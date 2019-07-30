@@ -1,0 +1,44 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-nav{
+    float:right;
+    flex-direction: row-reverse;
+}
+
+.left-nav{
+    float:left;
+   
+}
+
+#atmosphere-logo{
+    font-weight: 400;
+    font-size: 40px;
+    padding: 5px;
+    float: left;
+    color: black;
+    margin: 5px;
+}
+
+#signin-btn{
+    float: right;
+    font-size: 12px;
+    color: orangered;
+    text-align: center;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+}
+
+#signup-btn{
+    float: right;
+    font-size: 12px;
+    color: orangered;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid orangered;
+    margin: 5px;
+    border-radius: 10%;
+}
