@@ -37,12 +37,8 @@ class SessionForm extends React.Component {
 
     render(){
         let email_label;
-        let email_errors;
         let email_input;
-        let submit;
-        let password_label;
-        let password_input;
-        let password_errors;
+        
         
         if(this.props.errors.length){
             email_label = <label id="session-errors">{this.props.errors}</label>

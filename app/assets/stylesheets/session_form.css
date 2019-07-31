@@ -96,6 +96,7 @@
     border: none;
     color: #03a87c;
     padding: 0;
+    margin-bottom: 10px;
 }
 
 #session-submit{
@@ -112,3 +113,15 @@
     margin-bottom: 10px;
 }
 
+#demo-user{
+    margin-top: 20px;
+    background: #cc5454;
+    border-color: #cc5454;
+    color: white;
+    padding: 0 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 37px;
+    max-width: 180px;
+    margin: 0 auto;
+}
