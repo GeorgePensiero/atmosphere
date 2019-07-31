@@ -1,8 +1,11 @@
 import React from 'react';
-import Navbar from './navbar';
+import NavbarContainer from './navbar_container';
+import Modal from './modal';
+
 export default () => (
     <div>
-        <Navbar />
+        <Modal />
+        <NavbarContainer/>
     </div>
 );
 
