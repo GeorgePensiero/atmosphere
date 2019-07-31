@@ -1,4 +1,4 @@
-import { signup } from "../actions/session_actions";
+import { signup, login } from "../actions/session_actions";
 import { connect } from "react-redux";
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../actions/modal_actions';
@@ -20,6 +20,7 @@ const mdp = dispatch => {
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
+        demoLogin: () => dispatch(login({username: "demo@demo.com", password: "password"})), 
     }
 }
 

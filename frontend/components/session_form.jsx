@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.loginDemoUser = this.loginDemoUser.bind(this);
     }
 
     handleClose(e){
@@ -20,7 +21,12 @@ class SessionForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user).then();
+        this.props.processForm(user);
+    }
+
+    loginDemoUser(e){
+        e.preventDefault();
+        this.props.demoLogin();
     }
 
     update(field){
@@ -31,18 +37,20 @@ class SessionForm extends React.Component {
 
     render(){
         let email_label;
+        let email_errors;
         let email_input;
         let submit;
-        let password;
+        let password_label;
+        let password_input;
+        let password_errors;
+        
         if(this.props.errors.length){
             email_label = <label id="session-errors">{this.props.errors}</label>
-            email_input = <input id="email-error-input" type="email" value={this.state.username} onChange={this.update('username')}/>
+            email_input = <input id="error-input" type="email" value={this.state.username} onChange={this.update('username')}/>
         } else {
             email_label = <label>Your email</label>
             email_input = <input type="email" value={this.state.username} onChange={this.update('username')}  />
         }
-
-        
 
         return (
             <form className="session-form" onSubmit={this.handleSubmit}>
@@ -60,6 +68,7 @@ class SessionForm extends React.Component {
                 <div className="session-btns">
                     <button id="session-submit" type="submit" >Continue</button>
                     {this.props.otherForm}
+                    <button id="demo-user" onClick={this.loginDemoUser}>Demo User</button>
                 </div>
             </form>
         )

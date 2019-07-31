@@ -11,6 +11,14 @@ export default ({openModal, currentUser, logout, closeModal}) => {
                 <button id="signin-btn" onClick={() => openModal('login')}>Sign in</button>
                 <button id="signup-btn" onClick={() => openModal('signup')}>Get started</button>
             </section>
+            <section className="bottom-nav">
+                <label>Topic</label>
+                <label>Topic</label>
+                <label>Topic</label>
+                <label>Topic</label>
+                <label>Topic</label>
+                <label>Topic</label>
+            </section>
         </header>
         )
     }
@@ -23,6 +31,14 @@ export default ({openModal, currentUser, logout, closeModal}) => {
             </section>
             <section className="right-nav">
                 <button id="logout-btn" onClick={() => logout()}>Logout</button>
+            </section>
+            <section className="bottom-nav">
+                <label>Topic</label>
+                <label>Topic</label>
+                <label>Topic</label>
+                <label>Topic</label>
+                <label>Topic</label>
+                <label>Topic</label>
             </section>
         </header>
         )

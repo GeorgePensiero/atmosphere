@@ -8,3 +8,4 @@
 User.create!(username:"HomerSimpson", password: "123456")
 User.create!(username:"Gob Bluth", password: "123456")
 User.create!(username:"George", password: "123456")
+User.create!(username:"demo@demo.com", password: "password")

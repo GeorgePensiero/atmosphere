@@ -1,6 +1,13 @@
 .navbar-logged-out{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navbar-logged-in{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .navbar-logged-out .right-nav{
@@ -51,4 +58,18 @@
     border: 1px solid orangered;
     margin: 5px;
     border-radius: 10%;
+}
+
+.navbar-logged-out .bottom-nav{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.navbar-logged-in .bottom-nav{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
 }

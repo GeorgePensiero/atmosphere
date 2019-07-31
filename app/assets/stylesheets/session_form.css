@@ -1,10 +1,15 @@
 
+.session-form {
+    max-width: 340px;
+}
 .button-close{
     position: absolute;
     top: 0;
     right: 0;
     margin: 10px;
     background-color: none;
+    text-decoration: none;
+    border: none;
 }
 
 .session-form h1{
@@ -14,6 +19,8 @@
     line-height: 28px;
     margin-bottom: 20px;
 }
+
+
 
 .session-form h2 {
     margin-bottom: 25px;
@@ -42,6 +49,8 @@
     font-size: 16px;
 }
 
+
+
 .email-input input {
     /* display: block; */
     text-align: left;
@@ -50,7 +59,7 @@
     margin-bottom: 10px;
 }
 
-#email-error-input{
+#error-input{
     text-align: left;
     border: none;
     border-bottom: 1px solid #cc5454;
