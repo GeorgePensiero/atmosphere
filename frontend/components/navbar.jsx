@@ -1,8 +1,9 @@
 import React from 'react';
 
-export default ({openModal}) => {
-    return (
-        <header className='navbar'>
+export default ({openModal, currentUser, logout, closeModal}) => {
+    const loggedOut = () => {
+        return (
+        <header className='navbar-logged-out'>
             <section className="left-nav">
                 <h1 id="atmosphere-logo">Atmosphere</h1>
             </section>
@@ -11,6 +12,21 @@ export default ({openModal}) => {
                 <button id="signup-btn" onClick={() => openModal('signup')}>Get started</button>
             </section>
         </header>
-    )
+        )
+    }
+
+    const loggedIn = () => {
+        return (
+        <header className="navbar-logged-in">
+            <section className="left-nav">
+                <h1 id="atmosphere-logo">Atmosphere</h1>
+            </section>
+            <section className="right-nav">
+                <button id="logout-btn" onClick={() => logout()}>Logout</button>
+            </section>
+        </header>
+        )
+    }
+    return  currentUser ? loggedIn() : loggedOut();
 }
 

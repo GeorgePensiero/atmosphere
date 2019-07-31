@@ -1,0 +1,105 @@
+
+.button-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    background-color: none;
+}
+
+.session-form h1{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.session-form h2 {
+    margin-bottom: 25px;
+    font-size: 19px;
+    font-family: sans-serif;
+    max-width: 360px;
+    line-height: 24px;
+    font-weight: 400px;
+}
+
+.email-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-input label{
+    /* display: block; */
+    text-align: left;
+    font-size: 16px;
+    color: gray;
+}
+
+#session-errors{
+    color: #cc5454;
+    text-align: left;
+    font-size: 16px;
+}
+
+.email-input input {
+    /* display: block; */
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+#email-error-input{
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #cc5454;
+    margin-bottom: 10px;
+}
+
+.password-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.password-input label{
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    color: gray;
+}
+
+.password-input input {
+    /* display: block; */
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+.session-btns {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.session-btns button{
+    border: none;
+    color: #03a87c;
+    padding: 0;
+}
+
+#session-submit{
+    /* display: block; */
+    background: black;
+    border-color: black;
+    color: white;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 37px;
+    max-width: 90px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+

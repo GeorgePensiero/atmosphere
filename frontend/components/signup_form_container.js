@@ -1,13 +1,13 @@
 import { signup } from "../actions/session_actions";
 import { connect } from "react-redux";
 import SessionForm from './session_form';
-import { openModal } from '../actions/modal_actions';
+import { openModal, closeModal } from '../actions/modal_actions';
 import React from 'react';
 
 const msp  = ({errors}) => {
     return {
         errors: errors.session,
-        formType: "Sign in ",
+        formType: "Sign up ",
     }
 }
 
@@ -19,6 +19,7 @@ const mdp = dispatch => {
                 Login
             </button>
         ),
+        closeModal: () => dispatch(closeModal()),
     }
 }
 

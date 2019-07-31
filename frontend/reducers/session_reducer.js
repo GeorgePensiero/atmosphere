@@ -5,7 +5,9 @@ export default(state = _nullUser, action) => {
     let newState = Object.freeze(state);
     switch(action.type){
         case RECEIVE_CURRENT_USER:
-            return Object.assign({}, newState, {[id]: action.user.id})
+            newState = Object.assign({}, newState)
+            newState["id"] = action.user.id;
+            return newState;
         case LOGOUT_CURRENT_USER:
             return _nullUser;
         default: 

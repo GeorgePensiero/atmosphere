@@ -17,7 +17,4 @@ class Api::SessionsController < ApplicationController
             render json: ["No current user to logout"], status: 404
         end
     end
-
-    def destroy
-    end
 end

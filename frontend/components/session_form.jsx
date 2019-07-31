@@ -1,4 +1,5 @@
 import React from 'react';
+import { closeModal } from '../actions/modal_actions';
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -8,12 +9,18 @@ class SessionForm extends React.Component {
             password: "",
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+    }
+
+    handleClose(e){
+        e.preventDefault();
+        this.props.closeModal();
     }
 
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then();
     }
 
     update(field){
@@ -23,13 +30,37 @@ class SessionForm extends React.Component {
     }
 
     render(){
+        let email_label;
+        let email_input;
+        let submit;
+        let password;
+        if(this.props.errors.length){
+            email_label = <label id="session-errors">{this.props.errors}</label>
+            email_input = <input id="email-error-input" type="email" value={this.state.username} onChange={this.update('username')}/>
+        } else {
+            email_label = <label>Your email</label>
+            email_input = <input type="email" value={this.state.username} onChange={this.update('username')}  />
+        }
+
+        
+
         return (
-            <form onSubmit={this.handleSubmit}>
-                <span>{this.props.formType} with email</span>
-                <p>Enter the email and password associated with your account to log in</p>
-                <input type="text" value={this.state.username} onChange={this.update('username')}/>
-                <input type="password" value={this.state.password} onChange={this.update('password')}/>
-                {this.props.otherForm}
+            <form className="session-form" onSubmit={this.handleSubmit}>
+                <button className="button-close" onClick={this.handleClose}>{String.fromCharCode(10005)}</button>
+                <h1>{this.props.formType} with email</h1>
+                <h2>Enter the email and password associated with your account to log in</h2>
+                <div className="email-input">
+                    {email_label}
+                    {email_input}
+                </div>
+                <div className="password-input">
+                    <label>Your password</label>
+                    <input type="password" value={this.state.password} onChange={this.update('password')} />
+                </div>
+                <div className="session-btns">
+                    <button id="session-submit" type="submit" >Continue</button>
+                    {this.props.otherForm}
+                </div>
             </form>
         )
     }
