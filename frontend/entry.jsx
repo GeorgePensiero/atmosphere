@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStory, fetchStory, editStory, removeStory } from './actions/story_actions';
+import {fetchAllStories, createStory, fetchStory, editStory, removeStory } from './actions/story_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     const root = document.getElementById("root");
+    window.fetchAllStories = fetchAllStories;
     window.createStory = createStory;
     window.fetchStory = fetchStory;
     window.editStory = editStory;

@@ -1,3 +1,10 @@
+export const fetchAllStories = () => {
+    return $.ajax({
+        method: "get",
+        url: "api/stories",
+    });
+};
+
 export const createStory = story => {
     return $.ajax({
         method: "POST",

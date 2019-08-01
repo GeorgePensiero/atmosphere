@@ -1,5 +1,10 @@
 class Api::StoriesController < ApplicationController
 
+    def index
+        @stories = Story.all
+        render :index
+    end
+
     def show
         @story = Story.find(params[:id])
     end
@@ -15,6 +20,7 @@ class Api::StoriesController < ApplicationController
     end
 
     def update
+        debugger
         @story = Story.find(params[:id])
         if @story.update(story_params)
             render :show
