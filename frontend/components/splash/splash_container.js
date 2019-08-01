@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import Splash from './splash';
 
-const msp = ({stories}) => {
+const msp = ({entities}) => {
     return {
-        stories: Object.values(stories),
+        stories: Object.values(entities.stories),
     };
 };
 
@@ -11,3 +12,5 @@ const mdp = dispatch => {
         fetchAllStories: () => dispatch(fetchAllStories()),
     };
 };
+
+export default connect(msp, mdp)(Splash);
