@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as SessionUtil from './util/session_api_util';
+import {createStory, fetchStory, editStory, removeStory } from './actions/story_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     const root = document.getElementById("root");
-    window.signup = SessionUtil.signup;
-    window.login = SessionUtil.login;
-    window.logout = SessionUtil.logout;
+    window.createStory = createStory;
+    window.fetchStory = fetchStory;
+    window.editStory = editStory;
+    window.deleteStory = removeStory;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
