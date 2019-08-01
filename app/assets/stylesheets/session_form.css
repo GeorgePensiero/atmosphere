@@ -125,3 +125,7 @@
     max-width: 180px;
     margin: 0 auto;
 }
+
+.error-list{
+    margin: 5px;
+}

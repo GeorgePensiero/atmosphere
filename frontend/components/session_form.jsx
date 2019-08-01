@@ -40,6 +40,7 @@ class SessionForm extends React.Component {
         let email_input;
         
         
+        
         if(this.props.errors.length){
             email_label = <label id="session-errors">{this.props.errors}</label>
             email_input = <input id="error-input" type="email" value={this.state.username} onChange={this.update('username')}/>
@@ -47,6 +48,7 @@ class SessionForm extends React.Component {
             email_label = <label>Your email</label>
             email_input = <input type="email" value={this.state.username} onChange={this.update('username')}  />
         }
+        
 
         return (
             <form className="session-form" onSubmit={this.handleSubmit}>

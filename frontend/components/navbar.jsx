@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default ({openModal, currentUser, logout, closeModal}) => {
+export default ({ openModal, currentUser, logout }) => {
+    
     const loggedOut = () => {
         return (
         <header className='navbar-logged-out'>
@@ -45,4 +46,5 @@ export default ({openModal, currentUser, logout, closeModal}) => {
     }
     return  currentUser ? loggedIn() : loggedOut();
 }
+
 

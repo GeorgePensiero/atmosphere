@@ -2,12 +2,16 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px; 
 }
 
 .navbar-logged-in{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .navbar-logged-out .right-nav{
