@@ -1,8 +1,8 @@
 
 import { connect } from 'react-redux';
 import Navbar from './navbar';
-import { openModal } from '../actions/modal_actions';
-import { logout } from '../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
+import { logout } from '../../actions/session_actions';
 
 const msp = ({session, entities: {users} }) => {
     return {
