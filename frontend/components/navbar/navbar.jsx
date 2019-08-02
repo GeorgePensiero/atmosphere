@@ -11,9 +11,7 @@ class Navbar extends React.Component {
     }
 
     handleClick({dropdown}){
-        debugger
         this.setState({dropdown: !dropdown})
-        debugger
     }
 
 

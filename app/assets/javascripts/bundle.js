@@ -676,11 +676,9 @@ function (_React$Component) {
     key: "handleClick",
     value: function handleClick(_ref) {
       var dropdown = _ref.dropdown;
-      debugger;
       this.setState({
         dropdown: !dropdown
       });
-      debugger;
     }
   }, {
     key: "render",
