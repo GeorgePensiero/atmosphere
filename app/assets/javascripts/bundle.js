@@ -861,7 +861,6 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var users = this.props.users;
-      debugger;
       var coverStoryBig = this.props.stories.slice(0, 1).map(function (story) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cover-big",
@@ -27358,7 +27357,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

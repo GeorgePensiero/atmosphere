@@ -8,7 +8,6 @@ class Featured extends React.Component{
 
     render() {
         const {users} = this.props;
-        debugger
         const coverStoryBig = this.props.stories.slice(0, 1).map(story => {
             return (
                 <div className="cover-big" key={story.id}>
