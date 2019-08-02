@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # == Schema Information
 #
 # Table name: stories
@@ -10,6 +11,8 @@
 #  updated_at :datetime         not null
 #
 
+=======
+>>>>>>> story
 require 'test_helper'
 
 class StoryTest < ActiveSupport::TestCase
