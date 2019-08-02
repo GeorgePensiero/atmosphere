@@ -39,14 +39,12 @@ class SessionForm extends React.Component {
         let email_input;
         
         
-        
-        if(this.props.errors.length){
-            email_label = <label id="session-errors">{this.props.errors}</label>
-            email_input = <input id="error-input" type="email" value={this.state.username} onChange={this.update('username')}/>
-        } else {
-            email_label = <label>Your email</label>
-            email_input = <input type="email" value={this.state.username} onChange={this.update('username')}  />
-        }
+        let errors = this.props.errors.map(err => {
+            return (
+                <li className="session-errors">{err}</li>
+            )
+        });
+
         
 
         return (
@@ -54,9 +52,10 @@ class SessionForm extends React.Component {
                 <button className="button-close" onClick={this.handleClose}>{String.fromCharCode(10005)}</button>
                 <h1>{this.props.formType} with email</h1>
                 <h2>Enter the email and password associated with your account to log in</h2>
+                {errors}
                 <div className="email-input">
-                    {email_label}
-                    {email_input}
+                    <label>Your email</label>
+                    <input type="email" value={this.state.username} onChange={this.update('username')} />
                 </div>
                 <div className="password-input">
                     <label>Your password</label>

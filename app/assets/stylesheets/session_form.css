@@ -1,7 +1,10 @@
 
 .session-form {
+    display: flex;
+    flex-direction: column;
     max-width: 340px;
 }
+
 .button-close{
     position: absolute;
     top: 0;
@@ -13,6 +16,7 @@
 }
 
 .session-form h1{
+    width: 100%;
     font-family: sans-serif;
     font-weight: 500;
     font-size: 24px;
@@ -23,6 +27,7 @@
 
 
 .session-form h2 {
+    width: 100%;
     margin-bottom: 25px;
     font-size: 19px;
     font-family: sans-serif;
@@ -43,10 +48,16 @@
     color: gray;
 }
 
-#session-errors{
+li{
     color: #cc5454;
     text-align: left;
     font-size: 16px;
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+#session-errors{
+    
 }
 
 
