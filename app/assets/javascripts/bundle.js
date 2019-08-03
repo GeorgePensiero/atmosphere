@@ -681,6 +681,7 @@ function (_React$Component) {
       visible: false
     };
     _this.toggleDropdown = _this.toggleDropdown.bind(_assertThisInitialized(_this));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -692,6 +693,27 @@ function (_React$Component) {
           visible: !prevState.visible
         };
       });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      document.addEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(e) {
+      if (this.node && this.node.contains(e.target)) {
+        return;
+      } else if (!this.state.visible && !this.iconRef.contains(e.target)) {
+        return;
+      }
+
+      this.toggleDropdown();
     }
   }, {
     key: "componentDidUpdate",
@@ -707,12 +729,17 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _this$props = this.props,
           currentUser = _this$props.currentUser,
           openModal = _this$props.openModal,
           logout = _this$props.logout;
       var visible = this.state.visible ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown"
+        className: "dropdown",
+        ref: function ref(node) {
+          return _this2.node = node;
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/story/new"
       }, "New Story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Stories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -720,6 +747,7 @@ function (_React$Component) {
       }, "Logout")) : null;
 
       if (currentUser) {
+        var initial = currentUser.username.slice(0, 1).toUpperCase();
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "navbar"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
@@ -730,10 +758,12 @@ function (_React$Component) {
           id: "atmosphere-logo"
         }, "Atmosphere")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "right-nav"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          id: "dropdown-btn",
-          onClick: this.toggleDropdown
-        }, "Menu"), visible)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          ref: function ref(iconRef) {
+            return _this2.iconRef = iconRef;
+          },
+          className: "user-initial"
+        }, initial), visible)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "bottom-nav"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic")));
       } else {
@@ -1089,6 +1119,7 @@ function (_React$Component) {
       author: _this.props.author
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.returnToSplash = _this.returnToSplash.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1100,6 +1131,11 @@ function (_React$Component) {
       return function (e) {
         _this2.setState(_defineProperty({}, field, e.target.value));
       };
+    }
+  }, {
+    key: "returnToSplash",
+    value: function returnToSplash() {
+      this.props.history.push('/');
     }
   }, {
     key: "handleSubmit",
@@ -1115,10 +1151,22 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "story-submit-btn",
+      var initial = this.props.author.username.slice(0, 1).toUpperCase();
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+        className: "story-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "left-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "atmosphere-letter",
+        onClick: this.returnToSplash
+      }, "A")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "right-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "submit-btn",
         onClick: this.handleSubmit
       }, "Ready to publish?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-initial"
+      }, initial))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "story-form-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         placeholder: "Title",
