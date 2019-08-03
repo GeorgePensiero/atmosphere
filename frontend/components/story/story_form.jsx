@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarContainer from '../navbar/navbar_container';
 
 class StoryForm extends React.Component{
     constructor(props){
@@ -22,17 +23,19 @@ class StoryForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const story = Object.assign({}, this.state);
-        this.props.createStory(story);
+        this.props.createStory(story).then(() => this.props.history.push('/'));
     }
 
    
     render(){
         return (
-            
-            <div className="story-form-main">
-                <input placeholder="Title" onChange={this.update('title')} value={this.state.title}/>
-                <textarea placeholder="Start your story..." onChange={this.update('body')} value={this.state.body}/>
-            </div>
+            <>
+                <button className="story-submit-btn" onClick={this.handleSubmit}>Ready to publish?</button>
+                <div className="story-form-main">
+                    <input placeholder="Title" onChange={this.update('title')} value={this.state.title}/>
+                    <textarea placeholder="Start your story..." onChange={this.update('body')} value={this.state.body}/>
+                </div>
+            </>
         )
     }
 }

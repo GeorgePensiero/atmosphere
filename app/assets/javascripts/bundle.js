@@ -687,20 +687,22 @@ function (_React$Component) {
   _createClass(Navbar, [{
     key: "toggleDropdown",
     value: function toggleDropdown(e) {
-      debugger;
       this.setState(function (prevState) {
         return {
           visible: !prevState.visible
         };
       });
-      debugger;
     }
   }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      this.setState({
-        visible: false
-      });
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prev) {
+      if (prev.currentUser !== this.props.currentUser) {
+        this.setState({
+          visible: false
+        });
+      }
+
+      ;
     }
   }, {
     key: "render",
@@ -1046,6 +1048,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _navbar_navbar_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../navbar/navbar_container */ "./frontend/components/navbar/navbar_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1065,6 +1068,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -1100,14 +1104,21 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var story = Object.assign({}, this.state);
-      this.props.createStory(story);
+      this.props.createStory(story).then(function () {
+        return _this3.props.history.push('/');
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "story-submit-btn",
+        onClick: this.handleSubmit
+      }, "Ready to publish?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "story-form-main"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         placeholder: "Title",
@@ -1117,7 +1128,7 @@ function (_React$Component) {
         placeholder: "Start your story...",
         onChange: this.update('body'),
         value: this.state.body
-      }));
+      })));
     }
   }]);
 

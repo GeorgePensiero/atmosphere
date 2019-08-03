@@ -10,14 +10,15 @@ class Navbar extends React.Component {
     }
 
     toggleDropdown(e){
-        debugger
         this.setState(prevState => ({visible: !prevState.visible}));
-        debugger
     }
 
-    componentWillUnmount(){
-        this.setState({visible: false});
-    }
+   componentDidUpdate(prev){
+        if(prev.currentUser !== this.props.currentUser){
+            this.setState({visible: false});
+        };
+   }
+
 
 
     render(){

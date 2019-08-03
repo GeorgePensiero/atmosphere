@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    // padding: 0px 20px 0px 20px;
+    
 }
 
 .bottom-nav{
@@ -11,6 +11,13 @@
     width: 100%;
 }
 
+.left-nav{
+    padding-left: 20px;
+}
+
+.right-nav{
+    padding-right: 20px;
+}
 
 #atmosphere-logo{
     font-weight: 400;
@@ -41,7 +48,7 @@
 
 #dropdown-btn{
     position: relative;
-    float: right;
+    
     font-size: 12px;
     color: orangered;
     text-align: center;
