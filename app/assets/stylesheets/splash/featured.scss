@@ -1,18 +1,35 @@
 
 
 .featured{
-    margin: 12px auto 0 auto;
+    margin: 12px;
     display: flex;
     align-items: stretch;
     width: 100%;
     flex-direction: row;
+    justify-content: center;
+    height: 350px;
+    box-sizing: border-box;
 }
 
 .featured-left{
     display: flex;
+    height: 100%;
+    margin-right: 24px;
+    flex-wrap: wrap;
     flex-direction:row;
     flex-wrap: wrap;
-    margin: 10px;
+    width: 50%;
+}
+
+.cover-big{
+    display: block;
+}
+
+.featured-right{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
 }
 
 .cover-big-header{
@@ -20,4 +37,22 @@
     margin-bottom: 5px;
     font-size: 24px;
     overflow: hidden;
+    line-height: 28px;
+}
+
+.cover-big-description{
+    color: gray;
+    margin: 5px 0;
+}
+
+
+.cover-big-author{
+    margin-top: 5px;
+}
+
+.cover-story-header{
+    font-weight: 600;
+    max-height: 40px;
+    font-size: 18px;
+    line-height: 20px;
 }

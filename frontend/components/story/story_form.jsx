@@ -29,13 +29,10 @@ class StoryForm extends React.Component{
     render(){
         return (
             
-            <article className="story-form">
-                <div className="storyform-nav-bar">
-                    <button onClick={this.handleSubmit}>Publish</button>
-                </div>
-                    <input placeholder="Title" onChange={this.update('title')} value={this.state.title}/>
-                    <textarea onChange={this.update('body')} value={this.state.body}/>
-            </article>
+            <div className="story-form-main">
+                <input placeholder="Title" onChange={this.update('title')} value={this.state.title}/>
+                <textarea placeholder="Start your story..." onChange={this.update('body')} value={this.state.body}/>
+            </div>
         )
     }
 }

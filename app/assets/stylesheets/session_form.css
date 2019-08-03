@@ -2,7 +2,7 @@
 .session-form {
     display: flex;
     flex-direction: column;
-    max-width: 340px;
+    width: 300px;
 }
 
 .button-close{

@@ -889,7 +889,7 @@ function (_React$Component) {
     value: function render() {
       var users = this.props.users;
       var coverStoryBig = this.props.stories.slice(0, 1).map(function (story) {
-        var user = users[story.author_id];
+        var author = users[story.author_id].username.split("@")[0];
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cover-big",
           key: story.id
@@ -899,19 +899,18 @@ function (_React$Component) {
           className: "cover-big-description"
         }, story.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "cover-big-author"
-        }, user.username));
+        }, author));
       });
       var coverStories = this.props.stories.slice(1, 4).map(function (story) {
+        var author = users[story.author_id].username.split("@")[0];
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cover-story",
           key: story.id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "cover-story-header"
-        }, story.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          className: "cover-story-description"
-        }, story.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, story.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "cover-story-author"
-        }, users[story.author_id].username));
+        }, author));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "featured"
@@ -1108,17 +1107,14 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
-        className: "story-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "storyform-nav-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit
-      }, "Publish")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "story-form-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         placeholder: "Title",
         onChange: this.update('title'),
         value: this.state.title
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        placeholder: "Start your story...",
         onChange: this.update('body'),
         value: this.state.body
       }));

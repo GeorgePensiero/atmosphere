@@ -1,20 +1,27 @@
-.story-form{
+.story-form-main{
     display: flex;
+    flex-direction: column;
+    margin: 20px;
+    justify-content: center;
 }
 
-.story-form textarea{
+.story-form-main textarea{
     font-size: 18px;
     line-height: 1.58;
     border: none;
-    background-color: yellow;
+    background-color: none;
     width: 90%;
     height: 90%;
+    text-decoration: none;
+    resize: none;
+    height: 900px;
 }
 
-.story-form input{
+.story-form-main input{
     display: block;
     height: 30px;
     font-size: 20px;
     background-color: white;
+    border: none;
 }
 
