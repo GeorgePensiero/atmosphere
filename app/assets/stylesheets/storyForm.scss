@@ -1,0 +1,20 @@
+.story-form{
+    display: flex;
+}
+
+.story-form textarea{
+    font-size: 18px;
+    line-height: 1.58;
+    border: none;
+    background-color: yellow;
+    width: 90%;
+    height: 90%;
+}
+
+.story-form input{
+    display: block;
+    height: 30px;
+    font-size: 20px;
+    background-color: white;
+}
+

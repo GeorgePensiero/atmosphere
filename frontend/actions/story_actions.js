@@ -7,7 +7,7 @@ export const DELETE_STORY = "DELETE_STORY";
 
 export const fetchAllStories = () => dispatch => {
     return StoryUtils.fetchAllStories()
-        .then(stories => dispatch(receiveAllStories(stories)),
+        .then(payload => dispatch(receiveAllStories(payload)),
         err => dispatch(receiveStoryErrors(err.responseJSON)));
 };
 
@@ -56,9 +56,10 @@ const receiveStory = story => {
     };
 };
 
-const receiveAllStories = stories => {
+const receiveAllStories = ({stories, users}) => {
     return {
         type: RECEIVE_ALL_STORIES,
         stories,
+        users,
     };
 };

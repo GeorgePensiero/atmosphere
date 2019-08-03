@@ -1,14 +1,17 @@
 import React from 'react';
-import NavbarContainer from './navbar/navbar_container';
 import Modal from './modal/modal';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Splash from './splash/splash';
+import { ProtectedRoute } from '../util/route_util';
+import StoryForm from './story/story_form_container';
 
 export default () => (
     <div>
         <Modal />
-        <NavbarContainer/>
-        <Splash />
+        <Switch>
+            <ProtectedRoute exact path="/story/new" component={StoryForm} />
+            <Route component={Splash} />
+        </Switch>
     </div>
 );
 

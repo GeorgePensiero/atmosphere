@@ -1,45 +1,50 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class Navbar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            dropdown: false
+            visible: false
         }
-        this.handleClick = this.handleClick.bind(this);
-        
+        this.toggleDropdown = this.toggleDropdown.bind(this);
     }
 
-    handleClick({dropdown}){
+    toggleDropdown(e){
         debugger
-        this.setState({dropdown: !dropdown})
+        this.setState(prevState => ({visible: !prevState.visible}));
         debugger
+    }
+
+    componentWillUnmount(){
+        this.setState({visible: false});
     }
 
 
     render(){
         const { currentUser, openModal, logout } = this.props;
+        const visible =  this.state.visible ? (
+            
+            <div className="dropdown">
+                <Link to="/story/new">New Story</Link>
+                <button>Stories</button>
+                <button>Profile</button>
+                <button onClick={logout}>Logout</button>
+            </div>
+        )
+            :(
+                null
+            );
         if(currentUser){
             return (
-                <header className="navbar-logged-in">
-                    <section className="left-nav">
-                        <h1 id="atmosphere-logo">Atmosphere</h1>
-                    </section>
-                    <section className="right-nav">
-                        <button id="logout-btn" onClick={this.handleClick}>Menu</button>
-                        { this.state.dropdown ? (
-                            <div className="dropdown">
-                                <button>New story</button>
-                                <button>Stories</button>
-                                <button>Profile</button>
-                                <button onClick={logout}>Logout</button>
-                            </div>
-                        )
-                            :(
-                                null
-                            )
-
-                        }
+                <div className="navbar">
+                    <section className="top-navbar">
+                        <section className="left-nav">
+                            <h1 id="atmosphere-logo">Atmosphere</h1>
+                        </section>
+                        <section className="right-nav">
+                            <button id="dropdown-btn" onClick={this.toggleDropdown}>Menu</button>
+                            {visible}
+                        </section>
                     </section>
                     <section className="bottom-nav">
                         <label>Topic</label>
@@ -49,17 +54,19 @@ class Navbar extends React.Component {
                         <label>Topic</label>
                         <label>Topic</label>
                     </section>
-                </header>
+                </div>
             )
         } else {
             return (
-                <header className='navbar-logged-out'>
-                    <section className="left-nav">
-                        <h1 id="atmosphere-logo">Atmosphere</h1>
-                    </section>
-                    <section className="right-nav">
-                        <button id="signin-btn" onClick={() => openModal('login')}>Sign in</button>
-                        <button id="signup-btn" onClick={() => openModal('signup')}>Get started</button>
+                <div className="navbar">
+                    <section className='top-navbar'>
+                        <section className="left-nav">
+                            <h1 id="atmosphere-logo">Atmosphere</h1>
+                        </section>
+                        <section className="right-nav">
+                            <button id="signin-btn" onClick={() => openModal('login')}>Sign in</button>
+                            <button id="signup-btn" onClick={() => openModal('signup')}>Get started</button>
+                        </section>
                     </section>
                     <section className="bottom-nav">
                         <label>Topic</label>
@@ -69,7 +76,7 @@ class Navbar extends React.Component {
                         <label>Topic</label>
                         <label>Topic</label>
                     </section>
-                </header>
+                    </div>
             )
         }
     }

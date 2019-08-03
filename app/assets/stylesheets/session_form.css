@@ -138,5 +138,10 @@ li{
 }
 
 .error-list{
-    margin: 5px;
+    margin: 20px;
+}
+
+.error-list li{
+    padding: 6px;
+    margin: 8px;
 }

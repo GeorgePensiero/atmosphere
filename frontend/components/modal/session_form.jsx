@@ -35,13 +35,12 @@ class SessionForm extends React.Component {
     }
 
     render(){
-        let email_label;
-        let email_input;
+        
         
         
         let errors = this.props.errors.map(err => {
             return (
-                <li className="session-errors">{err}</li>
+                <li className="session-errors" key={err.id}>{err}</li>
             )
         });
 
