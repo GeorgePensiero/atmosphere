@@ -6,15 +6,14 @@ const msp = state => {
     const { users } = state.entities;
     const { session } = state;
     return {
+        story: { title: "", body: ""},
         author: users[session.id],
-        title: "",
-        body: "", 
     };
 };
 
 const mdp = dispatch => {
     return {
-        createStory: story => dispatch(createStory(story)),
+        submit: story => dispatch(createStory(story)),
     };
 };
 

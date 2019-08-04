@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Featured extends React.Component{
 
@@ -13,10 +14,10 @@ class Featured extends React.Component{
             const description = story.body.slice(0, 100) + "...";
             return (
                 <div className="cover-big" key={story.id}>
-                    <img src={story.photoUrl} alt="bigCoverPhoto"/>
+                    {/* <img src={story.photoUrl} alt="bigCoverPhoto"/> */}
                     <h1 className="cover-big-header">{story.title}</h1>
                     <span className="cover-big-description">{description}</span>
-                    <p className="cover-big-author">{author}</p>
+                    <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link>
                 </div>
             )
         });
@@ -26,19 +27,19 @@ class Featured extends React.Component{
             return (
                 <div className="cover-story" key={story.id}>
                     <h1 className="cover-story-header">{story.title}</h1>
-                    <p className="cover-story-author">{author}</p>
+                    <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link>
                 </div>
             )
         })
 
         return (
             <div className="featured">
-                <section className="featured-left">
+                <div className="featured-left">
                     {coverStoryBig}
-                </section>
-                <section className="featured-right">
+                </div>
+                <div className="featured-right">
                     {coverStories}
-                </section>
+                </div>
             </div>
         )
     }

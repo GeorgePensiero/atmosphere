@@ -1,15 +1,11 @@
 import React from 'react';
-import NavbarContainer from '../navbar/navbar_container';
+import { withRouter } from 'react-router-dom';
 
 class StoryForm extends React.Component{
     constructor(props){
         super(props)
 
-        this.state = {
-            title: "",
-            body: "",
-            author: this.props.author,
-        }
+        this.state = this.props.story
         this.handleSubmit = this.handleSubmit.bind(this);
         this.returnToSplash = this.returnToSplash.bind(this);
     }
@@ -27,12 +23,12 @@ class StoryForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const story = Object.assign({}, this.state);
-        this.props.createStory(story).then(() => this.props.history.push('/'));
+        this.props.submit(story).then(() => this.props.history.push('/'));
     }
 
    
     render(){
-        const initial = this.props.author.username.slice(0, 1).toUpperCase();
+        // const initial = this.props.author.username.slice(0, 1).toUpperCase();
         return (
             <>
                 <header className="story-header">
@@ -41,7 +37,7 @@ class StoryForm extends React.Component{
                     </div>
                     <div className="right-nav">
                         <button className="submit-btn" onClick={this.handleSubmit}>Ready to publish?</button>
-                        <div className="user-initial">{initial}</div>
+                        {/* <div className="user-initial">{initial}</div> */}
                     </div>
                 </header> 
                 <div className="story-form-main">
@@ -53,4 +49,4 @@ class StoryForm extends React.Component{
     }
 }
 
-export default StoryForm;
+export default withRouter(StoryForm);

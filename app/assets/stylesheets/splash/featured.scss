@@ -4,7 +4,7 @@
     margin: 12px;
     display: flex;
     align-items: stretch;
-    width: 100%;
+    width: 90%;
     flex-direction: row;
     justify-content: center;
     height: 350px;
@@ -12,12 +12,8 @@
 }
 
 .featured-left{
-    display: flex;
     height: 100%;
     margin-right: 24px;
-    flex-wrap: wrap;
-    flex-direction:row;
-    flex-wrap: wrap;
     width: 50%;
 }
 
@@ -26,15 +22,14 @@
 }
 
 .featured-right{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    height: 100%;
     width: 50%;
+    word-wrap: break-word;
 }
 
 .cover-big-header{
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     font-size: 24px;
     overflow: hidden;
     line-height: 28px;
@@ -55,4 +50,12 @@
     max-height: 40px;
     font-size: 18px;
     line-height: 20px;
+}
+
+.cover-story{
+    margin-bottom: 10px;
+}
+
+.cover-story-header{
+    margin-bottom: 30px;
 }

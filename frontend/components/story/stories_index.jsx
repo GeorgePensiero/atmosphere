@@ -15,6 +15,7 @@ class UserStories extends React.Component{
             return (
                 <div className="story" key={story.id}>
                     <Link to={`/story/${story.id}`}>{story.title}</Link>
+                    <Link to={`/story/${story.id}/edit`}>Edit story</Link>
                     <p>{description}</p>
                 </div>
             )
