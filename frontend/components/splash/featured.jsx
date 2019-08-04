@@ -14,7 +14,7 @@ class Featured extends React.Component{
             const description = story.body.slice(0, 100) + "...";
             return (
                 <div className="cover-big" key={story.id}>
-                    {/* <img src={story.photoUrl} alt="bigCoverPhoto"/> */}
+                    <img id="big-photo" src={story.photoUrl} alt="bigCoverPhoto"/>
                     <h1 className="cover-big-header">{story.title}</h1>
                     <span className="cover-big-description">{description}</span>
                     <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link>
