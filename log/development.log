@@ -5740,1223 +5740,48 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 4.2ms)
 
 
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8524669822403596995)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8524669822403596995)[0m
   ↳ bin/rails:9
-  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-Migrating to CreateStories (20190801135225)
+Migrating to CreateStories (20190801133821)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (61.9ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190801133821_create_stories.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8524669822403596995)[0m
   ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/George/.rbenv/versions/2.5.1/bin/annotate:23
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8524669822403596995)[0m
   ↳ bin/rails:9
-  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-Migrating to CreateStories (20190801135225)
+Migrating to CreateStories (20190801133821)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   ↳ bin/rails:9
-  [1m[35m (54.3ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/migrate/20190801135225_create_stories.rb:3
-  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_stories_on_author_id" ON "stories"  ("author_id")[0m
-  ↳ db/migrate/20190801135225_create_stories.rb:10
-  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190801135225"]]
+  [1m[35m (49.1ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190801133821_create_stories.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
   ↳ bin/rails:9
-  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8524669822403596995)[0m
   ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8524669822403596995)[0m
-  ↳ bin/rails:9
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8524669822403596995)[0m
   ↳ bin/rails:9
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:10
-  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:10
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yPJjW-irW1gNLNqKrjOcdw"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:10
-  [1m[36mUser Create (44.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["password_digest", "$2a$12$pfXYupET4JnsNF2mns.dvuxE3SzqlZKu4tFbsy/xIgPavh1dQE4Qa"], ["session_token", "yPJjW-irW1gNLNqKrjOcdw"], ["created_at", "2019-08-01 15:02:15.249923"], ["updated_at", "2019-08-01 15:02:15.249923"]]
-  ↳ db/seeds.rb:10
-  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:10
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "GobBluth@magicians.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CrDBflzCjsiFBrkzhutnTg"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "GobBluth@magicians.com"], ["password_digest", "$2a$12$hKtl8njttkf7ZEjM1RR5/eUzE0TnaAFPuU/5Ylhk1SkGT13r3X0j."], ["session_token", "CrDBflzCjsiFBrkzhutnTg"], ["created_at", "2019-08-01 15:02:15.543383"], ["updated_at", "2019-08-01 15:02:15.543383"]]
-  ↳ db/seeds.rb:11
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:11
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "George@pensiero.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bWzyx867sPdP6gF3mxTrLg"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "George@pensiero.com"], ["password_digest", "$2a$12$oUMsXPPRdavGMfu/hcBAB.cNEaLjBkEeN0AKZCdEY9snfFOfhA0iO"], ["session_token", "bWzyx867sPdP6gF3mxTrLg"], ["created_at", "2019-08-01 15:02:15.789921"], ["updated_at", "2019-08-01 15:02:15.789921"]]
-  ↳ db/seeds.rb:12
-  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:12
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6Bf3lrIeGQOyLHLt4QH15w"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
-  ↳ db/seeds.rb:13
-  [1m[35m (2.0ms)[0m  [1m[35mCREATE DATABASE "atmosphere_development" ENCODING = 'unicode'[0m
-  ↳ bin/rails:9
-  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "atmosphere_test" ENCODING = 'unicode'[0m
-  ↳ bin/rails:9
-  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35mSQL (44.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  ↳ db/schema.rb:16
-  [1m[35m (7.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "stories" CASCADE[0m
-  ↳ db/schema.rb:18
-  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:18
-  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_stories_on_author_id" ON "stories"  ("author_id")[0m
-  ↳ db/schema.rb:18
-  [1m[35m (3.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
-  ↳ db/schema.rb:27
-  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:27
-  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/schema.rb:13
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
+Migrating to DropStories (20190801134445)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (12.8ms)[0m  [1m[35mDROP TABLE "stories"[0m
+  ↳ db/migrate/20190801134445_drop_stories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190801134445"]]
   ↳ bin/rails:9
-  [1m[35mSQL (1.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  ↳ db/schema.rb:16
-  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "stories" CASCADE[0m
-  ↳ db/schema.rb:18
-  [1m[35m (31.5ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:18
-  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_stories_on_author_id" ON "stories"  ("author_id")[0m
-  ↳ db/schema.rb:18
-  [1m[35m (7.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
-  ↳ db/schema.rb:27
-  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:27
-  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ db/schema.rb:13
-  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190801135225)[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-08-01 15:02:32.386509"], ["key", "environment"]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-08-01 15:02:32.392349"], ["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:10
-  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:10
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hgQCXDBXCWTjId36UKG-Dw"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:10
-  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["password_digest", "$2a$12$3SJkTaenCBkCtEY6vWkoUe8GC5vhjw8F47fl..ZyoSdZLmlgcOGky"], ["session_token", "hgQCXDBXCWTjId36UKG-Dw"], ["created_at", "2019-08-01 15:02:32.689030"], ["updated_at", "2019-08-01 15:02:32.689030"]]
-  ↳ db/seeds.rb:10
-  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:10
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "GobBluth@magicians.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KjUQTFQG_iQij4yqOcW3ew"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "GobBluth@magicians.com"], ["password_digest", "$2a$12$8n8NteDFyrIf2e.uc7ZAy.4GYo8xPKDlQTIJXczjswmc9lH74nZOy"], ["session_token", "KjUQTFQG_iQij4yqOcW3ew"], ["created_at", "2019-08-01 15:02:32.940201"], ["updated_at", "2019-08-01 15:02:32.940201"]]
-  ↳ db/seeds.rb:11
-  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:11
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "George@pensiero.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x9Mou9FJ3ZL5FhpD2cmP7Q"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "George@pensiero.com"], ["password_digest", "$2a$12$Z6eoYhoYA2zpQdiZE3NmyO8aBp6Oz3D86g/cQOU1oTNSLV6UQsKn2"], ["session_token", "x9Mou9FJ3ZL5FhpD2cmP7Q"], ["created_at", "2019-08-01 15:02:33.188830"], ["updated_at", "2019-08-01 15:02:33.188830"]]
-  ↳ db/seeds.rb:12
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:12
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lYkIJ9f8nzYYi5wfLiFcMQ"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "demo@demo.com"], ["password_digest", "$2a$12$l6e0LQ8Vnr4qhD6Gz8ywR.59MQgz7uCA360Uf9287/66woXf8mi5W"], ["session_token", "lYkIJ9f8nzYYi5wfLiFcMQ"], ["created_at", "2019-08-01 15:02:33.437029"], ["updated_at", "2019-08-01 15:02:33.437029"]]
-  ↳ db/seeds.rb:13
-  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:13
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ db/seeds.rb:15
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:15
-  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
-  ↳ db/seeds.rb:15
-  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "atmosphere_development" ENCODING = 'unicode'[0m
-  ↳ bin/rails:9
-  [1m[35m (1.4ms)[0m  [1m[35mCREATE DATABASE "atmosphere_test" ENCODING = 'unicode'[0m
-  ↳ bin/rails:9
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  ↳ db/schema.rb:16
-  [1m[35m (7.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "stories" CASCADE[0m
-  ↳ db/schema.rb:18
-  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:18
-  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_stories_on_author_id" ON "stories"  ("author_id")[0m
-  ↳ db/schema.rb:18
-  [1m[35m (6.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
-  ↳ db/schema.rb:27
-  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:27
-  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/schema.rb:13
-  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  ↳ db/schema.rb:16
-  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "stories" CASCADE[0m
-  ↳ db/schema.rb:18
-  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:18
-  [1m[35m (3.1ms)[0m  [1m[35mCREATE  INDEX  "index_stories_on_author_id" ON "stories"  ("author_id")[0m
-  ↳ db/schema.rb:18
-  [1m[35m (3.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
-  ↳ db/schema.rb:27
-  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:27
-  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-08-01 15:03:00.432820"], ["key", "environment"]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-08-01 15:03:00.439622"], ["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:10
-  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:10
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kR1Tj626-X65_HUJIVje8Q"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:10
-  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["password_digest", "$2a$12$BeI7clMIr2k/6Jsyyr30s.qDQnfy4UUFU4CzeVAL8jcy6vZ4aImf6"], ["session_token", "kR1Tj626-X65_HUJIVje8Q"], ["created_at", "2019-08-01 15:03:00.735077"], ["updated_at", "2019-08-01 15:03:00.735077"]]
-  ↳ db/seeds.rb:10
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:10
-  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "GobBluth@magicians.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IrHjOtVPXeKCp3y-En-hyA"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "GobBluth@magicians.com"], ["password_digest", "$2a$12$7qKNBtMnYlwh67T8itJKwOIYRpRVRz56Cxo5aQsidQ4CShiuttBQi"], ["session_token", "IrHjOtVPXeKCp3y-En-hyA"], ["created_at", "2019-08-01 15:03:00.984462"], ["updated_at", "2019-08-01 15:03:00.984462"]]
-  ↳ db/seeds.rb:11
-  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:11
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "George@pensiero.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FSoG1bPJTsbFXxb5b9178w"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "George@pensiero.com"], ["password_digest", "$2a$12$NyBYK7wE/7XlSgRLuGt0huVQTk53f2TdEc6uBnH0SXJ4h/8Gk0ha2"], ["session_token", "FSoG1bPJTsbFXxb5b9178w"], ["created_at", "2019-08-01 15:03:01.232756"], ["updated_at", "2019-08-01 15:03:01.232756"]]
-  ↳ db/seeds.rb:12
-  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:12
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "dV5omQATt4eeiEBWlCIf6Q"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "demo@demo.com"], ["password_digest", "$2a$12$5PrKfjpiScybd7unFhhzBOZrvHpexEDPay0kqmYcg9kvhLFh2WAV6"], ["session_token", "dV5omQATt4eeiEBWlCIf6Q"], ["created_at", "2019-08-01 15:03:01.483721"], ["updated_at", "2019-08-01 15:03:01.483721"]]
-  ↳ db/seeds.rb:13
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:13
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ db/seeds.rb:15
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:15
-  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
-  ↳ db/seeds.rb:15
-  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "atmosphere_development" ENCODING = 'unicode'[0m
-  ↳ bin/rails:9
-  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "atmosphere_test" ENCODING = 'unicode'[0m
-  ↳ bin/rails:9
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  ↳ db/schema.rb:16
-  [1m[35m (5.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "stories" CASCADE[0m
-  ↳ db/schema.rb:18
-  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:18
-  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_stories_on_author_id" ON "stories"  ("author_id")[0m
-  ↳ db/schema.rb:18
-  [1m[35m (3.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
-  ↳ db/schema.rb:27
-  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:27
-  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/schema.rb:13
-  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
-  ↳ db/schema.rb:16
-  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "stories" CASCADE[0m
-  ↳ db/schema.rb:18
-  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "stories" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:18
-  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_stories_on_author_id" ON "stories"  ("author_id")[0m
-  ↳ db/schema.rb:18
-  [1m[35m (4.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
-  ↳ db/schema.rb:27
-  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
-  ↳ db/schema.rb:27
-  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
-  ↳ db/schema.rb:27
-  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2019-08-01 15:04:07.927110"], ["key", "environment"]]
-  ↳ db/schema.rb:13
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/schema.rb:13
-  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-08-01 15:04:07.933659"], ["key", "environment"]]
-  ↳ bin/rails:9
-  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:10
-  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:10
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Sr-dsNleXaRraOZpcXbQ6Q"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:10
-  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["password_digest", "$2a$12$0Ww0vV6VEFXsixB78ADHBe7/FrfDaePpUxlodUg9t1LRVQV77CzLi"], ["session_token", "Sr-dsNleXaRraOZpcXbQ6Q"], ["created_at", "2019-08-01 15:04:08.231847"], ["updated_at", "2019-08-01 15:04:08.231847"]]
-  ↳ db/seeds.rb:10
-  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:10
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "GobBluth@magicians.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "cwwYi-dr5Zcwh-Sw3kslpQ"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "GobBluth@magicians.com"], ["password_digest", "$2a$12$y7vubBo0WK7SssTj.7Q16uneN6He02d1gAUTq8xYj640rM7dtI8l."], ["session_token", "cwwYi-dr5Zcwh-Sw3kslpQ"], ["created_at", "2019-08-01 15:04:08.483034"], ["updated_at", "2019-08-01 15:04:08.483034"]]
-  ↳ db/seeds.rb:11
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:11
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "George@pensiero.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FCGOYBiwlA2wju0sKzE94Q"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "George@pensiero.com"], ["password_digest", "$2a$12$O9mUlsuIjLSMEZlunwGYWu4BuouaHUh66foKyMqhYAbsatNFjv/yi"], ["session_token", "FCGOYBiwlA2wju0sKzE94Q"], ["created_at", "2019-08-01 15:04:08.731121"], ["updated_at", "2019-08-01 15:04:08.731121"]]
-  ↳ db/seeds.rb:12
-  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:12
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ty53KPgpGh1HaMxdHw7MJw"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "demo@demo.com"], ["password_digest", "$2a$12$r2Uy7095C8qBDAVnnjV3seTe4SFGzyDfDO6sGUAqyt/3Dp0pboi7O"], ["session_token", "ty53KPgpGh1HaMxdHw7MJw"], ["created_at", "2019-08-01 15:04:08.979126"], ["updated_at", "2019-08-01 15:04:08.979126"]]
-  ↳ db/seeds.rb:13
-  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:13
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ db/seeds.rb:15
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:15
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ db/seeds.rb:15
-  [1m[36mStory Create (1.0ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "But Margeee, the chili"], ["body", "heyheyhey"], ["author_id", 1], ["created_at", "2019-08-01 15:04:09.014058"], ["updated_at", "2019-08-01 15:04:09.014058"]]
-  ↳ db/seeds.rb:15
-  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:15
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
-  ↳ db/seeds.rb:16
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:16
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ db/seeds.rb:16
-  [1m[36mStory Create (0.4ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Yoda's magic tricks explained by an expert magician"], ["body", "may the force be with you"], ["author_id", 2], ["created_at", "2019-08-01 15:04:09.061468"], ["updated_at", "2019-08-01 15:04:09.061468"]]
-  ↳ db/seeds.rb:16
-  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:16
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
-  ↳ db/seeds.rb:17
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:17
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
-  ↳ db/seeds.rb:17
-  [1m[36mStory Create (0.4ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Hey Dawg"], ["body", "schwifty"], ["author_id", 3], ["created_at", "2019-08-01 15:04:09.068422"], ["updated_at", "2019-08-01 15:04:09.068422"]]
-  ↳ db/seeds.rb:17
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:17
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 3]]
-  ↳ db/seeds.rb:18
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:18
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
-  ↳ db/seeds.rb:18
-  [1m[36mStory Create (0.3ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "This is the demo story"], ["body", "demoman gotta demo"], ["author_id", 4], ["created_at", "2019-08-01 15:04:09.072982"], ["updated_at", "2019-08-01 15:04:09.072982"]]
-  ↳ db/seeds.rb:18
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:18
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ db/seeds.rb:19
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:19
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ db/seeds.rb:19
-  [1m[36mStory Create (0.3ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Got your nose, got your wallet"], ["body", "doh"], ["author_id", 1], ["created_at", "2019-08-01 15:04:09.077321"], ["updated_at", "2019-08-01 15:04:09.077321"]]
-  ↳ db/seeds.rb:19
-  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:19
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
-  ↳ db/seeds.rb:20
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:20
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ db/seeds.rb:20
-  [1m[36mStory Create (0.4ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I've made a terrible mistake"], ["body", "I've made a terrible mistake"], ["author_id", 2], ["created_at", "2019-08-01 15:04:09.082787"], ["updated_at", "2019-08-01 15:04:09.082787"]]
-  ↳ db/seeds.rb:20
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:20
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
-  ↳ db/seeds.rb:21
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:21
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ db/seeds.rb:21
-  [1m[36mStory Create (0.3ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "How i learned to make chicken noises"], ["body", "kawkawkawkawkaw"], ["author_id", 2], ["created_at", "2019-08-01 15:04:09.087255"], ["updated_at", "2019-08-01 15:04:09.087255"]]
-  ↳ db/seeds.rb:21
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:21
-Started GET "/" for ::1 at 2019-08-01 16:59:08 -0400
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /Users/George/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (27.4ms)
-Completed 200 OK in 1373ms (Views: 1366.9ms | ActiveRecord: 3.7ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 16:59:33 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (8.5ms)
-Completed 200 OK in 503ms (Views: 495.3ms | ActiveRecord: 6.2ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 16:59:34 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (20.9ms)
-Completed 200 OK in 77ms (Views: 74.5ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:00:00 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (13.0ms)
-Completed 200 OK in 521ms (Views: 507.2ms | ActiveRecord: 11.0ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:00:01 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (26.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (31.2ms)
-Completed 200 OK in 97ms (Views: 69.4ms | ActiveRecord: 26.3ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:00:18 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (8.7ms)
-Completed 200 OK in 447ms (Views: 437.6ms | ActiveRecord: 6.7ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:00:42 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (10.0ms)
-Completed 200 OK in 518ms (Views: 511.3ms | ActiveRecord: 4.1ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:00:45 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
-Completed 200 OK in 59ms (Views: 56.5ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:00:48 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (13.2ms)
-Completed 200 OK in 71ms (Views: 57.5ms | ActiveRecord: 11.0ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:02:11 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (10.4ms)
-Completed 200 OK in 648ms (Views: 635.3ms | ActiveRecord: 7.7ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:03:12 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (10.7ms)
-Completed 200 OK in 79ms (Views: 68.2ms | ActiveRecord: 8.5ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:06:46 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
-Completed 200 OK in 88ms (Views: 82.5ms | ActiveRecord: 3.8ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:06:47 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (8.4ms)
-Completed 200 OK in 57ms (Views: 51.5ms | ActiveRecord: 3.4ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:07:45 -0400
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /Users/George/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (28.7ms)
-Completed 200 OK in 1506ms (Views: 1500.3ms | ActiveRecord: 3.2ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:09:17 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (15.6ms)
-Completed 200 OK in 642ms (Views: 630.1ms | ActiveRecord: 8.3ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:09:40 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
-Completed 200 OK in 453ms (Views: 446.1ms | ActiveRecord: 4.7ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:10:54 -0400
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /Users/George/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (39.0ms)
-Completed 200 OK in 1111ms (Views: 1104.3ms | ActiveRecord: 4.5ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:10:56 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (8.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (58.9ms)
-Completed 200 OK in 85ms (Views: 33.7ms | ActiveRecord: 41.1ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:11:39 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
-Completed 200 OK in 397ms (Views: 390.7ms | ActiveRecord: 4.0ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:12:26 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (9.6ms)
-Completed 200 OK in 463ms (Views: 455.7ms | ActiveRecord: 5.8ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:12:49 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (46.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (50.0ms)
-Completed 200 OK in 139ms (Views: 89.2ms | ActiveRecord: 46.2ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:12:59 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (36.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (40.6ms)
-Completed 200 OK in 127ms (Views: 86.9ms | ActiveRecord: 36.9ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:20:17 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (8.4ms)
-Completed 200 OK in 412ms (Views: 407.2ms | ActiveRecord: 3.1ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:20:50 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 106ms (Views: 99.7ms | ActiveRecord: 0.9ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:20:51 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (1.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (4.1ms)
-Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 1.3ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:23:01 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
-Completed 200 OK in 410ms (Views: 405.0ms | ActiveRecord: 1.5ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:23:01 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (37.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (41.6ms)
-Completed 200 OK in 50ms (Views: 11.8ms | ActiveRecord: 37.5ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:23:17 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (11.2ms)
-Completed 200 OK in 409ms (Views: 402.5ms | ActiveRecord: 4.7ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:27:51 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
-Completed 200 OK in 100ms (Views: 97.0ms | ActiveRecord: 0.8ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:28:03 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
-Completed 200 OK in 81ms (Views: 77.9ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:28:07 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
-Completed 200 OK in 429ms (Views: 425.5ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:29:52 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
-Completed 200 OK in 404ms (Views: 401.1ms | ActiveRecord: 0.7ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:30:02 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (14.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (20.5ms)
-Completed 200 OK in 77ms (Views: 59.5ms | ActiveRecord: 14.8ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:30:43 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
-Completed 200 OK in 409ms (Views: 404.8ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:34:48 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (8.1ms)
-Completed 200 OK in 413ms (Views: 409.2ms | ActiveRecord: 1.3ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:34:48 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (10.7ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (14.9ms)
-Completed 200 OK in 25ms (Views: 13.8ms | ActiveRecord: 10.7ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:35:13 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (10.3ms)
-Completed 200 OK in 388ms (Views: 381.3ms | ActiveRecord: 3.8ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:35:14 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (22.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (29.1ms)
-Completed 200 OK in 44ms (Views: 20.5ms | ActiveRecord: 22.9ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:39:01 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
-Completed 200 OK in 541ms (Views: 535.1ms | ActiveRecord: 2.3ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:39:02 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (28.9ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (37.8ms)
-Completed 200 OK in 56ms (Views: 26.3ms | ActiveRecord: 28.9ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:42:05 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
-Completed 200 OK in 93ms (Views: 90.7ms | ActiveRecord: 0.5ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:42:05 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (43.4ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (46.6ms)
-Completed 200 OK in 54ms (Views: 10.0ms | ActiveRecord: 43.4ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:43:04 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
-Completed 200 OK in 82ms (Views: 76.7ms | ActiveRecord: 3.7ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:43:04 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (8.6ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (12.5ms)
-Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 8.6ms)
-
-
-Started GET "/" for ::1 at 2019-08-01 17:49:30 -0400
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (10.6ms)
-Completed 200 OK in 52ms (Views: 45.9ms | ActiveRecord: 4.5ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 17:49:31 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (3.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (7.4ms)
-Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 3.8ms)
-
-
-  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ db/seeds.rb:8
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:8
-  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
-  ↳ db/seeds.rb:8
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:8
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:8
-  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
-  ↳ db/seeds.rb:8
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:8
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:8
-  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
-  ↳ db/seeds.rb:8
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:8
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:8
-  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
-  ↳ db/seeds.rb:8
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:8
-  [1m[36mStory Load (1.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ db/seeds.rb:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:9
-  [1m[36mStory Destroy (0.6ms)[0m  [1m[31mDELETE FROM "stories" WHERE "stories"."id" = $1[0m  [["id", 2]]
-  ↳ db/seeds.rb:9
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:9
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:9
-  [1m[36mStory Destroy (0.3ms)[0m  [1m[31mDELETE FROM "stories" WHERE "stories"."id" = $1[0m  [["id", 3]]
-  ↳ db/seeds.rb:9
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:9
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:9
-  [1m[36mStory Destroy (0.3ms)[0m  [1m[31mDELETE FROM "stories" WHERE "stories"."id" = $1[0m  [["id", 4]]
-  ↳ db/seeds.rb:9
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:9
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:9
-  [1m[36mStory Destroy (0.3ms)[0m  [1m[31mDELETE FROM "stories" WHERE "stories"."id" = $1[0m  [["id", 5]]
-  ↳ db/seeds.rb:9
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:9
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:9
-  [1m[36mStory Destroy (0.3ms)[0m  [1m[31mDELETE FROM "stories" WHERE "stories"."id" = $1[0m  [["id", 6]]
-  ↳ db/seeds.rb:9
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:9
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:9
-  [1m[36mStory Destroy (0.3ms)[0m  [1m[31mDELETE FROM "stories" WHERE "stories"."id" = $1[0m  [["id", 7]]
-  ↳ db/seeds.rb:9
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:9
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k1LRy0vKhDxGS8FbkOLcSQ"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:11
-  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "HomerSimpson@nuclearplant.jpg"], ["password_digest", "$2a$12$5iQQKl7cAPYqFGcOJpnYH.4i2gfrxqB.EaRzxcuFFUAHxJXQA4Jnm"], ["session_token", "k1LRy0vKhDxGS8FbkOLcSQ"], ["created_at", "2019-08-02 00:01:08.843568"], ["updated_at", "2019-08-02 00:01:08.843568"]]
-  ↳ db/seeds.rb:11
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:11
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "GobBluth@magicians.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JxMyhv95enUNQDWU_GIR7w"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:12
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "GobBluth@magicians.com"], ["password_digest", "$2a$12$cufhYBeov5TRG4C9wCAiq.TLVkRf9ugxLBRUt6UvTzKUED.KgeuWK"], ["session_token", "JxMyhv95enUNQDWU_GIR7w"], ["created_at", "2019-08-02 00:01:09.093177"], ["updated_at", "2019-08-02 00:01:09.093177"]]
-  ↳ db/seeds.rb:12
-  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:12
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "George@pensiero.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "tTCVqnSwQNwee3BPLofQQg"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:13
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "George@pensiero.com"], ["password_digest", "$2a$12$t/2qWw26aIgaD3Num/6.buWIns1085FMm6Gb38CN5.VaW7gQwqk0u"], ["session_token", "tTCVqnSwQNwee3BPLofQQg"], ["created_at", "2019-08-02 00:01:09.344228"], ["updated_at", "2019-08-02 00:01:09.344228"]]
-  ↳ db/seeds.rb:13
-  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:13
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:14
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:14
-  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "DaeX5Br0nt84x-NV27zRpw"], ["LIMIT", 1]]
-  ↳ db/seeds.rb:14
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "demo@demo.com"], ["password_digest", "$2a$12$1mrUHlWFMAeXhiyUkEo7TeMocmsESW4FkBiwBY8hl7OQ6X2g42brq"], ["session_token", "DaeX5Br0nt84x-NV27zRpw"], ["created_at", "2019-08-02 00:01:09.594804"], ["updated_at", "2019-08-02 00:01:09.594804"]]
-  ↳ db/seeds.rb:14
-  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:14
-  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ db/seeds.rb:16
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:16
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
-  ↳ db/seeds.rb:16
-  [1m[36mStory Create (1.1ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "But Margeee, the chili"], ["body", "heyheyhey"], ["author_id", 5], ["created_at", "2019-08-02 00:01:09.614111"], ["updated_at", "2019-08-02 00:01:09.614111"]]
-  ↳ db/seeds.rb:16
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:16
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
-  ↳ db/seeds.rb:17
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:17
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
-  ↳ db/seeds.rb:17
-  [1m[36mStory Create (0.3ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Yoda's magic tricks explained by an expert magician"], ["body", "may the force be with you"], ["author_id", 6], ["created_at", "2019-08-02 00:01:09.620516"], ["updated_at", "2019-08-02 00:01:09.620516"]]
-  ↳ db/seeds.rb:17
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:17
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
-  ↳ db/seeds.rb:18
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:18
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
-  ↳ db/seeds.rb:18
-  [1m[36mStory Create (0.3ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Hey Dawg"], ["body", "schwifty"], ["author_id", 7], ["created_at", "2019-08-02 00:01:09.625286"], ["updated_at", "2019-08-02 00:01:09.625286"]]
-  ↳ db/seeds.rb:18
-  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:18
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 3]]
-  ↳ db/seeds.rb:19
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:19
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
-  ↳ db/seeds.rb:19
-  [1m[36mStory Create (0.3ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "This is the demo story"], ["body", "demoman gotta demo"], ["author_id", 8], ["created_at", "2019-08-02 00:01:09.630929"], ["updated_at", "2019-08-02 00:01:09.630929"]]
-  ↳ db/seeds.rb:19
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:19
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ db/seeds.rb:20
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:20
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
-  ↳ db/seeds.rb:20
-  [1m[36mStory Create (0.4ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Got your nose, got your wallet"], ["body", "doh"], ["author_id", 5], ["created_at", "2019-08-02 00:01:09.636250"], ["updated_at", "2019-08-02 00:01:09.636250"]]
-  ↳ db/seeds.rb:20
-  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:20
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
-  ↳ db/seeds.rb:21
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:21
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
-  ↳ db/seeds.rb:21
-  [1m[36mStory Create (0.3ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I've made a terrible mistake"], ["body", "I've made a terrible mistake"], ["author_id", 6], ["created_at", "2019-08-02 00:01:09.641509"], ["updated_at", "2019-08-02 00:01:09.641509"]]
-  ↳ db/seeds.rb:21
-  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:21
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
-  ↳ db/seeds.rb:22
-  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
-  ↳ db/seeds.rb:22
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
-  ↳ db/seeds.rb:22
-  [1m[36mStory Create (0.3ms)[0m  [1m[32mINSERT INTO "stories" ("title", "body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "How i learned to make chicken noises"], ["body", "kawkawkawkawkaw"], ["author_id", 6], ["created_at", "2019-08-02 00:01:09.645833"], ["updated_at", "2019-08-02 00:01:09.645833"]]
-  ↳ db/seeds.rb:22
-  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
-  ↳ db/seeds.rb:22
-Started GET "/" for ::1 at 2019-08-01 20:26:06 -0400
-  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /Users/George/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-Processing by StaticPagesController#root as HTML
-  Rendering static_pages/root.html.erb within layouts/application
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  Rendered static_pages/root.html.erb within layouts/application (20.7ms)
-Completed 200 OK in 1755ms (Views: 1749.1ms | ActiveRecord: 2.8ms)
-
-
-Started GET "/api/stories" for ::1 at 2019-08-01 20:26:08 -0400
-Processing by Api::StoriesController#index as JSON
-  Rendering api/stories/index.json.jbuilder
-  [1m[36mStory Load (1.3ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
-  ↳ app/views/api/stories/index.json.jbuilder:1
-  Rendered api/stories/index.json.jbuilder (25.5ms)
-Completed 200 OK in 39ms (Views: 21.5ms | ActiveRecord: 11.0ms)
-
-
-Started POST "/api/session" for ::1 at 2019-08-01 20:29:38 -0400
-Processing by Api::SessionsController#create as JSON
-  Parameters: {"user"=>{"username"=>"fsaf@gmail.com", "password"=>"[FILTERED]"}}
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fsaf@gmail.com"], ["LIMIT", 1]]
-  ↳ app/models/user.rb:24
-Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
-
-
-Started POST "/api/session" for ::1 at 2019-08-01 20:29:45 -0400
-Processing by Api::SessionsController#create as JSON
-  Parameters: {"user"=>{"username"=>"demo@demo.com", "password"=>"[FILTERED]"}}
-  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
-  ↳ app/models/user.rb:24
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/user.rb:40
-  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo@demo.com"], ["id", 8], ["LIMIT", 1]]
-  ↳ app/models/user.rb:40
-  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "sMYjavnXy96OWbHuIIcmcQ"], ["id", 8], ["LIMIT", 1]]
-  ↳ app/models/user.rb:40
-  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sMYjavnXy96OWbHuIIcmcQ"], ["updated_at", "2019-08-02 00:29:45.725308"], ["id", 8]]
-  ↳ app/models/user.rb:40
-  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/user.rb:40
-  Rendering api/users/show.json.jbuilder
-  Rendered api/users/_user.json.jbuilder (0.4ms)
-  Rendered api/users/show.json.jbuilder (2.0ms)
-Completed 200 OK in 286ms (Views: 6.9ms | ActiveRecord: 7.9ms)
-
-
-Started DELETE "/api/session" for ::1 at 2019-08-01 20:29:47 -0400
-Processing by Api::SessionsController#destroy as JSON
-  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sMYjavnXy96OWbHuIIcmcQ"], ["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:10
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/models/user.rb:40
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo@demo.com"], ["id", 8], ["LIMIT", 1]]
-  ↳ app/models/user.rb:40
-  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "sj7X03CN4YOjBt-WyjjdJQ"], ["id", 8], ["LIMIT", 1]]
-  ↳ app/models/user.rb:40
-  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sj7X03CN4YOjBt-WyjjdJQ"], ["updated_at", "2019-08-02 00:29:47.041547"], ["id", 8]]
-  ↳ app/models/user.rb:40
-  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/models/user.rb:40
-Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.1ms)
-
-
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8524669822403596995)[0m
-  ↳ bin/rails:9
-  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ bin/rails:9
-Migrating to CreateActiveStorageTables (20190802012724)
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ bin/rails:9
-  [1m[35m (40.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
-  ↳ db/migrate/20190802012724_create_active_storage_tables.active_storage.rb:4
-  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
-  ↳ db/migrate/20190802012724_create_active_storage_tables.active_storage.rb:4
-  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
-FOREIGN KEY ("blob_id")
-  REFERENCES "active_storage_blobs" ("id")
-)[0m
-  ↳ db/migrate/20190802012724_create_active_storage_tables.active_storage.rb:16
-  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
-  ↳ db/migrate/20190802012724_create_active_storage_tables.active_storage.rb:16
-  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
-  ↳ db/migrate/20190802012724_create_active_storage_tables.active_storage.rb:16
-  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190802012724"]]
-  ↳ bin/rails:9
-  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
-  ↳ bin/rails:9
-  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (43.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   ↳ bin/rails:9
@@ -6966,6 +5791,8 @@ FOREIGN KEY ("blob_id")
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+<<<<<<< HEAD
+=======
 Started GET "/" for ::1 at 2019-08-02 08:44:27 -0400
   [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/George/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -10203,6 +9030,7 @@ Processing by Api::StoriesController#index as JSON
 Completed 200 OK in 65ms (Views: 14.5ms | ActiveRecord: 50.1ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for ::1 at 2019-08-02 13:31:23 -0400
   [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/George/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -10318,6 +9146,30 @@ Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.3ms)
 
 
 Started POST "/api/session" for ::1 at 2019-08-02 13:32:21 -0400
+=======
+>>>>>>> story
+Started GET "/" for ::1 at 2019-08-02 12:10:07 -0400
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/George/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered static_pages/root.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 2075ms (Views: 2068.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/stories" for ::1 at 2019-08-02 12:10:12 -0400
+Processing by Api::StoriesController#index as JSON
+  Rendering api/stories/index.json.jbuilder
+  [1m[36mStory Load (1.2ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
+  ↳ app/views/api/stories/index.json.jbuilder:1
+  Rendered api/stories/index.json.jbuilder (66.0ms)
+Completed 200 OK in 86ms (Views: 21.6ms | ActiveRecord: 56.2ms)
+
+
+Started POST "/api/session" for ::1 at 2019-08-02 12:10:34 -0400
+>>>>>>> master
 Processing by Api::SessionsController#create as JSON
   Parameters: {"user"=>{"username"=>"demo@demo.com", "password"=>"[FILTERED]"}}
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
@@ -10326,6 +9178,7 @@ Processing by Api::SessionsController#create as JSON
   ↳ app/models/user.rb:40
   [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo@demo.com"], ["id", 8], ["LIMIT", 1]]
   ↳ app/models/user.rb:40
+<<<<<<< HEAD
   [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "cqYGs-e_QT0jW-XB-n9RYA"], ["id", 8], ["LIMIT", 1]]
   ↳ app/models/user.rb:40
   [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "cqYGs-e_QT0jW-XB-n9RYA"], ["updated_at", "2019-08-02 17:32:21.746993"], ["id", 8]]
@@ -10526,12 +9379,63 @@ Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.3ms)
 
 
 Started POST "/api/session" for ::1 at 2019-08-02 13:34:45 -0400
+=======
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "gHEsbmeXLBPo9_ULSn3SAQ"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "gHEsbmeXLBPo9_ULSn3SAQ"], ["updated_at", "2019-08-02 16:10:35.111617"], ["id", 8]]
+  ↳ app/models/user.rb:40
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 282ms (Views: 8.9ms | ActiveRecord: 8.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-08-02 12:10:40 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gHEsbmeXLBPo9_ULSn3SAQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo@demo.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LWIlOLNwVmzSQzVyF7SXOg"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LWIlOLNwVmzSQzVyF7SXOg"], ["updated_at", "2019-08-02 16:10:40.653139"], ["id", 8]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/" for ::1 at 2019-08-02 13:26:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 373ms (Views: 368.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/stories" for ::1 at 2019-08-02 13:26:34 -0400
+Processing by Api::StoriesController#index as JSON
+  Rendering api/stories/index.json.jbuilder
+  [1m[36mStory Load (1.5ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
+  ↳ app/views/api/stories/index.json.jbuilder:1
+  Rendered api/stories/index.json.jbuilder (3.6ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/session" for ::1 at 2019-08-02 13:26:39 -0400
+>>>>>>> master
 Processing by Api::SessionsController#create as JSON
   Parameters: {"user"=>{"username"=>"demo@demo.com", "password"=>"[FILTERED]"}}
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
   ↳ app/models/user.rb:24
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   ↳ app/models/user.rb:40
+<<<<<<< HEAD
   [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo@demo.com"], ["id", 8], ["LIMIT", 1]]
   ↳ app/models/user.rb:40
   [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "6IHH4vNiDMzTwea_VPOa8g"], ["id", 8], ["LIMIT", 1]]
@@ -38864,5 +37768,19 @@ Processing by Api::SessionsController#destroy as JSON
   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
   ↳ app/models/user.rb:40
 Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 4.6ms)
+=======
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo@demo.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "iNJb0FnW_nZfqMJMU4q4AA"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "iNJb0FnW_nZfqMJMU4q4AA"], ["updated_at", "2019-08-02 17:26:39.763824"], ["id", 8]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.5ms)
+Completed 200 OK in 270ms (Views: 7.9ms | ActiveRecord: 3.2ms)
+>>>>>>> master
 
 
