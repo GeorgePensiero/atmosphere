@@ -325,15 +325,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/story/new",
     component: _story_new_story_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/users/:userId/stories",
     component: _story_stories_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
     path: "/story/:storyId/edit",
     component: _story_edit_story_form_container__WEBPACK_IMPORTED_MODULE_7__["default"]
@@ -679,9 +679,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -704,36 +704,55 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Navbar).call(this, props));
     _this.state = {
-      visible: false // this.toggleDropdown = this.toggleDropdown.bind(this);
-      // this.handleClick = this.handleClick.bind(this);
-
+      visible: false
     };
+    _this.toggleDropdown = _this.toggleDropdown.bind(_assertThisInitialized(_this));
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
-  } //     toggleDropdown(e){
-  //         this.setState(prevState => ({visible: !prevState.visible}));
-  //     }
-  //     componentDidMount(){
-  //         document.addEventListener('mousedown', this.handleClick, false);
-  //     }
-  //     componentWillUnmount(){
-  //         document.removeEventListener('mousedown', this.handleClick, false);
-  //     }
-  //     handleClick(e){
-  //         if(this.node && this.node.contains(e.target)){
-  //             return;
-  //         } else if (!this.state.visible && !this.iconRef.contains(e.target)) {
-  //             return
-  //         }
-  //         this.toggleDropdown();
-  //     }
-  //    componentDidUpdate(prev){
-  //         if(prev.currentUser !== this.props.currentUser){
-  //             this.setState({visible: false});
-  //         };
-  //    }
-
+  }
 
   _createClass(Navbar, [{
+    key: "toggleDropdown",
+    value: function toggleDropdown(e) {
+      this.setState(function (prevState) {
+        return {
+          visible: !prevState.visible
+        };
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      document.addEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClick, false);
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick(e) {
+      if (this.node && this.node.contains(e.target)) {
+        return;
+      } else if (!this.state.visible && !this.iconRef.contains(e.target)) {
+        return;
+      }
+
+      this.toggleDropdown();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prev) {
+      if (prev.currentUser !== this.props.currentUser) {
+        this.setState({
+          visible: false
+        });
+      }
+
+      ;
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -741,17 +760,19 @@ function (_React$Component) {
       var _this$props = this.props,
           currentUser = _this$props.currentUser,
           openModal = _this$props.openModal,
-          logout = _this$props.logout; // const visible =  this.state.visible ? (
-      //     <div className="dropdown" ref={node => this.node = node}>
-      //         <Link to="/story/new">New Story</Link>
-      //         <Link to={`/users/${currentUser.id}/stories`}>Stories</Link>
-      //         <button>Profile</button>
-      //         <button onClick={logout}>Logout</button>
-      //     </div>
-      // )
-      //     :(
-      //         null
-      //     );
+          logout = _this$props.logout;
+      var visible = this.state.visible && currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown",
+        ref: function ref(node) {
+          return _this2.node = node;
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/story/new"
+      }, "New Story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/users/".concat(currentUser.id, "/stories")
+      }, "Stories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: logout
+      }, "Logout")) : null;
 
       if (currentUser) {
         var initial = currentUser.username.slice(0, 1).toUpperCase();
@@ -769,9 +790,8 @@ function (_React$Component) {
           ref: function ref(iconRef) {
             return _this2.iconRef = iconRef;
           },
-          className: "user-initial",
-          onClick: this.props.logout
-        }, initial))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+          className: "user-initial"
+        }, initial), visible)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "bottom-nav"
         }));
       } else {

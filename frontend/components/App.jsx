@@ -11,9 +11,9 @@ export default () => (
     <div>
         <Modal />
         <Switch>
-            <ProtectedRoute exact path="/story/new" component={NewStoryContainer} />
-            <ProtectedRoute exact path="/users/:userId/stories" component={StoryIndexContainer} />
-            <ProtectedRoute exact path="/story/:storyId/edit" component={EditStoryContainer} />
+            <Route exact path="/story/new" component={NewStoryContainer} />
+            <Route exact path="/users/:userId/stories" component={StoryIndexContainer} />
+            <Route exact path="/story/:storyId/edit" component={EditStoryContainer} />
             <Route component={Splash} />
         </Switch>
     </div>
