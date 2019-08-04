@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ProtectedRoute } from '../../util/route_util';
+import StoriesIndexContainer from '../story/stories_index_container';
 class Navbar extends React.Component {
     constructor(props){
         super(props);
@@ -44,10 +46,9 @@ class Navbar extends React.Component {
     render(){
         const { currentUser, openModal, logout } = this.props;
         const visible =  this.state.visible ? (
-        
             <div className="dropdown" ref={node => this.node = node}>
                 <Link to="/story/new">New Story</Link>
-                <button>Stories</button>
+                <Link to={`/users/${currentUser.id}/stories`}>Stories</Link>
                 <button>Profile</button>
                 <button onClick={logout}>Logout</button>
             </div>
@@ -69,12 +70,12 @@ class Navbar extends React.Component {
                         </section>
                     </section>
                     <section className="bottom-nav">
+                        {/* <label>Topic</label>
                         <label>Topic</label>
                         <label>Topic</label>
                         <label>Topic</label>
                         <label>Topic</label>
-                        <label>Topic</label>
-                        <label>Topic</label>
+                        <label>Topic</label> */}
                     </section>
                 </div>
             )
@@ -91,12 +92,12 @@ class Navbar extends React.Component {
                         </section>
                     </section>
                     <section className="bottom-nav">
+                        {/* <label>Topic</label>
                         <label>Topic</label>
                         <label>Topic</label>
                         <label>Topic</label>
                         <label>Topic</label>
-                        <label>Topic</label>
-                        <label>Topic</label>
+                        <label>Topic</label> */}
                     </section>
                     </div>
             )

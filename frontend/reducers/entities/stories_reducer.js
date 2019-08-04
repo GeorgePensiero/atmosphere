@@ -1,9 +1,11 @@
-import { RECEIVE_ALL_STORIES, RECEIVE_STORY, DELETE_STORY } from "../../actions/story_actions";
+import { RECEIVE_ALL_STORIES, RECEIVE_STORY, DELETE_STORY, RECEIVE_USER_STORIES } from "../../actions/story_actions";
 
 export default(state = {}, action) => {
     let newState = Object.freeze(state);
     switch(action.type){
         case RECEIVE_ALL_STORIES: 
+            return action.stories;
+        case RECEIVE_USER_STORIES:
             return action.stories;
         case RECEIVE_STORY:
             newState = Object.assign({}, newState);

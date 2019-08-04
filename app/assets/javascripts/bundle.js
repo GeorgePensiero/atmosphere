@@ -189,7 +189,7 @@ var receiveCurrentUser = function receiveCurrentUser(user) {
 /*!*******************************************!*\
   !*** ./frontend/actions/story_actions.js ***!
   \*******************************************/
-/*! exports provided: RECEIVE_ALL_STORIES, RECEIVE_STORY, RECEIVE_STORY_ERRORS, DELETE_STORY, fetchAllStories, createStory, fetchStory, editStory, removeStory */
+/*! exports provided: RECEIVE_ALL_STORIES, RECEIVE_STORY, RECEIVE_STORY_ERRORS, DELETE_STORY, RECEIVE_USER_STORIES, fetchAllStories, fetchUserStories, createStory, fetchStory, editStory, removeStory */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -198,7 +198,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_STORY", function() { return RECEIVE_STORY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_STORY_ERRORS", function() { return RECEIVE_STORY_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_STORY", function() { return DELETE_STORY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER_STORIES", function() { return RECEIVE_USER_STORIES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllStories", function() { return fetchAllStories; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUserStories", function() { return fetchUserStories; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStory", function() { return createStory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchStory", function() { return fetchStory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editStory", function() { return editStory; });
@@ -209,10 +211,20 @@ var RECEIVE_ALL_STORIES = "RECEIVE_ALL_STORIES";
 var RECEIVE_STORY = "RECEIVE_STORY";
 var RECEIVE_STORY_ERRORS = "RECEIVE_STORY_ERRORS";
 var DELETE_STORY = "DELETE_STORY";
+var RECEIVE_USER_STORIES = "RECEIVE_USER_STORIES";
 var fetchAllStories = function fetchAllStories() {
   return function (dispatch) {
     return _util_story_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllStories"]().then(function (payload) {
       return dispatch(receiveAllStories(payload));
+    }, function (err) {
+      return dispatch(receiveStoryErrors(err.responseJSON));
+    });
+  };
+};
+var fetchUserStories = function fetchUserStories(id) {
+  return function (dispatch) {
+    return _util_story_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchUserStories"](id).then(function (payload) {
+      return dispatch(receiveUserStories(payload));
     }, function (err) {
       return dispatch(receiveStoryErrors(err.responseJSON));
     });
@@ -286,6 +298,16 @@ var receiveAllStories = function receiveAllStories(_ref) {
   };
 };
 
+var receiveUserStories = function receiveUserStories(_ref2) {
+  var stories = _ref2.stories,
+      users = _ref2.users;
+  return {
+    type: RECEIVE_USER_STORIES,
+    stories: stories,
+    users: users
+  };
+};
+
 /***/ }),
 
 /***/ "./frontend/components/App.jsx":
@@ -304,6 +326,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splash_splash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash/splash */ "./frontend/components/splash/splash.jsx");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _story_story_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./story/story_form_container */ "./frontend/components/story/story_form_container.js");
+/* harmony import */ var _story_stories_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./story/stories_index_container */ "./frontend/components/story/stories_index_container.js");
+
 
 
 
@@ -315,6 +339,10 @@ __webpack_require__.r(__webpack_exports__);
     exact: true,
     path: "/story/new",
     component: _story_story_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_4__["ProtectedRoute"], {
+    exact: true,
+    path: "/users/:userId/stories",
+    component: _story_stories_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _splash_splash__WEBPACK_IMPORTED_MODULE_3__["default"]
   })));
@@ -367,7 +395,7 @@ var mdp = function mdp(dispatch) {
     demoLogin: function demoLogin() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])({
         username: "demo@demo.com",
-        password: "password"
+        password: "hunter2"
       }));
     }
   };
@@ -623,7 +651,7 @@ var mdp = function mdp(dispatch) {
     demoLogin: function demoLogin() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["login"])({
         username: "demo@demo.com",
-        password: "password"
+        password: "hunter2"
       }));
     }
   };
@@ -645,6 +673,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/route_util */ "./frontend/util/route_util.jsx");
+/* harmony import */ var _story_stories_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../story/stories_index_container */ "./frontend/components/story/stories_index_container.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -662,6 +692,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -742,7 +774,9 @@ function (_React$Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/story/new"
-      }, "New Story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Stories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "New Story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/users/".concat(currentUser.id, "/stories")
+      }, "Stories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: logout
       }, "Logout")) : null;
 
@@ -765,7 +799,7 @@ function (_React$Component) {
           className: "user-initial"
         }, initial), visible)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "bottom-nav"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic")));
+        }));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "navbar"
@@ -789,7 +823,7 @@ function (_React$Component) {
           }
         }, "Get started"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
           className: "bottom-nav"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Topic")));
+        }));
       }
     }
   }]);
@@ -922,14 +956,18 @@ function (_React$Component) {
       var users = this.props.users;
       var coverStoryBig = this.props.stories.slice(0, 1).map(function (story) {
         var author = users[story.author_id].username.split("@")[0];
+        var description = story.body.slice(0, 100) + "...";
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cover-big",
           key: story.id
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: story.photoUrl,
+          alt: "bigCoverPhoto"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "cover-big-header"
         }, story.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "cover-big-description"
-        }, story.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "cover-big-author"
         }, author));
       });
@@ -1064,6 +1102,127 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);
+
+/***/ }),
+
+/***/ "./frontend/components/story/stories_index.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/story/stories_index.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var UserStories =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(UserStories, _React$Component);
+
+  function UserStories() {
+    _classCallCheck(this, UserStories);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(UserStories).apply(this, arguments));
+  }
+
+  _createClass(UserStories, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchUserStories(this.props.user.id);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var stories = this.props.stories.map(function (story) {
+        var description = story.body.slice(0, 250) + "...";
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "story",
+          key: story.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/story/".concat(story.id)
+        }, story.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, description));
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stories-main"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "stories-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Your stories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/story/new"
+      }, "Write a story"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, stories)));
+    }
+  }]);
+
+  return UserStories;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (UserStories);
+
+/***/ }),
+
+/***/ "./frontend/components/story/stories_index_container.js":
+/*!**************************************************************!*\
+  !*** ./frontend/components/story/stories_index_container.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _stories_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stories_index */ "./frontend/components/story/stories_index.jsx");
+/* harmony import */ var _actions_story_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/story_actions */ "./frontend/actions/story_actions.js");
+
+
+
+
+var msp = function msp(state, ownProps) {
+  var user = state.entities.users[ownProps.match.params.userId];
+  var stories = Object.values(state.entities.stories);
+  return {
+    user: user,
+    stories: stories
+  };
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    fetchUserStories: function fetchUserStories(id) {
+      return dispatch(Object(_actions_story_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUserStories"])(id));
+    },
+    editStory: function editStory(story) {
+      return dispatch(Object(_actions_story_actions__WEBPACK_IMPORTED_MODULE_2__["editStory"])(story));
+    },
+    removeStory: function removeStory(id) {
+      return dispatch(Object(_actions_story_actions__WEBPACK_IMPORTED_MODULE_2__["removeStory"])(id));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_stories_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -1272,6 +1431,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.fetchStory = _actions_story_actions__WEBPACK_IMPORTED_MODULE_2__["fetchStory"];
   window.editStory = _actions_story_actions__WEBPACK_IMPORTED_MODULE_2__["editStory"];
   window.deleteStory = _actions_story_actions__WEBPACK_IMPORTED_MODULE_2__["removeStory"];
+  window.fetchUserStories = _actions_story_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUserStories"];
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1323,6 +1483,9 @@ __webpack_require__.r(__webpack_exports__);
     case _actions_story_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_STORIES"]:
       return action.stories;
 
+    case _actions_story_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER_STORIES"]:
+      return action.stories;
+
     case _actions_story_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_STORY"]:
       newState = Object.assign({}, newState);
       newState[action.story.id] = action.story;
@@ -1368,6 +1531,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     case _actions_story_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ALL_STORIES"]:
       return Object.assign({}, newState, action.users);
+
+    case _actions_story_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER_STORIES"]:
+      return action.users;
 
     default:
       return state;
@@ -1708,12 +1874,13 @@ var logout = function logout() {
 /*!*****************************************!*\
   !*** ./frontend/util/story_api_util.js ***!
   \*****************************************/
-/*! exports provided: fetchAllStories, createStory, fetchStory, editStory, deleteStory */
+/*! exports provided: fetchAllStories, fetchUserStories, createStory, fetchStory, editStory, deleteStory */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllStories", function() { return fetchAllStories; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUserStories", function() { return fetchUserStories; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStory", function() { return createStory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchStory", function() { return fetchStory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editStory", function() { return editStory; });
@@ -1722,6 +1889,12 @@ var fetchAllStories = function fetchAllStories() {
   return $.ajax({
     method: "get",
     url: "api/stories"
+  });
+};
+var fetchUserStories = function fetchUserStories(id) {
+  return $.ajax({
+    method: "get",
+    url: "api/users/".concat(id, "/stories")
   });
 };
 var createStory = function createStory(story) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {fetchAllStories, createStory, fetchStory, editStory, removeStory } from './actions/story_actions';
+import {fetchAllStories, createStory, fetchStory, editStory, removeStory, fetchUserStories } from './actions/story_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchStory = fetchStory;
     window.editStory = editStory;
     window.deleteStory = removeStory;
+    window.fetchUserStories = fetchUserStories;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 

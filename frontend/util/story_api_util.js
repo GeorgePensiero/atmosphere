@@ -5,6 +5,13 @@ export const fetchAllStories = () => {
     });
 };
 
+export const fetchUserStories = id => {
+    return $.ajax({
+        method: "get",
+        url: `api/users/${id}/stories`,
+    });
+};
+
 export const createStory = story => {
     return $.ajax({
         method: "POST",

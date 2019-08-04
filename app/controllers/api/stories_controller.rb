@@ -1,8 +1,15 @@
 class Api::StoriesController < ApplicationController
 
     def index
-        @stories = Story.all.includes(:author)
-        render :index
+        
+        if params[:user_id]
+            @user = User.find(params[:user_id])
+            @stories = @user.stories
+            render 'api/stories/userIndex'
+        else
+            @stories = Story.all.includes(:author)
+            render :index
+        end
     end
 
     def show

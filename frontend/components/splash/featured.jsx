@@ -10,17 +10,19 @@ class Featured extends React.Component{
         const {users} = this.props;
         const coverStoryBig = this.props.stories.slice(0, 1).map(story => {
             const author = users[story.author_id].username.split("@")[0]
+            const description = story.body.slice(0, 100) + "...";
             return (
                 <div className="cover-big" key={story.id}>
+                    <img src={story.photoUrl} alt="bigCoverPhoto"/>
                     <h1 className="cover-big-header">{story.title}</h1>
-                    <span className="cover-big-description">{story.body}</span>
+                    <span className="cover-big-description">{description}</span>
                     <p className="cover-big-author">{author}</p>
                 </div>
             )
         });
 
         const coverStories = this.props.stories.slice(1, 4).map(story => {
-            const author = users[story.author_id].username.split("@")[0]
+            const author = users[story.author_id].username.split("@")[0];
             return (
                 <div className="cover-story" key={story.id}>
                     <h1 className="cover-story-header">{story.title}</h1>
