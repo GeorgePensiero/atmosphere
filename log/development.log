@@ -39269,3 +39269,263 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 33.7ms)
 
 
+Started POST "/api/session" for ::1 at 2019-08-04 18:38:46 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"demo@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo@demo.com"], ["id", 111], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "KPRb9H8A8WHDn0XfsOIQdg"], ["id", 111], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "KPRb9H8A8WHDn0XfsOIQdg"], ["updated_at", "2019-08-04 22:38:46.441795"], ["id", 111]]
+  ↳ app/models/user.rb:40
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (3.9ms)
+Completed 200 OK in 302ms (Views: 8.9ms | ActiveRecord: 5.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-08-04 18:38:53 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KPRb9H8A8WHDn0XfsOIQdg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo@demo.com"], ["id", 111], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "eXCl3MhsWzCDeCO6hFKrsg"], ["id", 111], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "eXCl3MhsWzCDeCO6hFKrsg"], ["updated_at", "2019-08-04 22:38:53.307114"], ["id", 111]]
+  ↳ app/models/user.rb:40
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+Completed 200 OK in 58ms (Views: 0.3ms | ActiveRecord: 43.9ms)
+
+
+Started GET "/api/users/108/stories" for ::1 at 2019-08-04 18:38:56 -0400
+Processing by Api::StoriesController#index as JSON
+  Parameters: {"user_id"=>"108"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/api/stories_controller.rb:6
+  Rendering api/stories/userIndex.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[36mStory Load (0.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 108]]
+  ↳ app/views/api/stories/userIndex.json.jbuilder:6
+  Rendered api/stories/userIndex.json.jbuilder (29.1ms)
+Completed 200 OK in 91ms (Views: 40.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/stories/76" for ::1 at 2019-08-04 18:39:16 -0400
+Processing by Api::StoriesController#show as JSON
+  Parameters: {"id"=>"76"}
+  [1m[36mStory Load (0.7ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/api/stories_controller.rb:16
+  Rendering api/stories/show.json.jbuilder
+  Rendered api/stories/_story.json.jbuilder (2.5ms)
+  Rendered api/stories/show.json.jbuilder (19.8ms)
+Completed 200 OK in 52ms (Views: 32.6ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/api/stories/76" for ::1 at 2019-08-04 18:39:36 -0400
+Processing by Api::StoriesController#update as JSON
+  Parameters: {"story"=>{"id"=>"76", "title"=>"Cugini Chat", "body"=>"Williamsburg listicle craft beer xoxo. Raw denim tousled blue bottle chicharrones fashion axe everyday. Post-ironic celiac selvage tumblr before they sold out. Fanny pack pork belly mustache wolf portland yuccie scenester 8-bit. Asymmetrical 90's waistcoat banh mi mlkshk flannel. Chillwave actually williamsburg photo booth biodiesel 3 wolf moon crucifix austin. 90's leggings photo booth pug cliche. Literally loko chicharrones cleanse. Direct trade 3 wolf moon squid 90's readymade selfies. Craft beer organic fanny pack green juice sriracha you probably haven't heard of them. Put a bird on it portland hoodie ethical deep v. Cray pork belly small batch synth. Wes anderson tilde echo cliche bushwick. Intelligentsia goth letterpress. Tilde single-origin coffee food truck selfies ennui. Pbr&b occupy seitan yolo five dollar toast street mlkshk xoxo. Kickstarter organic blue bottle gentrify twee. Pbr&b banh mi 3 wolf moon you probably haven't heard of them. Ugh tousled iphone kinfolk kale chips. Craft beer schlitz chicharrones stumptown. Fanny pack vegan pinterest. Selvage retro skateboard sriracha gentrify actually. Paleo ethical +1 lumbersexual. Pug hoodie single-origin coffee xoxo. Shabby chic wolf vinyl ethical ennui poutine waistcoat. Meh craft beer forage. Intelligentsia squid green juice pitchfork quinoa yuccie neutra before they sold out. Single-origin coffee tote bag food truck. Flannel kombucha twee. Locavore taxidermy heirloom tousled helvetica salvia flannel cornhole. Sustainable you probably haven't heard of them health post-ironic literally. Schlitz occupy vinyl dreamcatcher hashtag. Retro banjo vice chicharrones. Kinfolk franzen tumblr letterpress green juice. Wes anderson locavore diy cornhole brooklyn semiotics jean shorts. Meggings helvetica vegan synth fixie tacos biodiesel vice. Small batch bitters stumptown wayfarers chillwave letterpress. Godard biodiesel scenester iphone brooklyn waistcoat. Authentic lumbersexual vice green juice pbr&b mixtape. Loko .", "author_id"=>"108"}, "id"=>"76"}
+  [1m[36mStory Load (2.3ms)[0m  [1m[34mSELECT  "stories".* FROM "stories" WHERE "stories"."id" = $1 LIMIT $2[0m  [["id", 76], ["LIMIT", 1]]
+  ↳ app/controllers/api/stories_controller.rb:30
+Unpermitted parameters: :id, :author_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/stories_controller.rb:31
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 108], ["LIMIT", 1]]
+  ↳ app/controllers/api/stories_controller.rb:31
+  [1m[36mStory Update (0.5ms)[0m  [1m[33mUPDATE "stories" SET "title" = $1, "updated_at" = $2 WHERE "stories"."id" = $3[0m  [["title", "Cugini Chat"], ["updated_at", "2019-08-04 22:39:36.065488"], ["id", 76]]
+  ↳ app/controllers/api/stories_controller.rb:31
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/stories_controller.rb:31
+  Rendering api/stories/show.json.jbuilder
+  Rendered api/stories/_story.json.jbuilder (0.6ms)
+  Rendered api/stories/show.json.jbuilder (2.9ms)
+Completed 200 OK in 30ms (Views: 9.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/stories" for ::1 at 2019-08-04 18:39:36 -0400
+Processing by Api::StoriesController#index as JSON
+  Rendering api/stories/index.json.jbuilder
+  [1m[36mStory Load (5.2ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
+  ↳ app/views/api/stories/index.json.jbuilder:2
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)[0m  [["id", 108], ["id", 109], ["id", 110], ["id", 111], ["id", 112], ["id", 113], ["id", 114], ["id", 115], ["id", 116], ["id", 117], ["id", 118], ["id", 119], ["id", 120], ["id", 121], ["id", 122], ["id", 123], ["id", 124], ["id", 125], ["id", 126], ["id", 127]]
+  ↳ app/views/api/stories/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/stories/index.json.jbuilder (139.5ms)
+Completed 200 OK in 153ms (Views: 145.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/users/109/stories" for ::1 at 2019-08-04 18:39:49 -0400
+Processing by Api::StoriesController#index as JSON
+  Parameters: {"user_id"=>"109"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 109], ["LIMIT", 1]]
+  ↳ app/controllers/api/stories_controller.rb:6
+  Rendering api/stories/userIndex.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[36mStory Load (1.8ms)[0m  [1m[34mSELECT "stories".* FROM "stories" WHERE "stories"."author_id" = $1[0m  [["author_id", 109]]
+  ↳ app/views/api/stories/userIndex.json.jbuilder:6
+  Rendered api/stories/userIndex.json.jbuilder (6.8ms)
+Completed 200 OK in 19ms (Views: 14.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/stories" for ::1 at 2019-08-04 18:39:55 -0400
+Processing by Api::StoriesController#index as JSON
+  Rendering api/stories/index.json.jbuilder
+  [1m[36mStory Load (16.2ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
+  ↳ app/views/api/stories/index.json.jbuilder:2
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)[0m  [["id", 108], ["id", 109], ["id", 110], ["id", 111], ["id", 112], ["id", 113], ["id", 114], ["id", 115], ["id", 116], ["id", 117], ["id", 118], ["id", 119], ["id", 120], ["id", 121], ["id", 122], ["id", 123], ["id", 124], ["id", 125], ["id", 126], ["id", 127]]
+  ↳ app/views/api/stories/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.0ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/stories/index.json.jbuilder (127.0ms)
+Completed 200 OK in 141ms (Views: 122.5ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/" for ::1 at 2019-08-04 18:41:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 272ms (Views: 265.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/stories" for ::1 at 2019-08-04 18:41:28 -0400
+Processing by Api::StoriesController#index as JSON
+  Rendering api/stories/index.json.jbuilder
+  [1m[36mStory Load (30.1ms)[0m  [1m[34mSELECT "stories".* FROM "stories"[0m
+  ↳ app/views/api/stories/index.json.jbuilder:2
+  [1m[36mUser Load (247.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)[0m  [["id", 108], ["id", 109], ["id", 110], ["id", 111], ["id", 112], ["id", 113], ["id", 114], ["id", 115], ["id", 116], ["id", 117], ["id", 118], ["id", 119], ["id", 120], ["id", 121], ["id", 122], ["id", 123], ["id", 124], ["id", 125], ["id", 126], ["id", 127]]
+  ↳ app/views/api/stories/index.json.jbuilder:2
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/stories/index.json.jbuilder (420.7ms)
+Completed 200 OK in 430ms (Views: 152.4ms | ActiveRecord: 277.3ms)
+
+
