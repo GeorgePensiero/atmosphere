@@ -1,7 +1,8 @@
 
 
 .featured{
-    margin: 12px;
+    margin-top: 12px;
+    padding: 0 16px 16px 16px;
     display: flex;
     align-items: stretch;
     width: 90%;
@@ -63,4 +64,9 @@
 #big-photo{
     width: 100%;
     border-radius: 5px;
+}
+
+.feature-cover-photos{
+    width: 100px;
+    height: 100px;
 }

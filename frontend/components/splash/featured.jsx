@@ -26,6 +26,7 @@ class Featured extends React.Component{
             const author = users[story.author_id].username.split("@")[0];
             return (
                 <div className="cover-story" key={story.id}>
+                    <img className="feature-cover-photos" src={story.photoUrl} alt="coverStoryPhoto"/>
                     <h1 className="cover-story-header">{story.title}</h1>
                     <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link>
                 </div>
