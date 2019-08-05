@@ -1,0 +1,24 @@
+.story-show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.story-show h1{
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.user-info span{
+    display: inline-block;
+}
+
+
+.story-body{
+    font-family: sans-serif;
+    line-height: 1.5;
+}

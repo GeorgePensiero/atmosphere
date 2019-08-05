@@ -1,9 +1,13 @@
 import { connect } from 'react-redux';
-import { fetchPost } from '../../actions/story_actions';
+import { fetchStory } from '../../actions/story_actions';
+import Story from './story_show';
 
 const msp = (state, ownProps) => {
-    const story = state.entities.stories[ownProps.match.params.id];
-    const author = state.entities.users[story.author_id];
+    const story = state.entities.stories[ownProps.match.params.storyId];
+    let author = {}
+    if(story){
+        author = state.entities.users[story.author_id];
+    }
     return {
         story, 
         author,
@@ -12,6 +16,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return {
-        fetchPost: id => dispatch(fetchPost(id)),
+        fetchStory: id => dispatch(fetchStory(id)),
     }
 }
+
+export default connect(msp, mdp)(Story);
