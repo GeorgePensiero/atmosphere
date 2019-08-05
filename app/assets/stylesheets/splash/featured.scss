@@ -11,21 +11,27 @@
     height: 420px;
     box-sizing: border-box;
     overflow: hidden;
+    border-bottom: 1px solid lightgray;
 }
 
 .featured-left{
     height: 100%;
     margin-right: 24px;
-    width: 50%;
+    width: 33%;
 }
 
 .cover-big{
     display: block;
 }
 
+.featured-mid{
+    height: 100%;
+    width: 33%;
+}
+
 .featured-right{
     height: 100%;
-    width: 50%;
+    width: 33%;
     word-wrap: break-word;
 }
 
@@ -64,13 +70,13 @@
     margin-bottom: 30px;
 }
 
-#big-photo{
-    width: 100%;
+.big-photo{
+    
     height: 150px;
     border-radius: 5px;
 }
 
 .feature-cover-photo{
-    width: 100px;
+    // width: 100px;
     height: 100px;
 }

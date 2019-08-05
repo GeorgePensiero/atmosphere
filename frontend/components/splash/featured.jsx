@@ -9,15 +9,16 @@ class Featured extends React.Component{
 
     render() {
         const {users} = this.props;
-        const coverStoryBig = this.props.stories.slice(0, 1).map(story => {
+        const coverStoryLeft = this.props.stories.slice(0, 1).map(story => {
             const author = users[story.author_id].username.split("@")[0]
             const description = story.body.slice(0, 100) + "...";
             return (
                 <div className="cover-big" key={story.id}>
-                    <img id="big-photo" src={story.photoUrl} alt="bigCoverPhoto"/>
+                    <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto"/>
                     <h1 className="cover-big-header">{story.title}</h1>
                     <span className="cover-big-description">{description}</span>
-                    <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link>
+                    {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
+                    <p className="author-name">{author}</p>
                 </div>
             )
         });
@@ -28,7 +29,22 @@ class Featured extends React.Component{
                 <div className="cover-story" key={story.id}>
                     <img className="feature-cover-photo" src={story.photoUrl} alt="coverStoryPhoto"/>
                     <h1 className="cover-story-header">{story.title}</h1>
-                    <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link>
+                    {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
+                    <p className="author-name">{author}</p>
+                </div>
+            )
+        })
+
+        const coverStoryRight = this.props.stories.slice(4, 5).map(story => {
+            const author = users[story.author_id].username.split("@")[0];
+            const description = story.body.slice(0, 100) + "...";
+            return (
+                <div className="cover-big" key={story.id}>
+                    <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto" />
+                    <h1 className="cover-big-header">{story.title}</h1>
+                    <span className="cover-big-description">{description}</span>
+                    {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
+                    <p className="author-name">{author}</p>
                 </div>
             )
         })
@@ -36,11 +52,17 @@ class Featured extends React.Component{
         return (
             <div className="featured">
                 <div className="featured-left">
-                    {coverStoryBig}
+                    {coverStoryLeft}
                 </div>
-                <div className="featured-right">
+                <div className="featured-mid">
                     {coverStories}
                 </div>
+                <div className="featured-right">
+                    {coverStoryRight}
+                </div>
+            </div>
+            <div className="splash-left">
+                
             </div>
         )
     }

@@ -32,9 +32,37 @@
 .user-story{
     padding: 20px 0px;
     margin: 0 auto;
+    width: 85%;
+    margin: 0 auto;
+    border-bottom: 1px solid lightgray;
 }
 
 .story-title{
     font-weight: 600;
-    
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.user-story p {
+    margin: 10px 0;
+    color: gray;
+}
+
+.edit-story {
+    text-decoration: none;
+    color: orangered;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.delete-story{
+    text-decoration: none;
+    color: orangered;
+    border: 1px solid orangered;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
 }
