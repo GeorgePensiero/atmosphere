@@ -1,7 +1,11 @@
-
+.splash{
+    margin: 0 auto;
+    width: 90%;
+}
 
 .featured{
     margin: 0 auto;
+    margin-bottom: 50px;
     padding: 0 16px 16px 16px;
     display: flex;
     align-items: stretch;
@@ -81,7 +85,11 @@
 }
 
 .feature-cover-photo{
-    width: 100px;
+    min-width: 100px;
     height: 100px;
     margin-right: 15px;
+}
+
+.mid-post-content{
+    word-break: break-word;
 }

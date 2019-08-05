@@ -13,9 +13,11 @@ class SplashLeft extends React.Component{
             const author = users[story.author_id].username.split("@")[0];
             return(
                 <li className="splash-left-story">
-                    <h2>{story.title}</h2>
-                    <p>{description}</p>
-                    <p>Written by {author}</p>
+                    <div className="bottompost-content">
+                        <h2>{story.title}</h2>
+                        <p className="splashleft-description">{description}</p>
+                        <p>Written by {author}</p>
+                    </div>
                     <img className="splashleft-img" src={story.photoUrl} alt="storyphoto"/>
                 </li>
             )
