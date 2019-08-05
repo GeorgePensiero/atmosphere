@@ -17,7 +17,7 @@ class UserStories extends React.Component{
                 <div className="user-story" key={story.id}>
                     <Link className="story-title" to={`/story/${story.id}`}>{story.title}</Link>
                     <Link to={`/story/${story.id}/edit`}>Edit story</Link>
-                    {/* <button onClick={this.props.removeStory(story.id)}>Delete Story</button> */}
+                    <button onClick={() => this.props.removeStory(story.id)}>Delete Story</button>
                     <p>{description}</p>
                 </div>
             )
