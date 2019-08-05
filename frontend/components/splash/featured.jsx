@@ -17,9 +17,9 @@ class Featured extends React.Component{
                     <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto"/>
                     <div className="feature-post-content">
                         <h1 className="cover-big-header">{story.title}</h1>
-                        <span className="cover-big-description">{description}</span>
+                        <p className="cover-big-description">{description}</p>
                         {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
-                        <p className="author-name">{author}</p>
+                        <p className="author-name">Written by {author}</p>
                     </div>
                 </div>
             )
@@ -30,9 +30,11 @@ class Featured extends React.Component{
             return (
                 <div className="cover-story" key={story.id}>
                     <img className="feature-cover-photo" src={story.photoUrl} alt="coverStoryPhoto"/>
-                    <h1 className="cover-story-header">{story.title}</h1>
-                    {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
-                    <p className="author-name">{author}</p>
+                    <div className="mid-post-content">
+                        <h1 className="cover-story-header">{story.title}</h1>
+                        {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
+                        <p className="author-name">Written by {author}</p>
+                    </div>
                 </div>
             )
         })
@@ -44,9 +46,9 @@ class Featured extends React.Component{
                 <div className="cover-big" key={story.id}>
                     <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto" />
                     <h1 className="cover-big-header">{story.title}</h1>
-                    <span className="cover-big-description">{description}</span>
+                    <p className="cover-big-description">{description}</p>
                     {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
-                    <p className="author-name">{author}</p>
+                    <p className="author-name">Written by {author}</p>
                 </div>
             )
         })
