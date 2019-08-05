@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import StoriesIndexContainer from '../story/stories_index_container';
 class Navbar extends React.Component {
@@ -10,6 +10,11 @@ class Navbar extends React.Component {
         }
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+    }
+
+    handleClose(){
+        this.props.logout().then(() => this.props.history.push("/"));
     }
 
     toggleDropdown(e){
@@ -48,7 +53,7 @@ class Navbar extends React.Component {
                 <Link to="/story/new">New Story</Link>
                 <Link to={`/users/${currentUser.id}/stories`}>Stories</Link>
                 <button>Profile</button>
-                <button onClick={logout}>Logout</button>
+                <button onClick={this.handleClose}>Logout</button>
             </div>
         )
             :(
@@ -103,6 +108,6 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
   
 
