@@ -2,7 +2,6 @@ import { RECEIVE_ALL_STORIES, RECEIVE_STORY, DELETE_STORY, RECEIVE_USER_STORIES 
 
 export default(state = {}, action) => {
     let newState = Object.freeze(state);
-    debugger
     switch(action.type){
         case RECEIVE_ALL_STORIES: 
             return action.stories;

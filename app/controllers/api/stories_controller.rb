@@ -8,7 +8,7 @@ class Api::StoriesController < ApplicationController
             render 'api/stories/userIndex'
         else
             @stories = Story.all.includes(:author)
-            debugger
+
             render :index
         end
     end
