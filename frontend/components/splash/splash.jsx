@@ -1,6 +1,7 @@
 import React from 'react';
 import Featured from './featured_container';
 import NavbarContainer from '../navbar/navbar_container';
+import SplashLeftContainer from './splash_left_container';
 
 class Splash extends React.Component {
 
@@ -9,6 +10,7 @@ class Splash extends React.Component {
             <div className="splash">
                 <NavbarContainer/>
                 <Featured />
+                <SplashLeftContainer />
             </div>
         )
     }
