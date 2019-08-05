@@ -15,10 +15,12 @@ class Featured extends React.Component{
             return (
                 <div className="cover-big" key={story.id}>
                     <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto"/>
-                    <h1 className="cover-big-header">{story.title}</h1>
-                    <span className="cover-big-description">{description}</span>
-                    {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
-                    <p className="author-name">{author}</p>
+                    <div className="feature-post-content">
+                        <h1 className="cover-big-header">{story.title}</h1>
+                        <span className="cover-big-description">{description}</span>
+                        {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
+                        <p className="author-name">{author}</p>
+                    </div>
                 </div>
             )
         });
@@ -60,9 +62,6 @@ class Featured extends React.Component{
                 <div className="featured-right">
                     {coverStoryRight}
                 </div>
-            </div>
-            <div className="splash-left">
-                
             </div>
         )
     }

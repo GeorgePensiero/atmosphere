@@ -12,7 +12,10 @@ class Story < ApplicationRecord
     private
 
     def ensure_default_photo
-        file = open('https://atmosphere-aa-seeds.s3.amazonaws.com/doubleicecream.png')
-        self.photo ||= self.photo.attach(io: file, filename: 'doubleicecream.jpg')
+        
+        unless self.photo.attached?
+            file = open('https://atmosphere-aa-seeds.s3.amazonaws.com/doubleicecream.png')
+            self.photo.attach(io: file, filename: 'doubleicecream.jpg')
+        end
     end
 end
