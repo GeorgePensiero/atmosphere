@@ -13,7 +13,7 @@ class UserStories extends React.Component{
             const description = story.body.slice(0, 250) + "...";
 
             return (
-                <div className="story" key={story.id}>
+                <div className="user-story" key={story.id}>
                     <Link to={`/story/${story.id}`}>{story.title}</Link>
                     <Link to={`/story/${story.id}/edit`}>Edit story</Link>
                     <p>{description}</p>
@@ -21,10 +21,10 @@ class UserStories extends React.Component{
             )
         })
         return (
-            <div className="stories-main">
-                <div className="stories-header">
+            <div className="user-stories-main">
+                <div className="user-stories-header">
                     <h1>Your stories</h1>
-                    <Link to="/story/new">Write a story</Link>
+                    <Link to="/story/new"><span id="new-story-btn">Write a story</span></Link>
                     <ul>
                         {stories}
                     </ul>

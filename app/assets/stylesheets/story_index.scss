@@ -1,0 +1,27 @@
+.user-story-main{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-stories-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-stories-header h1{
+    font-size: 44px;
+    font-weight: 600;
+}
+
+Link{
+    text-decoration: none;
+}
+#new-story-btn{
+    font-size: 12px;
+    color: orangered;
+    text-align: center;
+    padding: 12px;
+    border: 1px solid orangered;
+    margin: 5px;
+    border-radius: 10%;
+}
