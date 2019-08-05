@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import NavbarContainer from '../navbar/navbar_container';
 
 class UserStories extends React.Component{
 
@@ -14,24 +15,28 @@ class UserStories extends React.Component{
 
             return (
                 <div className="user-story" key={story.id}>
-                    <Link to={`/story/${story.id}`}>{story.title}</Link>
+                    <Link className="story-title" to={`/story/${story.id}`}>{story.title}</Link>
                     <Link to={`/story/${story.id}/edit`}>Edit story</Link>
+                    {/* <button onClick={this.props.removeStory(story.id)}>Delete Story</button> */}
                     <p>{description}</p>
                 </div>
             )
         })
         return (
-            <div className="user-stories-main">
-                <div className="user-stories-header">
-                    <h1>Your stories</h1>
-                    <Link to="/story/new"><span id="new-story-btn">Write a story</span></Link>
-                    <ul>
-                        {stories}
-                    </ul>
+            <div>
+                <NavbarContainer />
+                <div className="user-stories-main">
+                    <div className="user-stories-header">
+                        <h1>Your stories</h1>
+                        <Link className="newstory-btn" to='/story/new'>Write a story</Link>
+                    </div>
+                        <ul className="user-stories">
+                            {stories}
+                        </ul>
                 </div>
             </div>
         )
     }
 }
 
-export default UserStories;
+export default withRouter(UserStories);

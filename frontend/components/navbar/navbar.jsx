@@ -33,8 +33,6 @@ class Navbar extends React.Component {
         this.toggleDropdown();
     }
 
-
-
    componentDidUpdate(prev){
         if(prev.currentUser !== this.props.currentUser){
             this.setState({visible: false});

@@ -6,22 +6,35 @@
 .user-stories-header{
     display: flex;
     justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-bottom: 1px solid lightgray;
 }
 
 .user-stories-header h1{
-    font-size: 44px;
+    font-size: 30px;
     font-weight: 600;
 }
 
-Link{
-    text-decoration: none;
-}
-#new-story-btn{
-    font-size: 12px;
+
+.newstory-btn{
+    font-size: 14px;
     color: orangered;
     text-align: center;
     padding: 12px;
     border: 1px solid orangered;
     margin: 5px;
     border-radius: 10%;
+    text-decoration: none;
+}
+
+.user-story{
+    padding: 20px 0px;
+    margin: 0 auto;
+}
+
+.story-title{
+    font-weight: 600;
+    
 }
