@@ -6,6 +6,7 @@ export const RECEIVE_STORY_ERRORS = "RECEIVE_STORY_ERRORS";
 export const DELETE_STORY = "DELETE_STORY";
 
 export const fetchAllStories = () => dispatch => {
+    debugger
     return StoryUtils.fetchAllStories()
         .then(payload => dispatch(receiveAllStories(payload)),
         err => dispatch(receiveStoryErrors(err.responseJSON)));

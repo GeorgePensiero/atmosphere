@@ -1,5 +1,6 @@
 json.stories do 
     @stories.each do |story|  
+        debugger
         json.set! story.id do 
             json.extract! story, :id, :title, :body, :author_id
             if(story.photo)
