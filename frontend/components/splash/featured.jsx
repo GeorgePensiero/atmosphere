@@ -18,7 +18,7 @@ class Featured extends React.Component{
                         </div>   
                     </Link>
                         {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
-                        <p className="author-name">{author}</p>
+                    <Link to={`/users/${users[story.author_id].id}/profile`}><p className="author-name">{author}</p></Link> 
                 </div>
             )
         });
