@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
+import { Link } from 'react-redux';
 
 class Profile extends React.Component{
 
@@ -32,18 +33,20 @@ class Profile extends React.Component{
                 )
             });
         return (
-            <div className="profile">
-                <NavbarContainer />
-                <div className="user-container">
-                    <div className="user-info">
-                        <h1>{user.username}</h1>
+            <div>
+                <div className="profile">
+                    <NavbarContainer/>
+                    <div className="user-container">
+                        <div className="user-info">
+                            <h1>{user.username}</h1>
+                        </div>
+                        <div className="user-initial profile-initial">{initial}</div>
+                    </div> 
                     </div>
-                    <div className="user-initial profile-initial">{initial}</div>
-                </div>
-                    <ul className="profile-stories-list">
-                        {profileStories}
-                    </ul>
-            </div> 
+                        <ul className="profile-stories-list">
+                            {profileStories}
+                        </ul>
+            </div>
         )
     }
 }

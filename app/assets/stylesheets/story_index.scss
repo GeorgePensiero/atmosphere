@@ -25,7 +25,9 @@
     padding: 12px;
     border: 1px solid orangered;
     margin: 5px;
-    border-radius: 10%;
+    border-radius: 4px;
+    height: 6px;
+    line-height: .5;
     text-decoration: none;
 }
 
@@ -56,6 +58,7 @@
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
+    font-size: 14px;
 }
 
 .delete-story{
@@ -65,4 +68,6 @@
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
+    font-size: 14px;
+    font-weight: 350;
 }
