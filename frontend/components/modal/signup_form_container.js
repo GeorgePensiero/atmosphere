@@ -20,7 +20,7 @@ const mdp = dispatch => {
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
-        demoLogin: () => dispatch(login({username: "demo@demo.com", password: "hunter2"})), 
+        demoLogin: () => dispatch(login({username: "George Pensiero", password: "hunter2"})), 
     }
 }
 

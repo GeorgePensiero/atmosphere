@@ -11,7 +11,7 @@ class Popular extends React.Component{
                     <div className="savory-num">0{idx + 1}</div>
                     <div className="savory-content">
                     <h2>{story.title}</h2>
-                    <p>Written by: {users[story.author_id].username}</p>
+                    <p className="author-name">{users[story.author_id].username}</p>
                     </div>
                 </li>
             );
