@@ -3,9 +3,13 @@
     width: 85%;
 }
 
-.splash p{
+.splash-description{
     color: rgba(0, 0, 0, 0.54);
-
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
 }
 
 .featured{
@@ -105,4 +109,9 @@
 .author-name{
     font-size: 15px;
     font-family: sans-serif;
+    font-weight: 300;
+}
+
+.featured-left-description{
+    margin-bottom: 30px;
 }

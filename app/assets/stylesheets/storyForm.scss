@@ -1,10 +1,14 @@
+.storynew{
+    width: 90%;
+    margin: 0 auto;
+}
+
 .story-header{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
     margin: 5px;
-    padding: 0px 20px;
 }
 
 .right-nav{
@@ -41,7 +45,6 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
-    margin-left: 100px;
     justify-content: center;
 }
 

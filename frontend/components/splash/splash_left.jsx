@@ -11,8 +11,8 @@ class SplashLeft extends React.Component{
                 <li className="splash-left-story">
                     <div className="bottompost-content">
                         <h2>{story.title}</h2>
-                        <p className="splashleft-description">{description}</p>
-                        <p className="author-name">{author}</p>
+                        <p className="splash-description">{description}</p>
+                        <p className="author-name splash-left-author">{author}</p>
                     </div>
                     <img className="splashleft-img" src={story.photoUrl} alt="storyphoto"/>
                 </li>

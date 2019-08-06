@@ -30,7 +30,7 @@ class StoryForm extends React.Component{
     render(){
         // const initial = this.props.author.username.slice(0, 1).toUpperCase();
         return (
-            <>
+            <div className="storynew">
                 <header className="story-header">
                     <div className="left-nav">
                         <div className="atmosphere-letter" onClick={this.returnToSplash}>A</div>
@@ -44,7 +44,7 @@ class StoryForm extends React.Component{
                     <input placeholder="Title" onChange={this.update('title')} value={this.state.title}/>
                     <textarea placeholder="Start your story..." onChange={this.update('body')} value={this.state.body}/>
                 </div>
-            </>
+            </div>
         )
     }
 }

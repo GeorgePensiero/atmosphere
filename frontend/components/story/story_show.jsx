@@ -16,7 +16,6 @@ class Story extends React.Component{
         if(!author || !story){
             return null;
         }
-        debugger
         const name = author.username.split("@")[0];
         const initial = author.username.slice(0, 1).toUpperCase();
         return (

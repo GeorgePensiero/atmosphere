@@ -14,7 +14,7 @@ class Featured extends React.Component{
                     <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto"/>
                     <div className="feature-post-content">
                         <h1 className="cover-big-header">{story.title}</h1>
-                        <p className="cover-big-description">{description}</p>
+                        <p className="splash-description featured-left-description">{description}</p>
                         {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
                         <p className="author-name">{author}</p>
                     </div>
@@ -43,7 +43,7 @@ class Featured extends React.Component{
                 <div className="cover-big" key={story.id}>
                     <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto" />
                     <h1 className="cover-big-header">{story.title}</h1>
-                    <p className="cover-big-description">{description}</p>
+                    <p className="splash-description">{description}</p>
                     {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
                     <p className="author-name">{author}</p>
                 </div>
