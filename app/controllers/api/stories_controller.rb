@@ -15,6 +15,7 @@ class Api::StoriesController < ApplicationController
 
     def show
         @story = Story.find(params[:id])
+
         @user = @story.author
     end
 

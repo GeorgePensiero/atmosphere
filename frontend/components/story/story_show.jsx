@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 class Story extends React.Component{
 
     componentDidMount(){
-        debugger
         this.props.fetchStory(this.props.match.params.storyId)
     }
 
@@ -13,11 +12,9 @@ class Story extends React.Component{
 
     render(){
         const {author, story} = this.props;
-        debugger
         if(!author || !story){
             return null;
         }
-        const name = author.username.split("@")[0];
         const initial = author.username.slice(0, 1).toUpperCase();
         return (
             <div className="story-show">
@@ -28,7 +25,7 @@ class Story extends React.Component{
                         <div className="user-info">
                             <Link to={`/users/${author.id}/profile`} className="author-name">
                                 <span className="user-initial">{initial}</span>
-                                <span>{name}</span>
+                                <span>{author.username}</span>
                             </Link>
                         </div>
                     </div>
@@ -37,6 +34,10 @@ class Story extends React.Component{
                     </div>
                     <div className="story-body">
                         <p>{story.body}</p>
+                    </div>
+                    <div className="story-writer-info">
+                        <p>WRITTEN BY</p>
+                        <h2>{author.username}</h2>
                     </div>
                 </div>
             </div>

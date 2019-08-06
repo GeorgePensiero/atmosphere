@@ -9,7 +9,7 @@ export default(state = {}, action) => {
         case RECEIVE_ALL_STORIES:
             return Object.assign({}, newState, action.users );
         case RECEIVE_STORY: 
-            return Object.assign({}, newState, action.user);
+            return Object.assign({}, newState, {[action.user.id]: action.user });
         default: 
             return state;
     }
