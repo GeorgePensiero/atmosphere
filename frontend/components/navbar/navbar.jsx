@@ -32,7 +32,7 @@ class Navbar extends React.Component {
     handleClick(e){
         if(this.node && this.node.contains(e.target)){
             return;
-        } else if (!this.state.visible && !this.iconRef.contains(e.target)) {
+        } else if (!this.state.visible && this.iconRef && !this.iconRef.contains(e.target)) {
             return
         }
         this.toggleDropdown();

@@ -1,8 +1,13 @@
 .story-show{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.story-show-main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -37,8 +42,8 @@
 
 .storypage-img{
     width: 100vw;
-    margin-left: -10%;
-    margin-right: -10%;
+    margin-left: -15%;
+    margin-right: -15%;
     height: 350px;
     object-fit: cover;
 }

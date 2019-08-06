@@ -3,10 +3,13 @@ import { fetchStory } from '../../actions/story_actions';
 import Story from './story_show';
 
 const msp = (state, ownProps) => {
+    debugger
     const story = state.entities.stories[ownProps.match.params.storyId];
+    debugger
     let author = {}
     if(story){
         author = state.entities.users[story.author_id];
+        debugger
     }
     return {
         story, 

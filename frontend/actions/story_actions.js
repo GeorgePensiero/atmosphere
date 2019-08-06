@@ -27,7 +27,7 @@ export const createStory = story => dispatch => {
 
 export const fetchStory = id => dispatch => {
     return StoryUtils.fetchStory(id)
-        .then(story => dispatch(receiveStory(story)),
+        .then(payload => dispatch(receiveStory(payload)),
         err => dispatch(receiveStoryErrors(err.responseJSON)));
 };
 
@@ -57,10 +57,11 @@ const receiveStoryErrors = errors => {
     }
 }
 
-const receiveStory = story => {
+const receiveStory = ({story, user}) => {
     return {
         type: RECEIVE_STORY,
         story,
+        user,
     };
 };
 

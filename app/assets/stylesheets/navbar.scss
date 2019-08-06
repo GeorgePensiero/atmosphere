@@ -2,13 +2,13 @@
     margin: 0 auto;
     width: 90%;
     margin-bottom: 20px;
-    // box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
 }
 
 .top-navbar{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    
 }
 
 .bottom-nav{
@@ -23,6 +23,7 @@
 
 .right-nav{
     padding-right: 20px;
+    align-items: center;
 }
 
 #atmosphere-logo{
@@ -49,7 +50,10 @@
     padding: 12px;
     border: 1px solid orangered;
     margin: 5px;
-    border-radius: 10%;
+    border-radius: 4px;
+    height: 10px;
+    line-height: 2px;
+    vertical-align: baseline;
 }
 
 .user-initial{
