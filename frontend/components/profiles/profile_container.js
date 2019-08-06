@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 
 const msp = (state, ownProps) => {
-    const user = state.entities.users[ownProps.match.params.userId];
+    const defaultUser = {username: "", password: ""};
+    const user = state.entities.users[ownProps.match.params.userId] || defaultUser;
     const stories = Object.values(state.entities.stories);
     return {
         user,

@@ -12,7 +12,7 @@ class Profile extends React.Component{
             const profileStories = stories.map( story => {
                 const description = story.body.slice(0, 30) + "...";
                 return(
-                    <li className="profile-stories">
+                    <li className="profile-story">
                         <span>{user.username}</span>
                         <div className="profile-story-content">
                             <img className="profile-pic" src={story.photoUrl} />
@@ -28,7 +28,7 @@ class Profile extends React.Component{
                     <div className="user-info">
                         <h1>{user.username}</h1>
                     </div>
-                    <div className="user-initial">{initial}</div>
+                    <div className="user-initial profile-initial">{initial}</div>
                 </div>
                     <ul className="profile-stories-list">
                         {profileStories}
