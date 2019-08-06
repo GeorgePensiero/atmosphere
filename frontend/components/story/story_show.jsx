@@ -16,18 +16,26 @@ class Story extends React.Component{
         if(!author || !story){
             return null;
         }
+        debugger
         const name = author.username.split("@")[0];
         const initial = author.username.slice(0, 1).toUpperCase();
         return (
             <div>
                 <NavbarContainer />
                 <div className="story-show">
-                    <h1>{story.title}</h1>
-                    <div className="user-info">
-                        <span className="user-initial">{initial}</span>
-                        <span>{name}</span>
+                    <div className="storyshow-header">
+                        <h1>{story.title}</h1>
+                        <div className="user-info">
+                            <span className="user-initial">{initial}</span>
+                            <span>{name}</span>
+                        </div>
                     </div>
-                    <p className="story-body">{story.body}</p>
+                    <div className="story-img-div">
+                        <img className="storypage-img" src={story.photoUrl} />
+                    </div>
+                    <div className="story-body">
+                        <p>{story.body}</p>
+                    </div>
                 </div>
             </div>
         )
