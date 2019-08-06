@@ -4,7 +4,8 @@ import NavbarContainer from '../navbar/navbar_container';
 class Profile extends React.Component{
 
     componentDidMount(){
-        this.props.fetchUserStories(this.props.user.id);
+        this.props.fetchUserStories(this.props.match.params.userId);
+        
     }
 
     // componentDidUpdate(prev){
@@ -13,6 +14,9 @@ class Profile extends React.Component{
 
     render(){
         const { user, stories } = this.props;
+        if (!user || !stories) {
+            return null;
+        }
         const initial = user.username.slice(0, 1).toUpperCase();
             const profileStories = stories.map( story => {
                 const description = story.body.slice(0, 30) + "...";

@@ -10,6 +10,8 @@ export default(state = {}, action) => {
             return Object.assign({}, newState, action.users );
         case RECEIVE_STORY: 
             return Object.assign({}, newState, {[action.user.id]: action.user });
+        case RECEIVE_USER_STORIES:
+            return Object.assign({}, newState, {[action.users.id]: action.users})
         default: 
             return state;
     }
