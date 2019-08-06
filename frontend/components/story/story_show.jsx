@@ -7,9 +7,7 @@ class Story extends React.Component{
         this.props.fetchStory(this.props.match.params.storyId)
     }
 
-    componentDidUpdate(prev){
-        
-    }
+
 
     render(){
         const {author, story} = this.props;

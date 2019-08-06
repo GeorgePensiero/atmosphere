@@ -18,7 +18,7 @@ class Featured extends React.Component{
                         </div>   
                     </Link>
                         {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
-                    <Link to={`/users/${users[story.author_id].id}/profile`}><p className="author-name">{author}</p></Link> 
+                    <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name">{author}</p></Link> 
                 </div>
             )
         });
@@ -27,11 +27,11 @@ class Featured extends React.Component{
             const author = users[story.author_id].username.split("@")[0];
             return (
                 <div className="cover-story" key={story.id}>
-                    <img className="feature-cover-photo" src={story.photoUrl} alt="coverStoryPhoto"/>
+                    <Link to={`/story/${story.id}`} className="route-link"><img className="feature-cover-photo" src={story.photoUrl} alt="coverStoryPhoto" /></Link>
                     <div className="mid-post-content">
-                        <h1 className="cover-story-header">{story.title}</h1>
+                        <Link to={`/story/${story.id}`} className="route-link"><h1 className="cover-story-header">{story.title}</h1></Link>
                         {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
-                        <p className="author-name">{author}</p>
+                        <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name">{author}</p></Link>
                     </div>
                 </div>
             )
@@ -42,11 +42,13 @@ class Featured extends React.Component{
             const description = story.body.slice(0, 40) + "...";
             return (
                 <div className="cover-big" key={story.id}>
-                    <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto" />
-                    <h1 className="cover-big-header">{story.title}</h1>
-                    <p className="splash-description">{description}</p>
+                    <Link to={`/story/${story.id}`} className="route-link">
+                        <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto" />
+                        <h1 className="cover-big-header">{story.title}</h1>
+                        <p className="splash-description">{description}</p>
+                    </Link>
                     {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
-                    <p className="author-name">{author}</p>
+                    <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name">{author}</p></Link>
                 </div>
             )
         })

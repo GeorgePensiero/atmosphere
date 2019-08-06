@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class SplashLeft extends React.Component{
 
     render(){
@@ -10,11 +10,13 @@ class SplashLeft extends React.Component{
             return(
                 <li className="splash-left-story">
                     <div className="bottompost-content">
-                        <h2>{story.title}</h2>
-                        <p className="splash-description">{description}</p>
-                        <p className="author-name splash-left-author">{author}</p>
+                        <Link to={`/story/${story.id}`} className="route-link">
+                            <h2>{story.title}</h2>
+                            <p className="splash-description">{description}</p>
+                        </Link>
+                        <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name splash-left-author">{author}</p></Link>
                     </div>
-                    <img className="splashleft-img" src={story.photoUrl} alt="storyphoto"/>
+                    <Link to={`/story/${story.id}`} className="route-link"><img className="splashleft-img" src={story.photoUrl} alt="storyphoto"/></Link>
                 </li>
             )
         })

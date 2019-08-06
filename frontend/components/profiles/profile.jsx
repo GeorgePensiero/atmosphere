@@ -1,11 +1,15 @@
 import React from 'react';
-// import NavbarContainer from '../navbar/navbar_container';
+import NavbarContainer from '../navbar/navbar_container';
 
 class Profile extends React.Component{
 
     componentDidMount(){
         this.props.fetchUserStories(this.props.user.id);
     }
+
+    // componentDidUpdate(prev){
+    //     if(prev.props.match.params.userId !== )
+    // }
 
     render(){
         const { user, stories } = this.props;
@@ -25,7 +29,7 @@ class Profile extends React.Component{
             });
         return (
             <div className="profile">
-                {/* <NavbarContainer /> */}
+                <NavbarContainer />
                 <div className="user-container">
                     <div className="user-info">
                         <h1>{user.username}</h1>
