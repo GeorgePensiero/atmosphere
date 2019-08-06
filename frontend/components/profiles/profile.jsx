@@ -1,6 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
-import { Link } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Profile extends React.Component{
 
@@ -25,9 +25,11 @@ class Profile extends React.Component{
                     <li className="profile-story">
                         <span>{user.username}</span>
                         <div className="profile-story-content">
-                            <img className="profile-pic" src={story.photoUrl} />
-                            <h1 className="pro-story-title">{story.title}</h1>
-                            <h2 className="story-teaser">{description}</h2>
+                            <Link to={`/story/${story.id}`} className="route-link">
+                                <img className="profile-pic" src={story.photoUrl} />
+                                <h1 className="pro-story-title">{story.title}</h1>
+                                <h2 className="story-teaser">{description}</h2>
+                            </Link>
                         </div>
                     </li>
                 )
