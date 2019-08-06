@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from './modal/modal';
 import { Route, Switch } from 'react-router-dom';
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 import { ProtectedRoute } from '../util/route_util';
 import NewStoryContainer from './story/new_story_form_container';
 import StoryIndexContainer from './story/stories_index_container';
@@ -16,7 +16,7 @@ export default () => (
             <Route exact path="/users/:userId/stories" component={StoryIndexContainer} />
             <Route exact path="/story/:storyId/edit" component={EditStoryContainer} />
             <Route exact path="/story/:storyId" component={StoryShowContainer} />
-            <Route component={Splash} />
+            <Route component={SplashContainer} />
         </Switch>
     </div>
 );

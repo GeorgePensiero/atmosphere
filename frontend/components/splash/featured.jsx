@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 class Featured extends React.Component{
 
-    componentDidMount() {
-        this.props.fetchAllStories();
-    }
 
     render() {
         const {users} = this.props;

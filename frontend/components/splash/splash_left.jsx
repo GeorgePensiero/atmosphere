@@ -2,10 +2,6 @@ import React from 'react';
 
 class SplashLeft extends React.Component{
 
-    componentDidMount(){
-        this.props.fetchAllStories();
-    }
-
     render(){
         const {users, stories} = this.props;
             const splash_stories = stories.map(story => {

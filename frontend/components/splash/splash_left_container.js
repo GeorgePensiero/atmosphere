@@ -9,10 +9,10 @@ const msp = ({ entities }) => {
 };
 
 
-const mdp = dispatch => {
-    return {
-        fetchAllStories: () => dispatch(fetchAllStories()),
-    };
-};
+// const mdp = dispatch => {
+//     return {
+//         fetchAllStories: () => dispatch(fetchAllStories()),
+//     };
+// };
 
-export default connect(msp, mdp)(SplashLeft);
+export default connect(msp)(SplashLeft);

@@ -1,0 +1,45 @@
+.splash-bottom-content{
+    display: flex;
+    width: 90%;
+}
+
+.savory-scoops{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    font-family: sans-serif;
+}
+
+.savory-header{
+    font-weight: 600;
+    font-size: 24px;
+    font-family: sans-serif;
+    margin: 32px 32px 0px;
+    padding: 0px 0px 16px;
+    border-bottom: 1px solid lightgray;
+}
+
+.savory-list{
+    padding: 32px;
+}
+
+.savory{
+    margin-bottom: 24px;
+    display: flex;
+}
+
+.savory-num{
+    font-size: 34px;
+    color: rgba(0,0,0,.15);
+}
+
+.savory-content{
+    margin-left: 16px;
+    color: black;
+}
+
+.savory-content h2{
+    font-weight: 550;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
