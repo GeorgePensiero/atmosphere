@@ -67,6 +67,7 @@
     max-height: 40px;
     font-size: 18px;
     line-height: 20px;
+    overflow: hidden;
 }
 
 .cover-story{
@@ -79,6 +80,7 @@
 }
 
 .big-photo{
+    width: 100%;
     margin: 0px 0px 16px; 
     height: 150px;
     border-radius: 5px;

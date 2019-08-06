@@ -1,6 +1,7 @@
 .splash-bottom-content{
     display: flex;
     width: 90%;
+    justify-content: space-between;
 }
 
 .savory-scoops{
@@ -8,6 +9,7 @@
     flex-direction: column;
     position: sticky;
     font-family: sans-serif;
+    width: 33%;
 }
 
 .savory-header{

@@ -38,7 +38,7 @@ class Featured extends React.Component{
 
         const coverStoryRight = this.props.stories.slice(4, 5).map(story => {
             const author = users[story.author_id].username.split("@")[0];
-            const description = story.body.slice(0, 100) + "...";
+            const description = story.body.slice(0, 40) + "...";
             return (
                 <div className="cover-big" key={story.id}>
                     <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto" />
