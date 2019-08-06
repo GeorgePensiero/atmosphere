@@ -3,6 +3,10 @@
     width: 85%;
 }
 
+.splash Link{
+    text-decoration: none;
+}
+
 .splash-description{
     color: rgba(0, 0, 0, 0.54);
     font-size: 16px;
@@ -59,6 +63,7 @@
     font-size: 24px;
     overflow: hidden;
     line-height: 28px;
+    color: black;
 }
 
 .cover-big-description{
@@ -114,4 +119,8 @@
 
 .featured-left-description{
     margin-bottom: 30px;
+}
+
+.route-link{
+    text-decoration: none;
 }

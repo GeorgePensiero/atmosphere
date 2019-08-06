@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Featured extends React.Component{
 
@@ -11,13 +11,14 @@ class Featured extends React.Component{
             const description = story.body.slice(0, 100) + "...";
             return (
                 <div className="cover-big" key={story.id}>
-                    <img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto"/>
-                    <div className="feature-post-content">
-                        <h1 className="cover-big-header">{story.title}</h1>
-                        <p className="splash-description featured-left-description">{description}</p>
+                    <Link to={`/story/${story.id}`} className="route-link"><img className="big-photo" src={story.photoUrl} alt="bigCoverPhoto" />
+                        <div className="feature-post-content">
+                            <h1 className="cover-big-header">{story.title}</h1>
+                            <p className="splash-description featured-left-description">{description}</p>
+                        </div>   
+                    </Link>
                         {/* <Link to={`users/${users[story.author_id].id}/stories`}>{author}</Link> */}
                         <p className="author-name">{author}</p>
-                    </div>
                 </div>
             )
         });
