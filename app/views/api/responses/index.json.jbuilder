@@ -14,7 +14,7 @@ end
 json.users do 
     @responses.each do |response|
         json.set! response.author.id do
-            json.partial! "api/users/user", user: user
+            json.partial! "api/users/user", user: response.author
         end
     end
 end

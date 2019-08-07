@@ -19,8 +19,9 @@ class Response < ApplicationRecord
         foreign_key: :story_id,
         class_name: :Story
 
-    belongs_to :parent_response,
+    belongs_to :parent_response, 
         foreign_key: :parent_response_id,
-        class_name: :Response
+        class_name: :Response,
+        optional: true
     
 end

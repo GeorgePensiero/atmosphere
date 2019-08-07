@@ -43,6 +43,7 @@ class Profile extends React.Component{
                     <div className="user-container">
                         <div className="user-info">
                             <h1>{user.username}</h1>
+                            <p className="atmo-member">atmosphere member since 2019</p>
                         </div>
                         <div className="user-initial profile-initial">{initial}</div>
                     </div> 

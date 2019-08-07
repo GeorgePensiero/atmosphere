@@ -23,7 +23,7 @@ class Popular extends React.Component{
             <div className="savory-scoops">
                 <div className="scoops-section">
                     <div className="savory-header">
-                        <h3>Savory on Scoop</h3>
+                        <h3>Awesome on Atmosphere</h3>
                     </div>
                     <ol className="savory-list">
                         {popular}

@@ -21,7 +21,7 @@ export const createResponse = (storyId, response) => {
     });
 };
 
-export const editResponse = (storyId, response) => {
+export const updateResponse = (storyId, response) => {
     return $.ajax({
         method: "patch",
         url: `api/stories/${storyId}/responses/${response.id}`,

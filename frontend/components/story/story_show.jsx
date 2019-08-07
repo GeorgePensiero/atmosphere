@@ -40,7 +40,7 @@ class Story extends React.Component{
                         <Link to={`/users/${author.id}/profile`} className="author-name"><h2>{author.username}</h2></Link>
                     </div>
                     <div className="response-button">
-                        <button>See responses</button>
+                        <button>See responses({story.num_responses})</button>
                     </div>
                 </div>
             </div>
