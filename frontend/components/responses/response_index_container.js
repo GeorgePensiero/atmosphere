@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import ResponseIndex from './response_index';
+import { fetchAllResponses } from '../../actions/response_actions';
 
 const msp = (state , ownProps) => {
-    const { stories, responses, users} = state.entities;
-    const story = stories[ownProps.match.params.id];
+    const { stories, users} = state.entities;
+    const story = stories[ownProps.match.params.storyId];
+    const responses = Object.values(state.entities.responses);
     return {
         story,
         responses,

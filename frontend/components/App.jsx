@@ -8,16 +8,18 @@ import StoryIndexContainer from './story/stories_index_container';
 import EditStoryContainer from './story/edit_story_form_container';
 import StoryShowContainer from './story/story_show_container';
 import ProfileContainer from './profiles/profile_container';
+import ResponseIndexContainer from './responses/response_index_container';
 
 export default () => (
     <div>
         <Modal />
         <Switch>
             <Route exact path="/story/new" component={NewStoryContainer} />
-            <Route exact path="/users/:userId/stories" component={StoryIndexContainer} />
+            <ProtectedRoute exact path="/users/:userId/stories" component={StoryIndexContainer} />
             <Route exact path="/story/:storyId/edit" component={EditStoryContainer} />
             <Route exact path="/story/:storyId" component={StoryShowContainer} />
-            <Route exact path="/users/:userId/profile" component={ProfileContainer} />
+            <ProtectedRoute exact path="/users/:userId/profile" component={ProfileContainer} />
+            <Route exact path="/story/:storyId/responses" component={ResponseIndexContainer} />
             <Route path="/" component={SplashContainer} />
         </Switch>
     </div>

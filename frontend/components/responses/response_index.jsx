@@ -1,4 +1,5 @@
 import React from 'react';
+import NavbarContainer from '../navbar/navbar_container';
 
 class ResponseIndex extends React.Component{
 
@@ -9,12 +10,22 @@ class ResponseIndex extends React.Component{
         }
     }
 
+    update(field){
+        return e => {
+            this.setState({ [field]: e.target.value })
+        }
+    }
+    componentDidMount(){
+        this.props.fetchAllResponses(this.props.match.params.storyId);
+    }
+
     render(){
         const { responses, users, story} = this.props;
+        
         const responseList = responses.map( response => {
             return (
                 <li className="response" key={response.body}>
-                    <p className="author-name">{users[response.author_id]}</p>
+                    <p className="author-name">{users[response.author_id].username}</p>
                     <div className="response-body">{response.body}</div>
                 </li>
             );
@@ -29,7 +40,7 @@ class ResponseIndex extends React.Component{
                     <p>Showing responses for:</p>
                     <div className="story-response-info">
                         <span>{story.title}</span>
-                        <span>{users[story.author_id]}</span>
+                        <span>{users[story.author_id].username}</span>
                     </div>
                 </div>
                 <div className="response-index-main">

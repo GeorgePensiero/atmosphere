@@ -5,7 +5,7 @@ export const RECEIVE_RESPONSE_ERRORS = "RECEIVE_RESPONSE_ERRORS";
 export const DELETE_RESPONSE = "DELETE_RESPONSE";
 
 
-export const fetchAllResponses = storyId => {
+export const fetchAllResponses = storyId => dispatch => {
     return ResponseUtils.fetchAllResponses(storyId)
         .then(payload => dispatch(receiveAllResponses(payload)),
         err => dispatch(receiveResponseErrors(err.responseJSON)));

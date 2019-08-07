@@ -7,7 +7,8 @@ json.responses do
 end
 
 
-json.story do 
+json.story do
+     
     json.partial! "api/stories/story", story: @story
 end
 

@@ -17,7 +17,9 @@ export default(state = {}, action) => {
             delete newState[action.storyId];
             return newState;
         case RECEIVE_ALL_RESPONSES:
-            return action.story;
+            newState = Object.assign({}, newState);
+            newState[action.story.id] = action.story;
+            return newState;
         default: 
             return state;
     };
