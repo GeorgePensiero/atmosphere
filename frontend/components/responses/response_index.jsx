@@ -19,9 +19,21 @@ class ResponseIndex extends React.Component{
         this.props.fetchAllResponses(this.props.match.params.storyId);
     }
 
+    handleSubmit(e){
+        const { users, session, createResponse, story } = this.props;
+        e.preventDefault();
+        const response = Object.assign({}, this.state);
+        response.author_id = users[session.id];
+        response.story_id = story;
+        
+        createResponse(story.id, response);
+    }
+
     render(){
         const { responses, users, story} = this.props;
-
+        if(responses === undefined){
+            return null;
+        }
         const responseList = responses.map( response => {
             return (
                 <li className="response" key={response.body}>
@@ -45,10 +57,13 @@ class ResponseIndex extends React.Component{
                 </div>
                 <div className="response-index-main">
                     <p>Responses</p>
-                    <input className="write-response" placeholder="Write a response..." onChange={this.update('userResponse')} value={this.state.userResponse} />
-                    <ul className="response-list">
-                        {responseList}
-                    </ul>
+                    <form onSubmit={this.handleSubmit}>
+                        <input className="write-response" placeholder="Write a response..." onChange={this.update('userResponse')} value={this.state.userResponse} />
+                        <input type="submit" value="submit" />
+                        <ul className="response-list">
+                            {responseList}
+                        </ul>
+                    </form>
                 </div>
             </div>
         )

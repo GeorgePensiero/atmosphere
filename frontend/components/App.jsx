@@ -18,7 +18,7 @@ export default () => (
             <ProtectedRoute exact path="/users/:userId/stories" component={StoryIndexContainer} />
             <Route exact path="/story/:storyId/edit" component={EditStoryContainer} />
             <Route exact path="/story/:storyId" component={StoryShowContainer} />
-            <ProtectedRoute exact path="/users/:userId/profile" component={ProfileContainer} />
+            <Route exact path="/users/:userId/profile" component={ProfileContainer} />
             <Route exact path="/story/:storyId/responses" component={ResponseIndexContainer} />
             <Route path="/" component={SplashContainer} />
         </Switch>
