@@ -7,7 +7,8 @@ const msp = (state, ownProps) => {
     const defaultStory = { title: "", body: ""};
     const story = state.entities.stories[ownProps.match.params.storyId] || defaultStory;
     const author = state.entities.users[state.session.id];
-    return { story, author };
+    const errors = state.errors.stories;
+    return { story, author, errors };
 };
 
 const mdp = dispatch => {

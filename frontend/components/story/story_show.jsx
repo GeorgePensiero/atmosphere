@@ -25,7 +25,7 @@ class Story extends React.Component{
                         <div className="user-info">
                             <Link to={`/users/${author.id}/profile`} className="author-name">
                                 <span className="user-initial">{initial}</span>
-                                <span>{author.username}</span>
+                                <span className="author-name">{author.username}</span>
                             </Link>
                         </div>
                     </div>

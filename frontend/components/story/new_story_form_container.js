@@ -5,9 +5,11 @@ import StoryForm from './story_form';
 const msp = state => {
     const { users } = state.entities;
     const { session } = state;
+    const errors = state.errors.stories;
     return {
         story: { title: "", body: ""},
         author: users[session.id],
+        errors,
     };
 };
 

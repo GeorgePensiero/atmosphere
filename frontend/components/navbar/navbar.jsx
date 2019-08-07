@@ -65,11 +65,12 @@ class Navbar extends React.Component {
                 <div className="navbar">
                     <section className="top-navbar">
                         <section className="left-nav">
-                            <h1 id="atmosphere-logo">Atmosphere</h1>
+                            <Link to="/" className="route-link"><h1 id="atmosphere-logo">Atmosphere</h1></Link>
                         </section>
                         <section className="right-nav">
-                            <div ref={iconRef => this.iconRef = iconRef} className="user-initial">{initial}</div>
-                            {visible}
+                            <div ref={iconRef => this.iconRef = iconRef} className="user-initial">{initial}
+                                {visible}
+                            </div>
                         </section>
                     </section>
                     <section className="bottom-nav">
@@ -87,7 +88,7 @@ class Navbar extends React.Component {
                 <div className="navbar">
                     <section className='top-navbar'>
                         <section className="left-nav">
-                            <h1 id="atmosphere-logo">Atmosphere</h1>
+                            <Link to="/" className="route-link"><h1 id="atmosphere-logo">Atmosphere</h1></Link>
                         </section>
                         <section className="right-nav">
                             <button id="signin-btn" onClick={() => openModal('login')}>Sign in</button>

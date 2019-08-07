@@ -29,6 +29,13 @@ class StoryForm extends React.Component{
    
     render(){
         // const initial = this.props.author.username.slice(0, 1).toUpperCase();
+        
+        let errors = this.props.errors.map(err => {
+            return (
+                <li className="story-errors" key={err.id}>{err}</li>
+            )
+        });
+
         return (
             <div className="storynew">
                 <header className="story-header">
@@ -37,6 +44,11 @@ class StoryForm extends React.Component{
                     </div>
                     <div className="right-nav">
                         <button className="submit-btn" onClick={this.handleSubmit}>Ready to publish?</button>
+                        {/* <div className="errors-message">
+                            <ul>
+                                {errors}
+                            </ul>
+                        </div> */}
                         {/* <div className="user-initial">{initial}</div> */}
                     </div>
                 </header> 

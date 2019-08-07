@@ -23,7 +23,7 @@ class Profile extends React.Component{
                 const description = story.body.slice(0, 30) + "...";
                 return(
                     <li className="profile-story">
-                        <span>{user.username}</span>
+                        <p className="author-name">{user.username}</p>
                         <div className="profile-story-content">
                             <Link to={`/story/${story.id}`} className="route-link">
                                 <img className="profile-pic" src={story.photoUrl} />
@@ -37,7 +37,9 @@ class Profile extends React.Component{
         return (
             <div>
                 <div className="profile">
-                    <NavbarContainer/>
+                    <div className="nav-holder">
+                        <NavbarContainer/>
+                    </div>
                     <div className="user-container">
                         <div className="user-info">
                             <h1>{user.username}</h1>

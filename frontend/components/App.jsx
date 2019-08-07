@@ -18,7 +18,7 @@ export default () => (
             <Route exact path="/story/:storyId/edit" component={EditStoryContainer} />
             <Route exact path="/story/:storyId" component={StoryShowContainer} />
             <Route exact path="/users/:userId/profile" component={ProfileContainer} />
-            <Route component={SplashContainer} />
+            <Route path="/" component={SplashContainer} />
         </Switch>
     </div>
 );
