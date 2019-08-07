@@ -13,11 +13,14 @@ class Response < ApplicationRecord
 
     belongs_to :author,
         foreign_key: :author_id,
-        className: :User
+        class_name: :User
 
     belongs_to :story,
         foreign_key: :story_id,
-        className: :Story
+        class_name: :Story
 
+    belongs_to :parent_response,
+        foreign_key: :parent_response_id,
+        class_name: :Response
     
 end

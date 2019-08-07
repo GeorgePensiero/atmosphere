@@ -12,7 +12,8 @@ class Api::ResponsesController < ApplicationController
 
     def index 
         @story = Story.find(params[:story_id])
-        @responses = @story.responses
+        
+        @responses = @story.responses.includes(:author)
     end
 
     def destroy

@@ -9,9 +9,9 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+require 'open-uri'
 
 class Story < ApplicationRecord
-    require 'open-uri'
     validates :title, :body, :author_id, presence: true
     after_initialize :ensure_default_photo
 

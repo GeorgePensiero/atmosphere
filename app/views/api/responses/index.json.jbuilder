@@ -12,8 +12,8 @@ json.story do
 end
 
 json.users do 
-    @users.each do |user|
-        json.set! user.id do
+    @responses.each do |response|
+        json.set! response.author.id do
             json.partial! "api/users/user", user: user
         end
     end
