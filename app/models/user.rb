@@ -8,6 +8,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  email           :string
 #
 
 class User < ApplicationRecord
@@ -18,6 +19,9 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     has_many :stories,
+        foreign_key: :author_id
+
+    has_many :responses,
         foreign_key: :author_id
 
     def self.find_by_credentials(username, password)
