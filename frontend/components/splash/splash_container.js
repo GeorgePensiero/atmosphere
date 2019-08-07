@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Splash from './splash';
+import { fetchAllStories } from '../../actions/story_actions';
 
 const msp = ({ entities }) => {
     return {

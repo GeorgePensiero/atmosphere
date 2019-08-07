@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
+import { fetchUserStories } from '../../actions/story_actions';
 
 const msp = (state, ownProps) => {
     const defaultUser = {username: "", password: ""};

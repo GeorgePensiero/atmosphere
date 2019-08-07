@@ -23,7 +23,7 @@ export const createResponse = (storyId, response) => {
         err => dispatch(receiveResponseErrors(err.responseJSON)));
 }
 
-export const deleteResponse = (storyId, id) => {
+export const removeResponse = (storyId, id) => {
     return ResponseUtils.deleteResponse(storyId, id)
         .then(payload => dispatch(deleteResponse(payload)),
         err => dispatch(receiveResponseErrors(err.responseJSON)));
