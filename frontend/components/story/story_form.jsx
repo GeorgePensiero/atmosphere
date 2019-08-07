@@ -30,11 +30,11 @@ class StoryForm extends React.Component{
     render(){
         // const initial = this.props.author.username.slice(0, 1).toUpperCase();
         
-        let errors = this.props.errors.map(err => {
-            return (
-                <li className="story-errors" key={err.id}>{err}</li>
-            )
-        });
+        // let errors = this.props.errors.map(err => {
+        //     return (
+        //         <li className="story-errors" key={err.id}>{err}</li>
+        //     )
+        // });
 
         return (
             <div className="storynew">

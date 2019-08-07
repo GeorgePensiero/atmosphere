@@ -39,6 +39,9 @@ class Story extends React.Component{
                         <p>WRITTEN BY</p>
                         <Link to={`/users/${author.id}/profile`} className="author-name"><h2>{author.username}</h2></Link>
                     </div>
+                    <div className="response-button">
+                        <button>See responses</button>
+                    </div>
                 </div>
             </div>
         )
