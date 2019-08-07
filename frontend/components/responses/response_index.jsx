@@ -21,7 +21,7 @@ class ResponseIndex extends React.Component{
 
     render(){
         const { responses, users, story} = this.props;
-        
+
         const responseList = responses.map( response => {
             return (
                 <li className="response" key={response.body}>
@@ -39,8 +39,8 @@ class ResponseIndex extends React.Component{
                 <div className="story-response-container">
                     <p>Showing responses for:</p>
                     <div className="story-response-info">
-                        <span>{story.title}</span>
-                        <span>{users[story.author_id].username}</span>
+                        <span className="response-story-name">{story.title}</span>
+                        <span className="response-author-name">{users[story.author_id].username}</span>
                     </div>
                 </div>
                 <div className="response-index-main">
