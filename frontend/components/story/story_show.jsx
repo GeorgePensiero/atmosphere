@@ -15,6 +15,12 @@ class Story extends React.Component{
         if(!author || !story){
             return null;
         }
+        let response_text;
+        if(story.num_responses > 0){
+            response_text = `See responses(${story.num_responses})`
+        } else {
+            response_text = "Write the first response"
+        }
         const initial = author.username.slice(0, 1).toUpperCase();
         return (
             <div className="story-show">
@@ -40,7 +46,7 @@ class Story extends React.Component{
                         <Link to={`/users/${author.id}/profile`} className="author-name"><h2>{author.username}</h2></Link>
                     </div>
                     <div className="response-button">
-                        <button>See responses({story.num_responses})</button>
+                        <button>{response_text}</button>
                     </div>
                 </div>
             </div>
