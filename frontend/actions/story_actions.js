@@ -39,7 +39,7 @@ export const editStory = story => dispatch => {
 
 export const removeStory = id => dispatch => {
     return StoryUtils.deleteStory(id)
-        .then(story => dispatch(deleteStory(story.id)),
+        .then(payload => dispatch(deleteStory(payload.story.id)),
         err => dispatch(receiveStoryErrors(err.responseJSON)));
 };
 

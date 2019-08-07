@@ -10,9 +10,9 @@ class UserStories extends React.Component{
     }
 
     render(){
+        
         const stories = this.props.stories.map(story => {
             const description = story.body.slice(0, 250) + "...";
-
             return (
                 <div className="user-story" key={story.id}>
                     <Link className="story-title" to={`/story/${story.id}`}>{story.title}</Link>

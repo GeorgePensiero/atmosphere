@@ -21,6 +21,7 @@ class Api::StoriesController < ApplicationController
     def create
         @story = Story.new(story_params)
         @story.author_id = current_user.id
+        @user = User.find(current_user.id)
         if @story.save
             render :show
         else
@@ -30,6 +31,7 @@ class Api::StoriesController < ApplicationController
 
     def update
         @story = Story.find(params[:id])
+        @user = User.find(@story.author_id)
         if @story.update(story_params)
             render :show
         else
@@ -39,7 +41,9 @@ class Api::StoriesController < ApplicationController
 
     def destroy
         @story = Story.find(params[:id])
+
         @story.destroy
+        @user = User.find(@story.author_id)
         render :show
     end
 
