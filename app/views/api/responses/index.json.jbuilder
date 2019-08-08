@@ -6,12 +6,6 @@ json.responses do
     end
 end
 
-
-json.story do
-    
-    json.partial! "api/stories/story", story: @story
-end
-
 json.users do 
     @responses.each do |response|
         json.set! response.author.id do

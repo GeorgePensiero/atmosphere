@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ResponseIndex from './response_index';
-import { fetchAllResponses } from '../../actions/response_actions';
+import { fetchAllResponses, createResponse } from '../../actions/response_actions';
 
 const msp = (state , ownProps) => {
     const { stories, users} = state.entities;
@@ -12,6 +12,7 @@ const msp = (state , ownProps) => {
         story,
         responses,
         users,
+        session,
     }
 }
 

@@ -11,25 +11,25 @@ export const fetchAllResponses = storyId => dispatch => {
         err => dispatch(receiveResponseErrors(err.responseJSON)));
 }
 
-export const fetchResponse = (storyId, id) => {
+export const fetchResponse = (storyId, id) => dispatch => {
     return ResponseUtils.fetchResponse(storyId, id)
         .then(payload => dispatch(receiveResponse(payload)),
         err => dispatch(receiveResponseErrors(err.responseJSON)));
 }
 
-export const createResponse = (storyId, response) => {
+export const createResponse = (storyId, response) => dispatch => {
     return ResponseUtils.createResponse(storyId, response)
-        .then(payload => dispatch(receiveResponse(payload)),
+        .then(response => dispatch(receiveResponse(response)),
         err => dispatch(receiveResponseErrors(err.responseJSON)));
 }
 
-export const removeResponse = (storyId, id) => {
+export const removeResponse = (storyId, id) => dispatch => {
     return ResponseUtils.deleteResponse(storyId, id)
         .then(payload => dispatch(deleteResponse(payload)),
         err => dispatch(receiveResponseErrors(err.responseJSON)));
 }
 
-export const updateResponse = (storyId, response) => {
+export const updateResponse = (storyId, response) => dispatch => {
     return ResponseUtils.updateResponse(storyId, response)
         .then(payload => dispatch(receiveResponse(payload)),
         err => dispatch(receiveResponseErrors(err.responseJSON)));
@@ -38,11 +38,11 @@ export const updateResponse = (storyId, response) => {
 
 
 
-const receiveResponse = ({ response, author}) => {
+const receiveResponse = response => {
+    debugger
     return {
         type: RECEIVE_RESPONSE,
         response,
-        author,
     }
 } 
 const receiveAllResponses = ({responses, story, users}) => {
@@ -55,12 +55,11 @@ const receiveAllResponses = ({responses, story, users}) => {
 }
 
 
-const deleteResponse = ({response, user, story}) => {
+const deleteResponse = ({response, user}) => {
     return {
         type: DELETE_RESPONSE,
         response,
         user,
-        story,
     }
 }
 

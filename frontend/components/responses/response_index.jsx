@@ -6,8 +6,9 @@ class ResponseIndex extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            userResponse: '',
+            body: '',
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field){
@@ -20,13 +21,12 @@ class ResponseIndex extends React.Component{
     }
 
     handleSubmit(e){
-        const { users, session, createResponse, story } = this.props;
+        const { users, session, createResponse} = this.props;
         e.preventDefault();
         const response = Object.assign({}, this.state);
-        response.author_id = users[session.id];
-        response.story_id = story;
-        
-        createResponse(story.id, response);
+        response.author_id = users[session.id].id;
+        response.story_id = this.props.match.params.storyId;
+        createResponse(response.story_id, response);
     }
 
     render(){
@@ -57,13 +57,13 @@ class ResponseIndex extends React.Component{
                 </div>
                 <div className="response-index-main">
                     <p>Responses</p>
-                    <form onSubmit={this.handleSubmit}>
-                        <input className="write-response" placeholder="Write a response..." onChange={this.update('userResponse')} value={this.state.userResponse} />
-                        <input type="submit" value="submit" />
+                    {/* <form onSubmit={this.handleSubmit}> */}
+                        <input className="write-response" placeholder="Write a response..." onChange={this.update('body')} value={this.state.userResponse} />
+                        <button className="submit-btn" onClick={this.handleSubmit}>Ready to publish?</button>
                         <ul className="response-list">
                             {responseList}
                         </ul>
-                    </form>
+                    {/* </form> */}
                 </div>
             </div>
         )

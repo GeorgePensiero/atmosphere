@@ -6,6 +6,7 @@ export default (state = {}, action) => {
         case RECEIVE_ALL_RESPONSES:
             return action.responses;
         case RECEIVE_RESPONSE:
+            newState = Object.assign({}, newState);
             newState[action.response.id] = action.response;
             return newState;
         case DELETE_RESPONSE:
