@@ -8,8 +8,10 @@ class ResponseIndex extends React.Component{
         super(props);
         this.state = {
             body: '',
+            focus: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.toggleFocus = this.toggleFocus.bind(this);
     }
 
     update(field){
@@ -27,6 +29,10 @@ class ResponseIndex extends React.Component{
         }
     }
 
+    toggleFocus(){
+        this.setState({focus: !this.state.focus});
+    }
+
     handleSubmit(e){
         const { users, session, createResponse} = this.props;
         e.preventDefault();
@@ -34,13 +40,26 @@ class ResponseIndex extends React.Component{
         response.author_id = users[session.id].id;
         response.story_id = this.props.match.params.storyId;
         createResponse(response.story_id, response);
+        this.state.body = '';
     }
 
     render(){
-        const { responses, users, story} = this.props;
+        const { responses, users, story, session} = this.props;
         if(!responses || !users || !story){
             return null;
         }
+        const currentUser = users[session.id];
+        const focused = this.state.focus;
+        let userResponse;
+        // if(focused){
+        //     userResponse = <div className="user-response-open" onBlur={this.toggleFocus}>
+        //         <input autoFocus value={this.state.body} onChange={this.update('body')} />
+        //         <button className="publish-response-btn" onClick={this.handleSubmit}>Publish</button>
+        //     </div>
+        // } else {
+        //     userResponse = 
+        //         <input type="text" placeholder="Write a response..." className="user-response-closed" onFocus={this.toggleFocus} />
+        // }
         const responseList = responses.map( (response, idx) => {
             const author = users[response.author_id];
             const initial = author.username.slice(0, 1);
@@ -76,9 +95,12 @@ class ResponseIndex extends React.Component{
                 <div className="response-wrapper">
                     <div className="response-index-main">
                         <div className="response-div"><p>Responses</p></div>
+                        <div className="write-response">
+                            <input type="text" placeholder="Write a response..." value={this.state.body} onChange={this.update('body')} className="user-response-closed" />
+                            <button onClick={this.handleSubmit}>Publish</button>
+                        </div>
                         {/* <form onSubmit={this.handleSubmit}> */}
-                            <input className="write-response" placeholder="Write a response..." onChange={this.update('body')}value={this.state.userResponse} />
-                            <button className="submit-btn" onClick={this.handleSubmit}>Ready to publish?</button>
+                            
                             <ul className="response-list">
                                 {responseList}
                             </ul>

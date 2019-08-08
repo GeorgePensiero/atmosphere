@@ -55,6 +55,7 @@
 .write-response{
     width: 680px;
     height: 78px;
+    margin-bottom: 20px;
 }
 
 .write-response:focus{
@@ -104,4 +105,25 @@
     letter-spacing: -.004em;
     word-break: break-word;
     font-family: serif;
+}
+
+.user-response-closed{
+    width: 680px;
+    min-height: 60px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+}
+
+.user-response-open textarea{
+    text-decoration: none;
+    resize: none;
+    width: 680px;
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.write-response button{
+    border-radius: 3px;
+    border-color: orangered;
+    color: orangered;
 }
