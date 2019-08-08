@@ -67,6 +67,7 @@
     background: #fff;
     width: 680px;
     min-height: 80px;
+    margin-top: 20px;
 }
 
 .response-div{
@@ -76,4 +77,31 @@
     color: rgba(0, 0, 0, 0.68);
     font-size: 16px;
     font-family: sans-serif;
+}
+
+.response-author-info{
+    margin: 0px 0px 15px;
+}
+
+.response-author-name{
+    color: orangered;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.response-initial{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.response-content{
+    padding: 10px 20px 15px;
+}
+
+.response-body{
+    font-size: 18px;
+    line-height: 1.58;
+    letter-spacing: -.004em;
+    word-break: break-word;
+    font-family: serif;
 }

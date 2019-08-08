@@ -4,6 +4,7 @@ export default (state = {}, action) => {
     let newState = Object.freeze(state);
     switch(action.type){
         case RECEIVE_ALL_RESPONSES:
+            
             return action.responses;
         case RECEIVE_RESPONSE:
             newState = Object.assign({}, newState);

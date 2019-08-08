@@ -7,8 +7,10 @@ export const DELETE_RESPONSE = "DELETE_RESPONSE";
 
 export const fetchAllResponses = storyId => dispatch => {
     return ResponseUtils.fetchAllResponses(storyId)
-        .then(payload => dispatch(receiveAllResponses(payload)),
-        err => dispatch(receiveResponseErrors(err.responseJSON)));
+        .then(payload => {
+            
+            dispatch(receiveAllResponses(payload)),
+        err => dispatch(receiveResponseErrors(err.responseJSON))});
 }
 
 export const fetchResponse = (storyId, id) => dispatch => {
@@ -44,7 +46,9 @@ const receiveResponse = response => {
         response,
     }
 } 
-const receiveAllResponses = ({responses, story, users}) => {
+
+const receiveAllResponses = ({responses = {}, story, users}) => {
+    
     return {
         type: RECEIVE_ALL_RESPONSES,
         responses,

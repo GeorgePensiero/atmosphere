@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
+import { Link } from 'react-router-dom';
 
 class ResponseIndex extends React.Component{
 
@@ -41,10 +42,19 @@ class ResponseIndex extends React.Component{
             return null;
         }
         const responseList = responses.map( (response, idx) => {
+            const author = users[response.author_id];
+            const initial = author.username.slice(0, 1);
             return (
                 <li className="response" key={response.body + idx}>
-                    <p className="author-name">{users[response.author_id].username}</p>
-                    <div className="response-body">{response.body}</div>
+                    <div className="response-content">
+                        <div className="response-author-info">
+                            <Link to={`/users/${author.id}/profile`} className="route-link">
+                                <span className="user-initial response-initial">{initial}</span>
+                                <p className="response-author-name">{author.username}</p>
+                            </Link>
+                        </div>
+                        <div className="response-body">{response.body}</div>
+                    </div>
                 </li>
             );
         });
@@ -56,10 +66,12 @@ class ResponseIndex extends React.Component{
                 </div>
                 <div className="story-response-container">
                     <p>Showing responses for:</p>
-                    <div className="story-response-info">
-                        <span className="response-story-name">{story.title}</span>
-                        <span className="response-author-name">{users[story.author_id].username}</span>
-                    </div>
+                    <Link to={`/story/${story.id}`} className="route-link">
+                        <div className="story-response-info">
+                            <span className="response-story-name">{story.title}</span>
+                            <span className="response-author-name">{users[story.author_id].username}</span>
+                        </div>
+                    </Link>
                 </div>
                 <div className="response-wrapper">
                     <div className="response-index-main">
