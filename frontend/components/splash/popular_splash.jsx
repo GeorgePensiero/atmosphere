@@ -8,7 +8,7 @@ class Popular extends React.Component{
         const { users, stories } = this.props;
         const popular = stories.slice(0,4).map((story, idx) => {
             return (
-                <li className="savory">
+                <li className="savory" key={story.title + idx}>
                     <div className="savory-num">0{idx + 1}</div>
                     <div className="savory-content">
                         <Link to={`/story/${story.id}`} className="route-link"><h2>{story.title}</h2></Link>

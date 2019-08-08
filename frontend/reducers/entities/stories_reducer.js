@@ -16,12 +16,10 @@ export default(state = {}, action) => {
             newState = Object.assign({}, newState);
             delete newState[action.storyId];
             return newState;
-        // case RECEIVE_ALL_RESPONSES:
-            
-        //     newState = Object.assign({}, newState);
-        //     newState[action.story.id] = action.story;
-            
-        //     return newState;
+        case RECEIVE_ALL_RESPONSES:
+            newState = Object.assign({}, newState);
+            newState[action.story.id] = action.story;
+            return newState;
         default: 
             return state;
     };

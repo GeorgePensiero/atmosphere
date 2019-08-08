@@ -39,7 +39,6 @@ export const updateResponse = (storyId, response) => dispatch => {
 
 
 const receiveResponse = response => {
-    debugger
     return {
         type: RECEIVE_RESPONSE,
         response,

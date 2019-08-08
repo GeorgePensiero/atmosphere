@@ -19,10 +19,10 @@ class Profile extends React.Component{
             return null;
         }
         const initial = user.username.slice(0, 1).toUpperCase();
-            const profileStories = stories.map( story => {
+            const profileStories = stories.map( (story, idx) => {
                 const description = story.body.slice(0, 30) + "...";
                 return(
-                    <li className="profile-story">
+                    <li className="profile-story" key={story.title + idx}>
                         <p className="author-name">{user.username}</p>
                         <div className="profile-story-content">
                             <Link to={`/story/${story.id}`} className="route-link">

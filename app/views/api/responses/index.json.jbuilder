@@ -12,4 +12,11 @@ json.users do
             json.partial! "api/users/user", user: response.author
         end
     end
+    json.set! @story.author_id do
+        json.partial! "api/users/user", user: @story.author
+    end
+end
+
+json.story do
+    json.partial! "api/stories/story", story: @story
 end

@@ -20,6 +20,12 @@ class ResponseIndex extends React.Component{
         this.props.fetchAllResponses(this.props.match.params.storyId);
     }
 
+    componentDidUpdate(prevProps){
+        if(prevProps.match.params.storyId !== this.props.match.params.storyId){
+            this.props.fetchAllResponses(this.props.match.params.storyId);
+        }
+    }
+
     handleSubmit(e){
         const { users, session, createResponse} = this.props;
         e.preventDefault();
@@ -31,12 +37,12 @@ class ResponseIndex extends React.Component{
 
     render(){
         const { responses, users, story} = this.props;
-        if(responses === undefined){
+        if(!responses || !users || !story){
             return null;
         }
-        const responseList = responses.map( response => {
+        const responseList = responses.map( (response, idx) => {
             return (
-                <li className="response" key={response.body}>
+                <li className="response" key={response.body + idx}>
                     <p className="author-name">{users[response.author_id].username}</p>
                     <div className="response-body">{response.body}</div>
                 </li>

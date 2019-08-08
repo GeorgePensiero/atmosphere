@@ -4,11 +4,11 @@ class SplashLeft extends React.Component{
 
     render(){
         const {users, stories} = this.props;
-            const splash_stories = stories.map(story => {
+            const splash_stories = stories.map((story, idx) => {
             const description = story.body.slice(0, 150) + "...";
             const author = users[story.author_id].username.split("@")[0];
             return(
-                <li className="splash-left-story">
+                <li className="splash-left-story" key={story.title + idx}>
                     <div className="bottompost-content">
                         <Link to={`/story/${story.id}`} className="route-link">
                             <h2>{story.title}</h2>
