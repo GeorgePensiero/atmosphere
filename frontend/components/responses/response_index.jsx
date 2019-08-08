@@ -61,15 +61,17 @@ class ResponseIndex extends React.Component{
                         <span className="response-author-name">{users[story.author_id].username}</span>
                     </div>
                 </div>
-                <div className="response-index-main">
-                    <p>Responses</p>
-                    {/* <form onSubmit={this.handleSubmit}> */}
-                        <input className="write-response" placeholder="Write a response..." onChange={this.update('body')} value={this.state.userResponse} />
-                        <button className="submit-btn" onClick={this.handleSubmit}>Ready to publish?</button>
-                        <ul className="response-list">
-                            {responseList}
-                        </ul>
-                    {/* </form> */}
+                <div className="response-wrapper">
+                    <div className="response-index-main">
+                        <div className="response-div"><p>Responses</p></div>
+                        {/* <form onSubmit={this.handleSubmit}> */}
+                            <input className="write-response" placeholder="Write a response..." onChange={this.update('body')}value={this.state.userResponse} />
+                            <button className="submit-btn" onClick={this.handleSubmit}>Ready to publish?</button>
+                            <ul className="response-list">
+                                {responseList}
+                            </ul>
+                        {/* </form> */}
+                    </div>
                 </div>
             </div>
         )

@@ -45,10 +45,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
+.response-wrapper{
     height: -webkit-fill-available;
     background-color: rgba(0, 0, 0, .02);
 }
 
+.write-response{
+    width: 680px;
+    height: 78px;
+}
+
 .write-response:focus{
     height: 300px;
+}
+
+.response{
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
+    border: 1px solid rgba(0, 0, 0, .09);
+    background: #fff;
+    width: 680px;
+    min-height: 80px;
+}
+
+.response-div{
+    width: 680px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    color: rgba(0, 0, 0, 0.68);
+    font-size: 16px;
+    font-family: sans-serif;
 }
