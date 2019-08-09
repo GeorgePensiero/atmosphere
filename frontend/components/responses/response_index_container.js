@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ResponseIndex from './response_index';
 import { fetchAllResponses, createResponse } from '../../actions/response_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = (state , ownProps) => {
     const { stories, users} = state.entities;
@@ -20,6 +21,7 @@ const mdp = dispatch => {
     return {
         fetchAllResponses: storyId => dispatch(fetchAllResponses(storyId)),
         createResponse: (storyId, response) => dispatch(createResponse(storyId, response)),
+        openModal: modal => dispatch(openModal(modal)),
     }
 }
 

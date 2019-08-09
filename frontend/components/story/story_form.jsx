@@ -5,7 +5,10 @@ class StoryForm extends React.Component{
     constructor(props){
         super(props)
 
-        this.state = this.props.story
+        this.state = {
+            story: this.props.story,
+            errors: this.props.errors,
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.returnToSplash = this.returnToSplash.bind(this);
     }
@@ -22,8 +25,12 @@ class StoryForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        const story = Object.assign({}, this.state);
+        const story = Object.assign({}, this.state.story);
         this.props.submit(story).then(() => this.props.history.push('/'));
+    }
+
+    componentWillUnmount(){
+        this.setState({errors: []});
     }
 
    
@@ -36,6 +43,22 @@ class StoryForm extends React.Component{
         //     )
         // });
 
+        let errorbox;
+        if(this.state.errors.length){
+            const list = this.state.errors.map((err, idx) => {
+                return (
+                    <li className="errors-list-item" key={err + idx}>
+                        {err}
+                    </li>
+                )
+            })
+            errorbox = <div className="error-box">
+                            <ul>
+                                {list}
+                            </ul>
+                        </div>
+        }
+
         return (
             <div className="storynew">
                 <header className="story-header">
@@ -44,6 +67,7 @@ class StoryForm extends React.Component{
                     </div>
                     <div className="right-nav">
                         <button className="submit-btn" onClick={this.handleSubmit}>Ready to publish?</button>
+                        {errorbox}
                         {/* <div className="errors-message">
                             <ul>
                                 {errors}
@@ -53,8 +77,8 @@ class StoryForm extends React.Component{
                     </div>
                 </header> 
                 <div className="story-form-main">
-                    <input placeholder="Title" onChange={this.update('title')} value={this.state.title}/>
-                    <textarea placeholder="Start your story..." onChange={this.update('body')} value={this.state.body}/>
+                    <input placeholder="Title" onChange={this.update('title')} value={this.state.story.title}/>
+                    <textarea placeholder="Start your story..." onChange={this.update('body')} value={this.state.story.body}/>
                 </div>
             </div>
         )

@@ -19,6 +19,7 @@ class ResponseIndex extends React.Component{
             this.setState({ [field]: e.target.value })
         }
     }
+
     componentDidMount(){
         this.props.fetchAllResponses(this.props.match.params.storyId);
     }
@@ -28,6 +29,9 @@ class ResponseIndex extends React.Component{
             this.props.fetchAllResponses(this.props.match.params.storyId);
         }
     }
+
+    
+    
 
     toggleFocus(){
         this.setState({focus: !this.state.focus});
@@ -44,13 +48,18 @@ class ResponseIndex extends React.Component{
     }
 
     render(){
-        const { responses, users, story, session} = this.props;
+        const { responses, users, story, session, openModal } = this.props;
         if(!responses || !users || !story){
             return null;
         }
         const currentUser = users[session.id];
         const focused = this.state.focus;
         let userResponse;
+        if(this.props.session.id === null){
+            userResponse = <input type="text" placeholder="Write a response..." value={this.state.body}  onFocus={() => openModal('signup')} className="user-response-closed" />
+        } else {
+            userResponse = <input type="text" placeholder="Write a response..." onChange={this.update('body')} value={this.state.body} className="user-response-closed" />
+        }
         // if(focused){
         //     userResponse = <div className="user-response-open" onBlur={this.toggleFocus}>
         //         <input autoFocus value={this.state.body} onChange={this.update('body')} />
@@ -96,7 +105,7 @@ class ResponseIndex extends React.Component{
                     <div className="response-index-main">
                         <div className="response-div"><p>Responses</p></div>
                         <div className="write-response">
-                            <input type="text" placeholder="Write a response..." value={this.state.body} onChange={this.update('body')} className="user-response-closed" />
+                            {userResponse}
                             <button onClick={this.handleSubmit}>Publish</button>
                         </div>
                         {/* <form onSubmit={this.handleSubmit}> */}
