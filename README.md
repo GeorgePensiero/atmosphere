@@ -22,3 +22,20 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# Atmosphere
+
+Atmosphere is a medium clone where you can write and view articles on any topic you wish.
+
+## User Auth
+
+User's can login if they belong to atmosphere, create an account if they dont, or demo a user to test out
+the site before making a decision.
+
+## Stories
+
+User's can write stories of their own, or read other users stories that interest them. User's can navigate to other user's 
+profile page and see all of the stories that they've wrote.
+
+
