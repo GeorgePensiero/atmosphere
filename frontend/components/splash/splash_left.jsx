@@ -14,7 +14,10 @@ class SplashLeft extends React.Component{
                             <h2>{story.title}</h2>
                             <p className="splash-description">{description}</p>
                         </Link>
-                        <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name splash-left-author">{author}</p></Link>
+                        <div className="author-splash-info">
+                            <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name">{author}</p></Link>
+                            <img className="star-img" src={window.starUrl} alt="star.png" />
+                        </div>
                     </div>
                     <Link to={`/story/${story.id}`} className="route-link"><img className="splashleft-img" src={story.photoUrl} alt="storyphoto"/></Link>
                 </li>
