@@ -50,10 +50,10 @@ class Navbar extends React.Component {
         const { currentUser, openModal, logout } = this.props;
         const visible =  (this.state.visible && currentUser) ? (
             <div className="dropdown" ref={node => this.node = node}>
-                <Link to="/story/new">New Story</Link>
-                <Link to={`/users/${currentUser.id}/stories`}>Stories</Link>
-                <button>Profile</button>
-                <button onClick={this.handleClose}>Logout</button>
+                <Link to="/story/new" className="dropdown-link">New Story</Link>
+                <Link to={`/users/${currentUser.id}/stories`} className="dropdown-link">Stories</Link>
+                <Link to={`/users/${currentUser.id}/profile`} className="dropdown-link">Profile</Link>
+                <button className="dropdown-link" onClick={this.handleClose}>Logout</button>
             </div>
         )
             :(
