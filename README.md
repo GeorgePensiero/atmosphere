@@ -36,6 +36,13 @@ the site before making a decision.
 ## Stories
 
 User's can write stories of their own, or read other users stories that interest them. User's can navigate to other user's 
-profile page and see all of the stories that they've wrote.
+profile page and see all of the stories that they've wrote. User's can also delete or edit their own stories.
+
+## Responses
+
+User's can view all responses to a story and also create a response of their own if they wish. 
+
+
+## Future features coming!!
 
 
