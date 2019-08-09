@@ -44,8 +44,8 @@ class StoryForm extends React.Component{
         // });
 
         let errorbox;
-        if(this.state.errors.length){
-            const list = this.state.errors.map((err, idx) => {
+        if(this.props.errors.length){
+            const list = this.props.errors.map((err, idx) => {
                 return (
                     <li className="errors-list-item" key={err + idx}>
                         {err}
