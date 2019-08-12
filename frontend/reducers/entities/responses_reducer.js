@@ -12,8 +12,7 @@ export default (state = {}, action) => {
             newState[action.response.id] = action.response;
             return newState;
         case DELETE_RESPONSE:
-            delete newState[action.response.id];
-            return newState;
+            return action.responses;
         default: 
             return state;
     }

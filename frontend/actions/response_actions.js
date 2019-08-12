@@ -33,7 +33,7 @@ export const createResponse = (storyId, response) => dispatch => {
 
 export const removeResponse = (storyId, id) => dispatch => {
     return ResponseUtils.deleteResponse(storyId, id)
-        .then(payload => dispatch(deleteResponse(payload)),
+        .then(payload => dispatch(receiveAllResponses(payload)),
         err => dispatch(receiveResponseErrors(err.responseJSON)));
 }
 
@@ -74,13 +74,13 @@ const receiveUserResponses = ({responses = {}, user, stories}) => {
 }
 
 
-const deleteResponse = ({response, user}) => {
-    return {
-        type: DELETE_RESPONSE,
-        response,
-        user,
-    }
-}
+// const deleteResponse = ({responses, user}) => {
+//     return {
+//         type: DELETE_RESPONSE,
+//         responses,
+//         user,
+//     }
+// }
 
 const receiveResponseErrors = errors => {
     return{
