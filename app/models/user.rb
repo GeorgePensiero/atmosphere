@@ -24,6 +24,14 @@ class User < ApplicationRecord
     has_many :responses,
         foreign_key: :author_id
 
+    has_many :followees,
+        foreign_key: :follower_id,
+        class_name: :Follow,
+        
+    has_many :following,
+        through: :followees,
+        source: :followed
+    
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil if user.nil?
