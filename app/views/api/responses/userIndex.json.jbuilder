@@ -1,4 +1,4 @@
-json.users do 
+json.user do 
     json.partial! "api/users/user", user: @user
 end
 
@@ -11,5 +11,7 @@ json.responses do
 end
 
 json.stories do 
-
+    @responses.each do |response| 
+        json.partial! "api/stories/story", story: response.story
+    end
 end

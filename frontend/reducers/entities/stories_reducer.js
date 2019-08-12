@@ -1,5 +1,5 @@
 import { RECEIVE_ALL_STORIES, RECEIVE_STORY, DELETE_STORY, RECEIVE_USER_STORIES } from "../../actions/story_actions";
-import { RECEIVE_ALL_RESPONSES } from "../../actions/response_actions";
+import { RECEIVE_ALL_RESPONSES, RECEIVE_USER_RESPONSES } from "../../actions/response_actions";
 
 export default(state = {}, action) => {
     let newState = Object.freeze(state);
@@ -20,6 +20,8 @@ export default(state = {}, action) => {
             newState = Object.assign({}, newState);
             newState[action.story.id] = action.story;
             return newState;
+        case RECEIVE_USER_RESPONSES:
+            return action.stories;
         default: 
             return state;
     };

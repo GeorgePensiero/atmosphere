@@ -30,8 +30,6 @@ class ResponseIndex extends React.Component{
         }
     }
 
-    
-    
 
     toggleFocus(){
         this.setState({focus: !this.state.focus});
@@ -73,7 +71,11 @@ class ResponseIndex extends React.Component{
         //         <input type="text" placeholder="Write a response..." className="user-response-closed" onFocus={this.toggleFocus} />
         // }
         const responseList = responses.map( (response, idx) => {
+            let deleteButton;
             const author = users[response.author_id];
+            // if(author === currentUser){
+            //     deleteButton = <button onClick={}
+            // }
             const initial = author.username.slice(0, 1);
             return (
                 <li className="response" key={response.body + idx}>

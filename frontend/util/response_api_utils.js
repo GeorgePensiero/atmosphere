@@ -9,7 +9,7 @@ export const fetchAllResponses = storyId => {
 export const fetchUserResponses = userId => {
     return $.ajax({
         method: "get",
-        url: `api.users/${userId}/responses`
+        url: `api/users/${userId}/responses`
     });
 };
 

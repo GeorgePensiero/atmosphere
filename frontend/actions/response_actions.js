@@ -3,7 +3,7 @@ export const RECEIVE_ALL_RESPONSES = "RECEIVE_ALL_RESPONSES";
 export const RECEIVE_RESPONSE = "RECEIVE_RESPONSE";
 export const RECEIVE_RESPONSE_ERRORS = "RECEIVE_RESPONSE_ERRORS";
 export const DELETE_RESPONSE = "DELETE_RESPONSE";
-
+export const RECEIVE_USER_RESPONSES = "RECEIVE_USER_RESPONSES";
 
 export const fetchAllResponses = storyId => dispatch => {
     return ResponseUtils.fetchAllResponses(storyId)
@@ -60,6 +60,16 @@ const receiveAllResponses = ({responses = {}, story, users}) => {
         responses,
         story, 
         users,
+    }
+}
+
+const receiveUserResponses = ({responses = {}, user, stories}) => {
+
+    return {
+        type: RECEIVE_USER_RESPONSES,
+        responses,
+        stories,
+        user
     }
 }
 

@@ -11,9 +11,15 @@ class Api::ResponsesController < ApplicationController
     end
 
     def index 
-        @story = Story.find(params[:story_id])
-        @responses = @story.responses
-
+        if(params[:user_id])
+            @user = User.find(params[:user_id])
+            @responses = @user.responses
+            render "api/responses/userIndex"
+        else
+            @story = Story.find(params[:story_id])
+            @responses = @story.responses
+            render "api/responses/index"
+        end
     end
 
     def destroy
