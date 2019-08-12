@@ -72,7 +72,7 @@ class ResponseIndex extends React.Component{
         // }
         const responseList = responses.map( (response, idx) => {
             let editDelete;
-            debugger
+            
             const author = users[response.author_id];
             if(currentUser === author){
                 editDelete = <div className="edit-delete-response">
