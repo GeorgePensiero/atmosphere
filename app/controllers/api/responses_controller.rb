@@ -25,6 +25,8 @@ class Api::ResponsesController < ApplicationController
     def destroy
         @response = Response.find(params[:id])
         @response.destroy
+        @story = Story.find(params[:story_id])
+        @responses = @story.responses
         render "api/responses/index"
     end
 

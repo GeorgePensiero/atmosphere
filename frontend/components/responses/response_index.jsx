@@ -71,8 +71,14 @@ class ResponseIndex extends React.Component{
         //         <input type="text" placeholder="Write a response..." className="user-response-closed" onFocus={this.toggleFocus} />
         // }
         const responseList = responses.map( (response, idx) => {
-            let deleteButton;
+            let editDelete;
+            debugger
             const author = users[response.author_id];
+            if(currentUser === author){
+                editDelete = <div className="edit-delete-response">
+                    <button onClick={() => this.props.removeResponse(story.id, response.id)}>Delete Response</button>
+                </div>
+            }
             // if(author === currentUser){
             //     deleteButton = <button onClick={}
             // }
@@ -87,6 +93,7 @@ class ResponseIndex extends React.Component{
                             </Link>
                         </div>
                         <div className="response-body">{response.body}</div>
+                        {editDelete}
                     </div>
                 </li>
             );

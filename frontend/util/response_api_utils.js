@@ -37,9 +37,10 @@ export const updateResponse = (storyId, response) => {
 };
 
 export const deleteResponse = (storyId, id) => {
+    debugger
     return $.ajax({
         method: "delete",
-        url: `api/stories/${storyId},responses/${id}`,
+        url: `api/stories/${storyId}/responses/${id}`,
     });
 };
 
