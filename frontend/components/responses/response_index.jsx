@@ -57,8 +57,11 @@ class ResponseIndex extends React.Component{
         let userResponse;
         if(this.props.session.id === null){
             userResponse = <input type="text" placeholder="Write a response..." value={this.state.body}  onFocus={() => openModal('signup')} className="user-response-closed" />
-        } else {
-            userResponse = <input type="text" placeholder="Write a response..." onChange={this.update('body')} value={this.state.body} className="user-response-closed" />
+        } else {            
+            userResponse =  <div>
+                                <input type="text" placeholder="Write a response..." onChange={this.update('body')} value={this.state.body} className="user-response-closed" />
+                                {/* <img className="caret-img" src={window.caretUrl} alt="caret-img" /> */}
+                            </div>
         }
         // if(focused){
         //     userResponse = <div className="user-response-open" onBlur={this.toggleFocus}>

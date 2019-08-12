@@ -13,6 +13,12 @@ export const fetchAllResponses = storyId => dispatch => {
         err => dispatch(receiveResponseErrors(err.responseJSON))});
 }
 
+export const fetchUserResponses = userId => dispatch => {
+    return ResponseUtils.fetchUserResponses(userId)
+        .then(payload => dispatch(receiveUserResponses(payload)),
+        err => dispatch(receiveResponseErrors(err.responseJSON)));
+}
+
 export const fetchResponse = (storyId, id) => dispatch => {
     return ResponseUtils.fetchResponse(storyId, id)
         .then(payload => dispatch(receiveResponse(payload)),

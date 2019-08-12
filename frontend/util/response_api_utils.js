@@ -6,6 +6,13 @@ export const fetchAllResponses = storyId => {
     });
 };
 
+export const fetchUserResponses = userId => {
+    return $.ajax({
+        method: "get",
+        url: `api.users/${userId}/responses`
+    });
+};
+
 export const fetchResponse = (storyId, id) => {
     return $.ajax({
         method: "get",
