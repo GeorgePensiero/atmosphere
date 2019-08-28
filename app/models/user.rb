@@ -63,10 +63,12 @@ class User < ApplicationRecord
 
     def follow(user)
         self.following << user
+        user.followers << self
     end
 
     def unfollow(user)
         self.following.delete(user)
+        user.followers.delete(self)
     end
 
     private
