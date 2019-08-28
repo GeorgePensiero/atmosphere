@@ -6,7 +6,7 @@ class Profile extends React.Component{
 
     componentDidMount(){
         this.props.fetchUserStories(this.props.match.params.userId);
-        
+        this.props.fetchFollowInfo(this.props.match.params.userId);
     }
 
     // componentDidUpdate(prev){
@@ -14,10 +14,14 @@ class Profile extends React.Component{
     // }
 
     render(){
-        const { user, stories } = this.props;
+        const { user, stories, following, followers } = this.props;
         if (!user || !stories) {
             return null;
         }
+       debugger
+        const followingLength = following.length;
+        const followersLength = followers.length;
+
         const initial = user.username.slice(0, 1).toUpperCase();
             const profileStories = stories.map( (story, idx) => {
                 const description = story.body.slice(0, 30) + "...";
@@ -43,7 +47,10 @@ class Profile extends React.Component{
                     <div className="user-container">
                         <div className="user-info">
                             <h1>{user.username}</h1>
+                            <h4>{followersLength} followers</h4>
+                            <h4>{followingLength} following</h4>
                             <p className="atmo-member">atmosphere member since 2019</p>
+
                         </div>
                         <div className="user-initial profile-initial">{initial}</div>
                     </div> 
