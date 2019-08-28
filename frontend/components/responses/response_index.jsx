@@ -76,7 +76,7 @@ class ResponseIndex extends React.Component{
             const author = users[response.author_id];
             if(currentUser === author){
                 editDelete = <div className="edit-delete-response">
-                    <button onClick={() => this.props.removeResponse(story.id, response.id)}>Delete Response</button>
+                    <button onClick={() => this.props.removeResponse(story.id, response.id)}>Delete</button>
                 </div>
             }
             // if(author === currentUser){

@@ -61,6 +61,14 @@ class User < ApplicationRecord
         self.session_token
     end
 
+    def follow(user)
+        self.following << user
+    end
+
+    def unfollow(user)
+        self.following.delete(user)
+    end
+
     private
     
     def ensure_session_token

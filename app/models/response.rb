@@ -2,10 +2,11 @@
 #
 # Table name: responses
 #
-#  id        :bigint           not null, primary key
-#  body      :text             not null
-#  author_id :integer          not null
-#  story_id  :integer          not null
+#  id                 :bigint           not null, primary key
+#  body               :text             not null
+#  author_id          :integer          not null
+#  story_id           :integer          not null
+#  parent_response_id :integer
 #
 
 class Response < ApplicationRecord
