@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchUserStories } from '../../actions/story_actions';
-import { fetchFollowInfo, createFollow, unFollow } from '../../actions/follow_actions';
+import { fetchFollowInfo, unFollow } from '../../actions/follow_actions';
+// import {createFollow } from '../../util/follows_api_util';
 
 const msp = (state, ownProps) => {
     const defaultUser = {username: "", password: ""};
@@ -26,7 +27,7 @@ const mdp = dispatch => {
     return {
         fetchUserStories: id => dispatch(fetchUserStories(id)),
         fetchFollowInfo: userId => dispatch(fetchFollowInfo(userId)),
-        createFollow: userId => dispatch(createFollow(userId)),
+        // createFollow: userId => dispatch(createFollow(userId)),
         unFollow: (userId, id) => dispatch(unFollow(userId, id)),
     }
 }

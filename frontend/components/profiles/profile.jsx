@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
-
+import { createFollow } from '../../util/follows_api_util';
 
 class Profile extends React.Component{
 
@@ -21,12 +21,13 @@ class Profile extends React.Component{
         }
         // const followingLength = following.length;
         // const followersLength = followers.length;
-        let followButton;
+        let followButton = <button onClick={() => createFollow(user.id)}>Follow</button>
         // if(followers.includes(currentUser.id)){
         //     followButton = <button onClick={() =>  this.props.unFollow(user.id, 0)}>Unfollow</button>;
         // } else {
         //     followButton = <button onClick={() => this.props.createFollow(user.id)}>Follow</button>
         // }
+        debugger
         const initial = user.username.slice(0, 1).toUpperCase();
             const profileStories = stories.map( (story, idx) => {
                 const description = story.body.slice(0, 30) + "...";
