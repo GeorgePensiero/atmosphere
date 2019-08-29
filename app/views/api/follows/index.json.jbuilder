@@ -3,7 +3,7 @@ json.followers do
         # json.set! follower.id do 
         #     json.partial! "api/users/user", user: follower 
         # end
-        json.id follower.id
+        follower.id
     end
 end
 

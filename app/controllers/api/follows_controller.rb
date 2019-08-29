@@ -11,6 +11,7 @@ class Api::FollowsController < ApplicationController
         current_user.follow(@user)
         @following = @user.following
         @followers = @user.followers
+        debugger
         render "api/follows/index"
     end
 

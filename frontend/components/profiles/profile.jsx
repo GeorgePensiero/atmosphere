@@ -23,7 +23,6 @@ class Profile extends React.Component{
         const followersLength = followers.length;
         let followButton;
         if(followers.includes(currentUser.id)){
-            debugger
             followButton = <button onClick={() =>  this.props.unFollow(user.id, 0)}>Unfollow</button>;
         } else {
             followButton = <button onClick={() => this.props.createFollow(user.id)}>Follow</button>

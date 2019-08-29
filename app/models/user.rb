@@ -62,8 +62,10 @@ class User < ApplicationRecord
     end
 
     def follow(user)
-        self.following << user
-        user.followers << self
+        unless(self.following.include?(user))
+            self.following << user
+            user.followers << self
+        end
     end
 
     def unfollow(user)
