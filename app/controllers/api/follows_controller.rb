@@ -9,12 +9,16 @@ class Api::FollowsController < ApplicationController
     def create
         @user = User.find(params[:user_id])
         current_user.follow(@user)
+        @following = @user.following
+        @followers = @user.followers
         render "api/follows/index"
     end
 
     def destroy
         @user = User.find(params[:user_id])
         current_user.unfollow(@user)
+        @following = @user.following
+        @followers = @user.followers
         render "api/follows/index"
     end
 

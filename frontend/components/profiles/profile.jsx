@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
 
+
 class Profile extends React.Component{
 
     componentDidMount(){
@@ -14,14 +15,19 @@ class Profile extends React.Component{
     // }
 
     render(){
-        const { user, stories, following, followers } = this.props;
+        const { user, stories, following, followers, currentUser } = this.props;
         if (!user || !stories) {
             return null;
         }
-       debugger
         const followingLength = following.length;
         const followersLength = followers.length;
-
+        let followButton;
+        if(followers.includes(currentUser.id)){
+            debugger
+            followButton = <button onClick={() =>  this.props.unFollow(user.id, 0)}>Unfollow</button>;
+        } else {
+            followButton = <button onClick={() => this.props.createFollow(user.id)}>Follow</button>
+        }
         const initial = user.username.slice(0, 1).toUpperCase();
             const profileStories = stories.map( (story, idx) => {
                 const description = story.body.slice(0, 30) + "...";
@@ -47,10 +53,12 @@ class Profile extends React.Component{
                     <div className="user-container">
                         <div className="user-info">
                             <h1>{user.username}</h1>
-                            <h4>{followersLength} followers</h4>
-                            <h4>{followingLength} following</h4>
                             <p className="atmo-member">atmosphere member since 2019</p>
-
+                            <div className="follow-info">
+                                <h4>{followersLength} followers</h4>
+                                <h4>{followingLength} following</h4>
+                            </div>
+                            {followButton}
                         </div>
                         <div className="user-initial profile-initial">{initial}</div>
                     </div> 
