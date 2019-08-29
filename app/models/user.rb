@@ -26,15 +26,18 @@ class User < ApplicationRecord
 
     has_many :following_relations,
         foreign_key: :follower_id,
-        class_name: :Follow
+        class_name: :Follow,
+        dependent: :destroy
         
     has_many :following,
         through: :following_relations,
-        source: :followed
+        source: :followed,
+        dependent: :destroy
 
     has_many :followed_relations,
         foreign_key: :followed_id,
-        class_name: :Follow
+        class_name: :Follow,
+        dependent: :destroy
 
     has_many :followers,
         through: :followed_relations,
@@ -61,12 +64,6 @@ class User < ApplicationRecord
         self.session_token
     end
 
-    def follow(user)
-        unless(self.following.include?(user))
-            self.following << user
-            user.followers << self
-        end
-    end
 
     def unfollow(user)
         self.following.delete(user)
