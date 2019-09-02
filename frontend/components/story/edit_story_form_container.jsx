@@ -1,4 +1,4 @@
-import { editStory } from "../../actions/story_actions";
+import { editStory, fetchStory } from "../../actions/story_actions";
 import StoryForm from "./story_form";
 import { connect } from "react-redux";
 import React from 'react';
