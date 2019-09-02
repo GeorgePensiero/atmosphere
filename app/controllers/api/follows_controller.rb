@@ -1,24 +1,26 @@
 class Api::FollowsController < ApplicationController
-    def index
-        @user = User.find(params[:user_id])
-        @following = @user.following
-        @followers = @user.followers
-        render "api/follows/index"
-    end
+    # def index
+    #     @user = User.find(params[:user_id])
+    #     @following = @user.following
+    #     @followers = @user.followers
+    #     render "api/follows/index"
+    # end
 
     def create
         @user = User.find(params[:user_id])
         @follow = Follow.new
         @follow.followed_id = @user.id
         @follow.follower_id = current_user.id
-        @follow.save
+        if @follow.save
+            @follow_status = true
+            render "api/follows/index"
+        end
     end
 
     def destroy
         @user = User.find(params[:user_id])
         current_user.unfollow(@user)
-        @following = @user.following
-        @followers = @user.followers
+        @follow_status = false
         render "api/follows/index"
     end
 

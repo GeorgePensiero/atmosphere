@@ -8,6 +8,6 @@ export default combineReducers({
     users,
     stories,
     responses,
-    follows,
+    follows
 });
 

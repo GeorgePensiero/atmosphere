@@ -10,15 +10,15 @@ const msp = (state, ownProps) => {
     const defaultStories = [];
     const stories = Object.values(state.entities.stories) || [];
     const currentUser = state.entities.users[state.session.id];
-    const followObj = state.entities.follows.following || {};
-    const followerObj = state.entities.follows.followers || {};
-    const following = Object.values(followObj);
-    const followers = Object.values(followerObj);
+    // const followObj = state.entities.follows.following || {};
+    // const followerObj = state.entities.follows.followers || {};
+    // const following = Object.values(followObj);
+    // const followers = Object.values(followerObj);
     return {
         user,
         stories,
-        following, 
-        followers,
+        // following, 
+        // followers,
         currentUser
     };
 }

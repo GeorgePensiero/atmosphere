@@ -1,5 +1,6 @@
 import * as FollowUtils from '../util/follows_api_util';
-export const RECEIVE_FOLLOW_INFO = "RECEIVE_FOLLOW_INFO";
+export const FOLLOW = "FOLLOW";
+export const UNFOLLOW = "UNFOLLOW";
 
 export const fetchFollowInfo = userId => dispatch => {
     return FollowUtils.fetchFollowInfo(userId)
@@ -7,21 +8,30 @@ export const fetchFollowInfo = userId => dispatch => {
         // err => dispatch(receiveFollowErrors(err.responseJSON)));
 }
 
-// export const createFollow = userId => dispatch => {
-//     debugger
-//     return FollowUtils.createFollow(userId)
-//         .then(payload => dispatch(receiveFollowInfo(payload)))
-//         // err => dispatch(receiveFollowErrors(err.responseJSON)));
-// }
-
-export const unFollow = (userId, id) => dispatch => {
-    return FollowUtils.unFollow(userId, id)
-        .then(payload => dispatch(receiveFollowInfo(payload)));
+export const createFollow = userId => dispatch => {
+    debugger
+    return FollowUtils.createFollow(userId)
+        .then(payload => dispatch(follow(payload)))
+        // err => dispatch(receiveFollowErrors(err.responseJSON)));
 }
-// const receiveFollowInfo = (info) => {
-//     return {
-//         type: RECEIVE_FOLLOW_INFO,
-//         info,
-//     };
-// };
 
+export const unFollow = userId => dispatch => {
+    return FollowUtils.unFollow(userId)
+        .then(payload => dispatch(unfollow(payload)));
+}
+
+const follow = ({user, followStatus}) => {
+    return {
+        type: FOLLOW,
+        user,
+        followStatus
+    }
+}
+
+const unfollow = ({user, followStatus}) => {
+    return {
+        type: UNFOLLOW,
+        user, 
+        followStatus,
+    }
+}

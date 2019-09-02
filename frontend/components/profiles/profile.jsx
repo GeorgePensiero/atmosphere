@@ -2,9 +2,13 @@ import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
 import { createFollow } from '../../util/follows_api_util';
+import FollowButton from './follow_button_container';
 
 class Profile extends React.Component{
-
+    constructor(props){
+        super(props);
+        
+    }
     componentDidMount(){
         this.props.fetchUserStories(this.props.match.params.userId);
         // this.props.fetchFollowInfo(this.props.match.params.userId);
@@ -19,14 +23,6 @@ class Profile extends React.Component{
         if (!user || !stories) {
             return null;
         }
-        // const followingLength = following.length;
-        // const followersLength = followers.length;
-        let followButton = <button onClick={() => createFollow(user.id)}>Follow</button>
-        // if(followers.includes(currentUser.id)){
-        //     followButton = <button onClick={() =>  this.props.unFollow(user.id, 0)}>Unfollow</button>;
-        // } else {
-        //     followButton = <button onClick={() => this.props.createFollow(user.id)}>Follow</button>
-        // }
         debugger
         const initial = user.username.slice(0, 1).toUpperCase();
             const profileStories = stories.map( (story, idx) => {
@@ -58,7 +54,7 @@ class Profile extends React.Component{
                                 <h4>{user.follower_count} followers</h4>
                                 <h4>{user.following_count} following</h4>
                             </div>
-                            {followButton}
+                            <FollowButton user={this.props.user}/>
                         </div>
                         <div className="user-initial profile-initial">{initial}</div>
                     </div> 
