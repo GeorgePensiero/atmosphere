@@ -11,27 +11,25 @@ export const fetchFollowInfo = userId => dispatch => {
 export const createFollow = userId => dispatch => {
     debugger
     return FollowUtils.createFollow(userId)
-        .then(payload => dispatch(follow(payload)))
+        .then(user => dispatch(follow(user)))
         // err => dispatch(receiveFollowErrors(err.responseJSON)));
 }
 
 export const unFollow = userId => dispatch => {
     return FollowUtils.unFollow(userId)
-        .then(payload => dispatch(unfollow(payload)));
+        .then(user => dispatch(unfollow(user)));
 }
 
-const follow = ({user, followStatus}) => {
+const follow = user => {
     return {
         type: FOLLOW,
-        user,
-        followStatus
+        user
     }
 }
 
-const unfollow = ({user, followStatus}) => {
+const unfollow = user => {
     return {
         type: UNFOLLOW,
-        user, 
-        followStatus,
+        user
     }
 }

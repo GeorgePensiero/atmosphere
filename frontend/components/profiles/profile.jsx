@@ -15,11 +15,11 @@ class Profile extends React.Component{
     }
 
     // componentDidUpdate(prev){
-    //     if(prev.props.match.params.userId !== )
+    //     this.props.fetchUserStories(this.props.match.params.userId);
     // }
 
     render(){
-        const { user, stories, following, followers, currentUser } = this.props;
+        const { user, stories} = this.props;
         if (!user || !stories) {
             return null;
         }

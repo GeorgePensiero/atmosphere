@@ -19,7 +19,7 @@ export default(state = {}, action) => {
         case RECEIVE_USER_RESPONSES:
             return Object.assign({}, newState, { [action.user.id]: action.user });
         case FOLLOW:
-            return Object.assign({}, newState, { [action.user.id]: action.user});
+            return Object.assign({}, newState, { [action.user.id]: action.user });
         case UNFOLLOW:
             return Object.assign({}, newState, { [action.user.id]: action.user });
         default: 
