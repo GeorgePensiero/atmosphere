@@ -9,7 +9,6 @@ export const fetchFollowInfo = userId => dispatch => {
 }
 
 export const createFollow = userId => dispatch => {
-    debugger
     return FollowUtils.createFollow(userId)
         .then(user => dispatch(follow(user)))
         // err => dispatch(receiveFollowErrors(err.responseJSON)));

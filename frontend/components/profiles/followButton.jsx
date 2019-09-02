@@ -10,7 +10,6 @@ class FollowButton extends React.Component {
 
     followAction(e){
         // e.stopPropogation();
-        debugger
         if(this.props.user.following){
             this.props.unFollow(this.props.user.id);
         } else {
@@ -19,7 +18,6 @@ class FollowButton extends React.Component {
     }
 
     following(){
-        debugger
         if(this.props.user.following){
             return "Unfollow";
         } else {
@@ -28,11 +26,17 @@ class FollowButton extends React.Component {
     }
 
     render(){
-        return (
-            <button onClick={this.followAction}>
-                {this.following()}
-            </button>
-        )
+        if(this.props.user.id === this.props.currentUser.id){
+            return (
+                <div></div>
+            )
+        } else {
+            return (
+                <button onClick={this.followAction} className={this.following() + "-btn"}>
+                    {this.following()}
+                </button>
+            )
+        }
     }
 }
 

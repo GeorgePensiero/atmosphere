@@ -11,19 +11,21 @@ class Profile extends React.Component{
     }
     componentDidMount(){
         this.props.fetchUserStories(this.props.match.params.userId);
+        debugger
         // this.props.fetchFollowInfo(this.props.match.params.userId);
     }
 
-    // componentDidUpdate(prev){
-    //     this.props.fetchUserStories(this.props.match.params.userId);
-    // }
+    componentDidUpdate(prevProps){
+        if(prevProps.match.params.userId !== this.props.match.params.userId){
+            this.props.fetchUserStories(this.props.match.params.userId);
+        }
+    }
 
     render(){
         const { user, stories} = this.props;
         if (!user || !stories) {
             return null;
         }
-        debugger
         const initial = user.username.slice(0, 1).toUpperCase();
             const profileStories = stories.map( (story, idx) => {
                 const description = story.body.slice(0, 30) + "...";
