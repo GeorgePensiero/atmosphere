@@ -5,10 +5,11 @@
     justify-content: center;
     align-items: center;
     transition: fill 200ms ease;
+    margin-right: 10px;
 }
 
-.clap-img:focus{
-    fill: rgba(195, 55, 49, 1);
+.like-btn:focus{
+    color: rgba(195, 55, 49, 1);
 }
 
 .like-btn:hover{
@@ -19,4 +20,10 @@
 .clap-img{
     width: 40px;
     height: 40px;
+}
+
+.story-like{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }

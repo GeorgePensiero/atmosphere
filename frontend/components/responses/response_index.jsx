@@ -80,7 +80,7 @@ class ResponseIndex extends React.Component{
                     <button onClick={() => this.props.removeResponse(story.id, response.id)}>Delete</button>
                 </div>
             } else {
-                likeBtn = <LikeButton component={response} type="response" />
+                likeBtn = <LikeButton component={response} type="response-like" />
             }
             // if(author === currentUser){
             //     deleteButton = <button onClick={}
