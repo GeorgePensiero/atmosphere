@@ -1,7 +1,8 @@
 json.stories do 
     @stories.each do |story|  
         json.set! story.id do 
-            json.extract! story, :id, :title, :body, :author_id
+            # json.extract! story, :id, :title, :body, :author_id, 
+            json.partial! "api/stories/story", story: story
             if(story.photo)
                 json.photoUrl url_for(story.photo)
             end
