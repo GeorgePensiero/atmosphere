@@ -28,7 +28,7 @@ class LikeButton extends React.Component{
     render(){
         return (
             <div>
-                <button onClick={this.like}>Like</button>
+                <button className="like-btn" onClick={this.like}><img className="clap-img" src={window.clapUrl} alt="clap.svg" /></button>
                 <span>{this.props.component.like_count} likes</span>
             </div>
         )
