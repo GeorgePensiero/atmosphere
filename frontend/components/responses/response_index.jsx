@@ -97,8 +97,8 @@ class ResponseIndex extends React.Component{
                         </div>
                         <div className="response-body">{response.body}</div>
                         {editDelete}
+                        {likeBtn}
                     </div>
-                    {likeBtn}
                 </li>
             );
         });

@@ -24,12 +24,12 @@ class LikeButton extends React.Component{
         }
     }
 
-
     render(){
         return (
             <div className={this.props.type}>
+                {/* <span className="user-like-bubble">+ {this.props.component.current_user_likes}</span> */}
                 <button className="like-btn" onClick={this.like}><img className="clap-img" src={window.clapUrl} alt="clap.svg" /></button>
-                <span>{this.props.component.like_count} likes</span>
+                <span>{this.props.component.like_count} smacks</span>
             </div>
         )
     }

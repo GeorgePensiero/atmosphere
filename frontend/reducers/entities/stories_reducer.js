@@ -8,7 +8,7 @@ export default(state = {}, action) => {
         case RECEIVE_ALL_STORIES: 
             return action.stories;
         case RECEIVE_USER_STORIES:
-            return action.stories;
+            return action.stories || {};
         case RECEIVE_STORY:
             newState = Object.assign({}, newState);
             newState[action.story.id] = action.story;
