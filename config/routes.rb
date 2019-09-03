@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resource :session, only:[:create, :destroy]
     resources :stories, only:[:index, :create, :destroy, :update, :show] do 
       resources :responses, only:[:create, :show, :index, :destroy, :update]
+      post '/responses/:id/likes', :to => 'responses#like'
+      post '/likes', :to => 'stories#like'
     end
   end
 end

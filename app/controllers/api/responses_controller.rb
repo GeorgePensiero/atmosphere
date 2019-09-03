@@ -39,6 +39,13 @@ class Api::ResponsesController < ApplicationController
         end
     end
 
+    def like
+        @like = Like.new(likeable_type: "Response", likeable_id: params[:id], liker_id: current_user.id)
+        @like.save!
+        @response = Response.find(params[:id])
+        render :show
+    end
+
     private
 
     def response_params

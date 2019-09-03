@@ -43,3 +43,10 @@ export const deleteResponse = (storyId, id) => {
     });
 };
 
+export const likeResponse = (storyId, id) => {
+    return $.ajax({
+        method: "post",
+        url: `api/stories/${storyId}/responses/${id}/likes`,
+    });
+};
+

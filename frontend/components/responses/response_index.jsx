@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
+import LikeButton from '../likes/like_button';
 
 class ResponseIndex extends React.Component{
 
@@ -72,12 +73,14 @@ class ResponseIndex extends React.Component{
         // }
         const responseList = responses.map( (response, idx) => {
             let editDelete;
-            
+            let likeBtn;
             const author = users[response.author_id];
             if(currentUser === author){
                 editDelete = <div className="edit-delete-response">
                     <button onClick={() => this.props.removeResponse(story.id, response.id)}>Delete</button>
                 </div>
+            } else {
+                likeBtn = <LikeButton component={response} type="response" />
             }
             // if(author === currentUser){
             //     deleteButton = <button onClick={}
@@ -95,6 +98,7 @@ class ResponseIndex extends React.Component{
                         <div className="response-body">{response.body}</div>
                         {editDelete}
                     </div>
+                    {likeBtn}
                 </li>
             );
         });

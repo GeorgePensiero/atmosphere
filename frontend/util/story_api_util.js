@@ -41,3 +41,10 @@ export const deleteStory = id => {
         url: `api/stories/${id}`
     });
 };
+
+export const likeStory = id => {
+    return $.ajax({
+        method: "post",
+        url: `api/stories/${id}/likes`
+    });
+};

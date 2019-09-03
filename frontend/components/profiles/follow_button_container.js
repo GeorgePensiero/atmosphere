@@ -4,7 +4,7 @@ import FollowButton from './followButton';
 
 const msp = ({entities: {users}, session}) => {
     return {
-        currentUser: users[session.id],
+        currentUser: users[session.id] || {},
     }
 }
 

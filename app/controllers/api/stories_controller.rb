@@ -47,6 +47,14 @@ class Api::StoriesController < ApplicationController
         render :show
     end
 
+    def like
+        @like = Like.new(likeable_type: "Story", likeable_id: params[:story_id], liker_id: current_user.id)
+        @like.save!
+        @story = Story.find(params[:story_id])
+        @user = @story.author
+        render :show
+    end
+
 
     private
 

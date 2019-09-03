@@ -11,7 +11,6 @@ class Profile extends React.Component{
     }
     componentDidMount(){
         this.props.fetchUserStories(this.props.match.params.userId);
-        debugger
         // this.props.fetchFollowInfo(this.props.match.params.userId);
     }
 

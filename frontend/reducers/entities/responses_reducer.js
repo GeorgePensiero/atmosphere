@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_RESPONSES, RECEIVE_RESPONSE, DELETE_RESPONSE, RECEIVE_USER_RESPONSES } from '../../actions/response_actions';
+import { RESPONSE_LIKE } from '../../actions/like_actions';
 
 export default (state = {}, action) => {
     let newState = Object.freeze(state);
@@ -13,6 +14,10 @@ export default (state = {}, action) => {
             return newState;
         case DELETE_RESPONSE:
             return action.responses;
+        case RESPONSE_LIKE:
+            newState = Object.assign({}, newState);
+            newState[action.response.id] = action.response;
+            return newState;
         default: 
             return state;
     }

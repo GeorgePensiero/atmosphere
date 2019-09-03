@@ -1,9 +1,10 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import { Link } from 'react-router-dom';
+import LikeButton from '../likes/like_button';
 
 class Story extends React.Component{
-
+    
     componentDidMount(){
         this.props.fetchStory(this.props.match.params.storyId)
     }
@@ -41,6 +42,7 @@ class Story extends React.Component{
                     <div className="story-body">
                         <p>{story.body}</p>
                     </div>
+                    <LikeButton component={story} type="story" /> 
                     <div className="story-writer-info">
                         <p>WRITTEN BY</p>
                         <Link to={`/users/${author.id}/profile`} className="author-name"><h2>{author.username}</h2></Link>
