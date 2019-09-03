@@ -26,21 +26,26 @@ class Profile extends React.Component{
             return null;
         }
         const initial = user.username.slice(0, 1).toUpperCase();
-            const profileStories = stories.map( (story, idx) => {
-                const description = story.body.slice(0, 30) + "...";
-                return(
-                    <li className="profile-story" key={story.title + idx}>
-                        <p className="author-name">{user.username}</p>
-                        <div className="profile-story-content">
-                            <Link to={`/story/${story.id}`} className="route-link">
-                                <img className="profile-pic" src={story.photoUrl} />
-                                <h1 className="pro-story-title">{story.title}</h1>
-                                <h2 className="story-teaser">{description}</h2>
-                            </Link>
-                        </div>
-                    </li>
-                )
-            });
+        let profileStories;
+            if(!stories.length){
+                profileStories = <div className="empty-stories">You haven't published any stories yet</div>
+            } else {
+                profileStories = stories.map( (story, idx) => {
+                    const description = story.body.slice(0, 30) + "...";
+                    return(
+                        <li className="profile-story" key={story.title + idx}>
+                            <p className="author-name">{user.username}</p>
+                            <div className="profile-story-content">
+                                <Link to={`/story/${story.id}`} className="route-link">
+                                    <img className="profile-pic" src={story.photoUrl} />
+                                    <h1 className="pro-story-title">{story.title}</h1>
+                                    <h2 className="story-teaser">{description}</h2>
+                                </Link>
+                            </div>
+                        </li>
+                    )
+                });
+            }
         return (
             <div>
                 <div className="profile">

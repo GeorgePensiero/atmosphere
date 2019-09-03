@@ -2,6 +2,12 @@ import React from 'react';
 import { likeStoryReq, likeResponseReq } from '../../actions/like_actions';
 import { connect } from 'react-redux';
 
+const msp = ({entities, session}) => {
+    const currentUser = entities.users[session.id];
+    return {
+        currentUser,
+    }
+}
 
 const mdp = dispatch => {
     return {
@@ -17,9 +23,9 @@ class LikeButton extends React.Component{
     }
 
     like(){
-        if(this.props.component.current_user_likes < 50 && this.props.type === "story-like"){
+        if(this.props.component.current_user_likes < 50 && this.props.type === "story-like" && this.props.author.id !== this.props.currentUser.id){
             this.props.likeStory(this.props.component.id);
-        } else if (this.props.component.current_user_likes < 50 && this.props.type === "response-like"){
+        } else if (this.props.component.current_user_likes < 50 && this.props.type === "response-like" && this.props.author.id !== this.props.currentUser.id){
             this.props.likeResponse(this.props.component.storyId, this.props.component.id);
         }
     }
@@ -35,4 +41,4 @@ class LikeButton extends React.Component{
     }
 }
 
-export default connect(null, mdp)(LikeButton);
+export default connect(msp, mdp)(LikeButton);

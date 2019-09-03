@@ -42,7 +42,7 @@ class Story extends React.Component{
                     <div className="story-body">
                         <p>{story.body}</p>
                     </div>
-                    <LikeButton  component={story} type="story-like" /> 
+                    <LikeButton  component={story} type="story-like" author={author}/> 
                     <div className="story-writer-info">
                         <p>WRITTEN BY</p>
                         <Link to={`/users/${author.id}/profile`} className="author-name"><h2>{author.username}</h2></Link>
