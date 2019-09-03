@@ -25,4 +25,5 @@ class Response < ApplicationRecord
         class_name: :Response,
         optional: true
     
+    has_many :likes, :as => :likeable
 end

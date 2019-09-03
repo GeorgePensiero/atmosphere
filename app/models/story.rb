@@ -24,6 +24,8 @@ class Story < ApplicationRecord
     
     has_one_attached :photo
 
+    has_many :likes, :as => :likeable
+
     private
 
     def ensure_default_photo
