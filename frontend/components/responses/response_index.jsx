@@ -73,15 +73,13 @@ class ResponseIndex extends React.Component{
         // }
         const responseList = responses.map( (response, idx) => {
             let editDelete;
-            let likeBtn;
             const author = users[response.author_id];
+            let likeBtn = <LikeButton component={response} type="response-like" author={author} />;
             if(currentUser === author){
                 editDelete = <div className="edit-delete-response">
                     <button onClick={() => this.props.removeResponse(story.id, response.id)}>Delete</button>
                 </div>
-            } else {
-                likeBtn = <LikeButton component={response} type="response-like" />
-            }
+            } 
             // if(author === currentUser){
             //     deleteButton = <button onClick={}
             // }
@@ -96,8 +94,10 @@ class ResponseIndex extends React.Component{
                             </Link>
                         </div>
                         <div className="response-body">{response.body}</div>
-                        {editDelete}
-                        {likeBtn}
+                        <div className="post-response-body">
+                            {likeBtn}
+                            {editDelete}
+                        </div>
                     </div>
                 </li>
             );
