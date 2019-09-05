@@ -21,8 +21,8 @@ class Featured extends React.Component{
                     <div className="author-splash-info">
                         <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name">{author}</p></Link> 
                         <img className="star-img" src={window.starUrl} alt="star.png" />
-                        <p>{story.date}</p>
                     </div>
+                        <p className="story-date">{story.date}</p>
                 </div>
             )
         });
@@ -38,7 +38,7 @@ class Featured extends React.Component{
                         {/* <div className="author-splash-info"> */}
                             <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name">{author}</p></Link>
                             {/* <img className="star-img" src={window.starUrl} alt="star.png" /> */}
-                            <p>{story.date}</p>
+                            <p className="story-date">{story.date}</p>
                         {/* </div> */}
                     </div>
                 </div>
@@ -59,8 +59,8 @@ class Featured extends React.Component{
                     <div className="author-splash-info">
                         <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name">{author}</p></Link>
                         <img className="star-img" src={window.starUrl} alt="star.png" />
-                        <p>{story.date}</p>
                     </div>
+                    <p className="story-date">{story.date}</p>
                 </div>
             )
         })

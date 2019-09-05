@@ -18,6 +18,7 @@ class SplashLeft extends React.Component{
                             <Link to={`/users/${users[story.author_id].id}/profile`} className="author-name"><p className="author-name">{author}</p></Link>
                             <img className="star-img" src={window.starUrl} alt="star.png" />
                         </div>
+                        <p className="story-date">{story.date}</p>
                     </div>
                     <Link to={`/story/${story.id}`} className="route-link"><img className="splashleft-img" src={story.photoUrl} alt="storyphoto"/></Link>
                 </li>
