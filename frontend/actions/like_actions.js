@@ -20,7 +20,7 @@ export const unSmackStory = id => dispatch => {
 
 export const unSmackResponse = (storyId, id) => dispatch => {
     return unlikeResponse(storyId, id)
-        .then(payload => dispatch(receiveLike(payload)))
+        .then(response => dispatch(receiveResponseLike(response)))
 }
 
 const receiveLike = ({story, user}) => {

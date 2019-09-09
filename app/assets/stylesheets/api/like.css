@@ -38,7 +38,7 @@
 .smack-limit{
     position: absolute;
     top: 50;
-    
+
     color: black;
     width: 100px;
     height: 100px;
@@ -58,3 +58,20 @@
     to {opacity :0;}
 }
 
+
+.unsmack{
+    /* float: right; */
+    margin-left: 10px;
+    text-decoration: none;
+    border-color: orangered;
+    border-radius: 4px;
+    text-align: center;
+    height: 30px;
+    color: black;
+}
+
+.unsmack:hover{
+    background-color: orangered;
+    /* opacity: .5; */
+    /* color: blue; */
+}
