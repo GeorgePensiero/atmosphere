@@ -50,3 +50,10 @@ export const likeResponse = (storyId, id) => {
     });
 };
 
+export const unlikeResponse = (storyId, id) => {
+    return $.ajax({
+        method: "delete",
+        url: `api/stories/${storyId}/responses/${id}/likes`,
+    });
+};
+

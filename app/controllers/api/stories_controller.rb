@@ -55,7 +55,12 @@ class Api::StoriesController < ApplicationController
         render :show
     end
 
-
+    def unlike
+        @story = Story.find(params[:story_id])
+        @story.likes.where(liker_id: current_user.id).destroy_all
+        @user = @story.author
+        render :show
+    end
     private
 
     def story_params

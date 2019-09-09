@@ -48,3 +48,10 @@ export const likeStory = id => {
         url: `api/stories/${id}/likes`
     });
 };
+
+export const unlikeStory = id => {
+    return $.ajax({
+        method: "delete",
+        url: `api/stories/${id}/likes`
+    });
+};

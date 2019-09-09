@@ -27,3 +27,34 @@
     margin: 0 auto;
     margin-bottom: 10px;
 }
+
+.like-bubble-closed{
+    display: none;
+}
+
+    
+    
+    
+.smack-limit{
+    position: absolute;
+    top: 50;
+    
+    color: black;
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    animation: smack-limit 0.5s 1;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-fill-mode: forwards;
+}
+    
+@keyframes smack-limit{
+    from { opacity :1;}
+    to {opacity :0;}
+}
+
+@-webkit-keyframes smack-limit{
+    from {opacity :1;}
+    to {opacity :0;}
+}
+

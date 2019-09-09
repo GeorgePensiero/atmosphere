@@ -46,6 +46,12 @@ class Api::ResponsesController < ApplicationController
         render :show
     end
 
+    def unlike
+        @response = Response.find(params[:id])
+        @response.likes.where(liker_id: current_user.id).destroy_all
+        render :show
+    end
+
     private
 
     def response_params
