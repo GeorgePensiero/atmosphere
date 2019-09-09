@@ -59,18 +59,9 @@ class ResponseIndex extends React.Component{
         } else {            
             userResponse =  <div>
                                 <input type="text" placeholder="Write a response..." onChange={this.update('body')} value={this.state.body} className="user-response-closed" />
-                                {/* <img className="caret-img" src={window.caretUrl} alt="caret-img" /> */}
                             </div>
         }
-        // if(focused){
-        //     userResponse = <div className="user-response-open" onBlur={this.toggleFocus}>
-        //         <input autoFocus value={this.state.body} onChange={this.update('body')} />
-        //         <button className="publish-response-btn" onClick={this.handleSubmit}>Publish</button>
-        //     </div>
-        // } else {
-        //     userResponse = 
-        //         <input type="text" placeholder="Write a response..." className="user-response-closed" onFocus={this.toggleFocus} />
-        // }
+        
         const responseList = responses.map( (response, idx) => {
             let editDelete;
             const author = users[response.author_id];

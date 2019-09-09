@@ -132,10 +132,10 @@
     color: orangered;
 }
 
-.user-response-closed:focus{
-  transform: scaleY(1);
-  transition: transform 0.5s ease;
-}
+// .user-response-closed:hover{
+//   height: 300px;
+//   transition: height 2s ease;
+// }
 
 .response-content{
     border: 1px solid rgba(0, 0, 0, 0.25);
