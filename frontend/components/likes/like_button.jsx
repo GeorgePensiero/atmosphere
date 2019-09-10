@@ -3,7 +3,7 @@ import { likeStoryReq, likeResponseReq, unSmackStory, unSmackResponse } from '..
 import { connect } from 'react-redux';
 
 const msp = ({entities, session}) => {
-    const currentUser = entities.users[session.id];
+    const currentUser = entities.users[session.id] || {};
     return {
         currentUser,
     }
