@@ -115,3 +115,20 @@
 .dropdown-link:hover{
 
 }
+
+.middle-nav{
+    display: flex;
+    color: black;
+    padding: 20px;
+}
+
+.middle-nav a{
+    font-size: 24px;
+    margin-right: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.middle-nav a:hover{
+    color: #00c;
+}

@@ -67,6 +67,11 @@ class Navbar extends React.Component {
                         <section className="left-nav">
                             <Link to="/" className="route-link"><h1 id="atmosphere-logo">Atmosphere</h1></Link>
                         </section>
+                        <section className="middle-nav">
+                            <a href="https://www.linkedin.com/in/george-pensiero-402913190/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://angel.co/george-pensiero" target="_blank"><i class="fab fa-angellist"></i></a>
+                            <a href="https://georgepensiero.github.io" target="_blank"><p>George Pensiero</p></a>
+                        </section>
                         <section className="right-nav">
                             <div ref={iconRef => this.iconRef = iconRef} className="user-initial">{initial}
                                 {visible}
@@ -89,6 +94,11 @@ class Navbar extends React.Component {
                     <section className='top-navbar'>
                         <section className="left-nav">
                             <Link to="/" className="route-link"><h1 id="atmosphere-logo">Atmosphere</h1></Link>
+                        </section>
+                        <section className="middle-nav">
+                            <a href="https://www.linkedin.com/in/george-pensiero-402913190/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://angel.co/george-pensiero" target="_blank"><i class="fab fa-angellist"></i></a>
+                            <a href="https://georgepensiero.github.io" target="_blank"><p>George Pensiero</p></a>
                         </section>
                         <section className="right-nav">
                             <button id="signin-btn" onClick={() => openModal('login')}>Sign in</button>
