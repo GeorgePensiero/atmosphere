@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -26,7 +27,7 @@ class SessionForm extends React.Component {
 
     loginDemoUser(e){
         e.preventDefault();
-        this.props.demoLogin();
+        this.props.demoLogin().then( () => this.props.history.push('/'));
     }
 
     update(field){
@@ -76,4 +77,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
