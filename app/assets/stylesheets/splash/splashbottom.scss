@@ -8,6 +8,7 @@
 .splash-left-story{
     margin: 0 0 48px;
     display: flex;
+    justify-content: space-between;
 }
 
 .splashleft-img{
@@ -18,6 +19,7 @@
 .bottompost-content{
     margin-right: 24px;
     color: black;
+    overflow: hidden;
 }
 
 .bottompost-content h2{
