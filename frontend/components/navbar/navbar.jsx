@@ -69,6 +69,7 @@ class Navbar extends React.Component {
                         </section>
                         <section className="middle-nav">
                             <a href="https://www.linkedin.com/in/george-pensiero-402913190/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/GeorgePensiero" target="_blank"><i class="fab fa-github"></i></a>
                             <a href="https://angel.co/george-pensiero" target="_blank"><i class="fab fa-angellist"></i></a>
                             <a href="https://georgepensiero.github.io" target="_blank"><p>George Pensiero</p></a>
                         </section>
@@ -97,6 +98,7 @@ class Navbar extends React.Component {
                         </section>
                         <section className="middle-nav">
                             <a href="https://www.linkedin.com/in/george-pensiero-402913190/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/GeorgePensiero" target="_blank"><i class="fab fa-github"></i></a>
                             <a href="https://angel.co/george-pensiero" target="_blank"><i class="fab fa-angellist"></i></a>
                             <a href="https://georgepensiero.github.io" target="_blank"><p>George Pensiero</p></a>
                         </section>
