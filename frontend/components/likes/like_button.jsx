@@ -45,7 +45,7 @@ class LikeButton extends React.Component{
     render(){
         let smacked;
         if(this.props.component.current_user_likes > 0 && this.props.author.id !== this.props.currentUser.id){
-            smacked = <button className="unsmack" onClick={this.unlike}>Unsmack</button>
+            smacked = <button className="unsmack" onClick={this.unlike}>{String.fromCharCode(10005)}</button>
         }
         return (
             <div className={this.props.type}>
