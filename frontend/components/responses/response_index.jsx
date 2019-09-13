@@ -32,8 +32,10 @@ class ResponseIndex extends React.Component{
     }
 
 
-    toggleFocus(){
-        this.setState({focus: !this.state.focus});
+    toggleFocus(e){
+        if(e.target.type !== "submit"){
+            this.setState({focus: !this.state.focus});
+        }
     }
 
     handleSubmit(e){
@@ -59,21 +61,29 @@ class ResponseIndex extends React.Component{
         } else {            
             userResponse =  <div>
                                 <input type="text" placeholder="Write a response..." onChange={this.update('body')} value={this.state.body} className="user-response-closed" />
+                                {/* <img className="caret-img" src={window.caretUrl} alt="caret-img" /> */}
+                                <button type="submit" onClick={this.handleSubmit}>Publish</button>
                             </div>
         }
-        
+        // if(focused){
+        //     userResponse = <div className="user-response-open" onBlur={this.toggleFocus}>
+        //         <textarea autoFocus value={this.state.body} onChange={this.update('body')} />
+        //         <button type="submit" onClick={this.handleSubmit}>Publish</button>
+        //     </div>
+        // } else {
+        //     userResponse = 
+        //         <input type="text" placeholder="Write a response..." className="user-response-closed" onFocus={this.toggleFocus} />
+        // }
         const responseList = responses.map( (response, idx) => {
             let editDelete;
             const author = users[response.author_id];
             let likeBtn = <LikeButton component={response} type="response-like" author={author} />;
             if(currentUser === author){
                 editDelete = <div className="edit-delete-response">
-                    <button onClick={() => this.props.removeResponse(story.id, response.id)}>Delete</button>
+                    <button className="button-close response-button" onClick={() => this.props.removeResponse(story.id, response.id)}>{String.fromCharCode(10005)}</button>
                 </div>
             } 
-            // if(author === currentUser){
-            //     deleteButton = <button onClick={}
-            // }
+            
             const initial = author.username.slice(0, 1);
             return (
                 <li className="response" key={response.body + idx}>
@@ -113,7 +123,6 @@ class ResponseIndex extends React.Component{
                         <div className="response-div"><p>Responses</p></div>
                         <div className="write-response">
                             {userResponse}
-                            <button onClick={this.handleSubmit}>Publish</button>
                         </div>
                         {/* <form onSubmit={this.handleSubmit}> */}
                             

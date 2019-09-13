@@ -101,6 +101,7 @@
 
 .response-content{
     padding: 10px 20px 15px;
+    position: relative;
 }
 
 .response-body{
@@ -116,6 +117,10 @@
     min-height: 60px;
     padding: 0px 10px;
     margin-bottom: 10px;
+}
+
+.user-response-closed:focus{
+    
 }
 
 .user-response-open textarea{
@@ -156,3 +161,4 @@
     justify-content: space-between;
     align-items: baseline;
 }
+
