@@ -1,11 +1,13 @@
 import React from 'react';
 import { likeStoryReq, likeResponseReq, unSmackStory, unSmackResponse } from '../../actions/like_actions';
 import { connect } from 'react-redux';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = ({entities, session}) => {
     const currentUser = entities.users[session.id] || {};
     return {
         currentUser,
+        session
     }
 }
 
@@ -15,6 +17,7 @@ const mdp = dispatch => {
         likeResponse: (storyId, id) => dispatch(likeResponseReq(storyId, id)),
         unlikeStory: id => dispatch(unSmackStory(id)),
         unlikeResponse: (storyId, id) => dispatch(unSmackResponse(storyId, id)),
+        openModal: modal => dispatch(openModal(modal)),
     }
 }
 
@@ -43,13 +46,20 @@ class LikeButton extends React.Component{
     }
 
     render(){
+        const { openModal } = this.props;
         let smacked;
+        let smackBtn;
+        if(this.props.session.id === null){
+            smackBtn = <button className="like-btn" onClick={() => openModal('signup')}><img className="clap-img" src={window.clapUrl} alt="clap.svg" /></button>
+        } else {
+            smackBtn = <button className="like-btn" onClick={this.like}><img className="clap-img" src={window.clapUrl} alt="clap.svg" /></button>
+        }
         if(this.props.component.current_user_likes > 0 && this.props.author.id !== this.props.currentUser.id){
             smacked = <button className="unsmack" onClick={this.unlike}>{String.fromCharCode(10005)}</button>
         }
         return (
             <div className={this.props.type}>
-                <button className="like-btn" onClick={this.like}><img className="clap-img" src={window.clapUrl} alt="clap.svg" /></button>
+                {smackBtn}
                 <span>{this.props.component.like_count} smacks</span>
                 {smacked}
             </div>

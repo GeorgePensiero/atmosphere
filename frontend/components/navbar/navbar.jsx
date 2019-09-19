@@ -68,9 +68,9 @@ class Navbar extends React.Component {
                             <Link to="/" className="route-link"><h1 id="atmosphere-logo">Atmosphere</h1></Link>
                         </section>
                         <section className="middle-nav">
-                            <a href="https://www.linkedin.com/in/george-pensiero-402913190/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/GeorgePensiero" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://angel.co/george-pensiero" target="_blank"><i class="fab fa-angellist"></i></a>
+                            <a href="https://www.linkedin.com/in/george-pensiero-402913190/" target="_blank"><i className="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/GeorgePensiero" target="_blank"><i className="fab fa-github"></i></a>
+                            <a href="https://angel.co/george-pensiero" target="_blank"><i className="fab fa-angellist"></i></a>
                             <a href="https://georgepensiero.github.io" target="_blank"><p>George Pensiero</p></a>
                         </section>
                         <section className="right-nav">
@@ -97,9 +97,9 @@ class Navbar extends React.Component {
                             <Link to="/" className="route-link"><h1 id="atmosphere-logo">Atmosphere</h1></Link>
                         </section>
                         <section className="middle-nav">
-                            <a href="https://www.linkedin.com/in/george-pensiero-402913190/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/GeorgePensiero" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://angel.co/george-pensiero" target="_blank"><i class="fab fa-angellist"></i></a>
+                            <a href="https://www.linkedin.com/in/george-pensiero-402913190/" target="_blank"><i className="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/GeorgePensiero" target="_blank"><i className="fab fa-github"></i></a>
+                            <a href="https://angel.co/george-pensiero" target="_blank"><i className="fab fa-angellist"></i></a>
                             <a href="https://georgepensiero.github.io" target="_blank"><p>George Pensiero</p></a>
                         </section>
                         <section className="right-nav">
