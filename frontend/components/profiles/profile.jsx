@@ -49,9 +49,6 @@ class Profile extends React.Component{
         return (
             <div>
                 <div className="profile">
-                    <div className="nav-holder">
-                        <NavbarContainer/>
-                    </div>
                     <div className="user-container">
                         <div className="user-info">
                             <h1>{user.username}</h1>

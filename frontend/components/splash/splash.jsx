@@ -13,7 +13,6 @@ class Splash extends React.Component {
     render(){
         return (
             <div className="splash">
-                <NavbarContainer/>
                 <FeaturedContainer />
                 <div className="splash-bottom-content">
                     <SplashLeftContainer />

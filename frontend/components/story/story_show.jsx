@@ -25,7 +25,6 @@ class Story extends React.Component{
         const initial = author.username.slice(0, 1).toUpperCase();
         return (
             <div className="story-show">
-                <NavbarContainer />
                 <div className="story-show-main">
                     <div className="storyshow-header">
                         <h1>{story.title}</h1>

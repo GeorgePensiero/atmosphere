@@ -24,7 +24,6 @@ class UserStories extends React.Component{
         })
         return (
             <div>
-                <NavbarContainer />
                 <div className="user-stories-main">
                     <div className="user-stories-header">
                         <h1>Your stories</h1>

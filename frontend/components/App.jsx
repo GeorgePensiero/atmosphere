@@ -10,12 +10,14 @@ import StoryShowContainer from './story/story_show_container';
 import ProfileContainer from './profiles/profile_container';
 import ResponseIndexContainer from './responses/response_index_container';
 import UserResponsesIndexContainer from './profiles/profile_responses_container';
+import NavbarContainer from './navbar/navbar_container';
 
 export default () => (
 
     
     <div>
         <Modal />
+        <NavbarContainer />
         <Switch>
             <Route exact path="/story/new" component={NewStoryContainer} />
             <ProtectedRoute exact path="/users/:userId/stories" component={StoryIndexContainer} />

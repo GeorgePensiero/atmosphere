@@ -106,9 +106,6 @@ class ResponseIndex extends React.Component{
         
         return (
             <div className="responses-index">
-                <div className="nav-holder">
-                    <NavbarContainer />
-                </div>
                 <div className="story-response-container">
                     <p>Showing responses for:</p>
                     <Link to={`/story/${story.id}`} className="route-link">
